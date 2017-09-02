@@ -23,5 +23,33 @@ namespace citi
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window newAnalyse = new NewAna();
+            this.Hide();
+            newAnalyse.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window historyWindow = new History();
+            this.Hide();
+            historyWindow.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Window newAnalyse = new NewAna();
+            //this.Hide();
+            newAnalyse.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Window historyWindow = new History();
+           // this.Hide();
+            historyWindow.Show();
+        }
     }
 }

@@ -1,0 +1,19 @@
+﻿<Window x:Class="citi.History"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:citi"
+        mc:Ignorable="d"
+        Title="History" Height="301.19" Width="371.825">
+    <Grid>
+
+        <ListBox x:Name="HistoryListBox" HorizontalAlignment="Left" Height="252" Margin="10,10,0,0" VerticalAlignment="Top" Width="275" Grid.ColumnSpan="2">
+            
+
+        </ListBox>
+        <Button Content="对比" HorizontalAlignment="Left" Margin="290,44,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="删除" HorizontalAlignment="Left" Margin="290,77,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

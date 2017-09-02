@@ -12,7 +12,7 @@
         <TextBox x:Name="username_text" HorizontalAlignment="Left" Height="38" Margin="230,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="22"/>
         <PasswordBox x:Name="password_text" HorizontalAlignment="Left" Height="38" Margin="230,210,0,0"  VerticalAlignment="Top" Width="157" FontSize="22"/>
         <Button Content="登录" HorizontalAlignment="Left" Margin="122,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontSize="16"/>
-        <Button Content="重置" HorizontalAlignment="Left" Margin="312,271,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="Button_Click_1"/>
+        <Button Content="注册" HorizontalAlignment="Left" Margin="312,271,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="Button_Click_1"/>
         <Image x:Name="imageView" HorizontalAlignment="Left" Height="100" Margin="205,42,0,0" VerticalAlignment="Top" Width="100" Source="avatar.png"/>
 
     </Grid>
