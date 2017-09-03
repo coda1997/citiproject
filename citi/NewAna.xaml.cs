@@ -36,5 +36,12 @@ namespace citi
         {
             
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Window anaData = new AnaData();
+            this.Hide();
+            anaData.Show();
+        }
     }
 }

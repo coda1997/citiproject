@@ -51,5 +51,12 @@ namespace citi
            // this.Hide();
             historyWindow.Show();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Window macroData = new MacroData();
+            this.Hide();
+            macroData.Show();
+        }
     }
 }

@@ -33,7 +33,9 @@ namespace citi
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Window compareData = new CompareData();
+            this.Hide();
+            compareData.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
