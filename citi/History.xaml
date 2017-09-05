@@ -6,14 +6,36 @@
         xmlns:local="clr-namespace:citi"
         mc:Ignorable="d"
         Title="History" Height="301.19" Width="371.825">
+    
+    
+    
     <Grid>
 
-        <ListBox x:Name="HistoryListBox" HorizontalAlignment="Left" Height="252" Margin="10,10,0,0" VerticalAlignment="Top" Width="275" Grid.ColumnSpan="2">
-            
+        <ListBox x:Name="HistoryListBox" HorizontalAlignment="Left" Height="252" Margin="10,10,0,0" VerticalAlignment="Top" Width="275" Grid.ColumnSpan="2"/>
+        <Button x:Name="CompareBtn" Content="对比" HorizontalAlignment="Left" Margin="290,44,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Width"
+                                To="70"  Duration="0:0:1"
+                                AutoReverse="True" 
+                                />
+                          
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                
+            </Button.Triggers>
 
-        </ListBox>
-        <Button Content="对比" HorizontalAlignment="Left" Margin="290,44,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        </Button>
         <Button Content="删除" HorizontalAlignment="Left" Margin="290,77,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
+   
+
+
+
+
 </Window>

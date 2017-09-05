@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -24,12 +25,34 @@ namespace citi
         public History()
         {
             InitializeComponent();
-            String[] items = new String[11];
-            for (int i = 0; i < items.Length; i++) {
-                items[i] = "item" + i;
-                HistoryListBox.Items.Add(items[i]);
-            }
+           // initView();
+
+
+
+
         }
+
+        //private void  initView() {
+        //    NameScope.SetNameScope(this, new NameScope());
+
+        //    this.RegisterName("fromToAnimation",CompareBtn);
+
+        //    DoubleAnimation doubleAnimation = new DoubleAnimation();
+        //    doubleAnimation.From = 50;
+        //    doubleAnimation.To = 300;
+        //    doubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(10));
+
+        //    Storyboard.SetTargetName(doubleAnimation, "fromToAnimation");
+        //    Storyboard.SetTargetProperty(doubleAnimation,new PropertyPath(Button.WidthProperty));
+
+        //    Storyboard storyboard = new Storyboard();
+        //    storyboard.Children.Add(doubleAnimation);
+
+        //    CompareBtn.MouseLeftButtonDown += delegate (object sender, MouseButtonEventArgs args)
+        //    {
+        //        storyboard.Begin(CompareBtn);   
+        //    };
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

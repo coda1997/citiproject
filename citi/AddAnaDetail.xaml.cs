@@ -10,32 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace citi
 {
     /// <summary>
-    /// Main.xaml 的交互逻辑
+    /// AddAnaDetail.xaml 的交互逻辑
     /// </summary>
-    public partial class Main : Window
+    public partial class AddAnaDetail : Page
     {
-        public Main()
+        public AddAnaDetail()
         {
             InitializeComponent();
         }
 
-     
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new AddAna();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            Window historyWindow = new History();
-           // this.Hide();
-            historyWindow.Show();
-        }
+        
     }
+
 }

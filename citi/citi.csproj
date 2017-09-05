@@ -57,10 +57,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAna.xaml.cs">
+      <DependentUpon>AddAna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddAnaDetail.xaml.cs">
+      <DependentUpon>AddAnaDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyLog.cs" />
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddAna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddAnaDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +146,12 @@
   <ItemGroup>
     <Resource Include="avatar.png" />
     <Resource Include="figure01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TIM图片20170904152934.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
