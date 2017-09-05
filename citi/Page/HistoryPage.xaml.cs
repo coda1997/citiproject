@@ -20,13 +20,14 @@ namespace citi
     /// </summary>
     public partial class HistoryPage : Page
     {
+        private List<HistoryEntry> list = new List<HistoryEntry>();
+
         public HistoryPage()
         {
             InitializeComponent();
 
-            ListViewItem ls = new ListViewItem();
-            //
-            myListView.Items.Add(listBoxItem);
+            list.Add(new HistoryEntry("col1","col2","col3","col4"));
+            myListView.ItemsSource = list;
             
         }
     }

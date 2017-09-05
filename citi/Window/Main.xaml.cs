@@ -22,6 +22,8 @@ namespace citi
         public Main()
         {
             InitializeComponent();
+        
+
         }
         private Page newAnaPage;
         private Page historyPage;
