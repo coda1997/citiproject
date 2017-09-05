@@ -10,30 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace citi
 {
     /// <summary>
-    /// NewAna.xaml 的交互逻辑
+    /// HistoryPage.xaml 的交互逻辑
     /// </summary>
-    public partial class NewAna : Window
+    public partial class HistoryPage : Page
     {
-        public NewAna()
+        public HistoryPage()
         {
             InitializeComponent();
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            data1.Text = "";
-            data2.Text = "";
-            data3.Text = "";
-            data4.Text = "";
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+            ListViewItem ls = new ListViewItem();
+            //
+            myListView.Items.Add(listBoxItem);
             
         }
     }

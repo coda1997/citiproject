@@ -23,19 +23,22 @@ namespace citi
         {
             InitializeComponent();
         }
-
-     
+        private Page newAnaPage;
+        private Page historyPage;
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            mainFrame.Content = new AddAna();
+            if (newAnaPage == null)
+                newAnaPage = new AddAna();
+            mainFrame.Content = newAnaPage;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Window historyWindow = new History();
-           // this.Hide();
-            historyWindow.Show();
+            if (historyPage == null)
+                historyPage = new HistoryPage();
+            mainFrame.Content = historyPage;
+           
         }
     }
 }

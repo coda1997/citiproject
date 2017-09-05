@@ -24,11 +24,22 @@ namespace citi
         {
             InitializeComponent();
         }
+        private Page detailPage1;
+        private Page detailPage2;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            detailFrame.Content = new AddAnaDetail();
+            if(detailPage1==null)
+            detailPage1    = new AddAnaDetail();
+            detailFrame.Content = detailPage1;
+            
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(detailPage2==null)
+            detailPage2 = new AddAnaDetail02();
+            detailFrame.Content = detailPage2;
         }
     }
 }
