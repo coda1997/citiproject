@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi"
       mc:Ignorable="d" 
-      d:DesignHeight="513" d:DesignWidth="837"
+      d:DesignHeight="533" d:DesignWidth="864"
       Title="AddAna" ShowsNavigationUI="False">
 
     <Grid>
-        <Label Content="资产" HorizontalAlignment="Left" Margin="55,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="资产" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top"/>
         <Label Content="资产负债表总资产" HorizontalAlignment="Left" Margin="67,73,0,0" VerticalAlignment="Top"/>
         <Label Content="影子银行部分" HorizontalAlignment="Left" Margin="67,103,0,0" VerticalAlignment="Top"/>
         <Label Content="债权" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top"/>
@@ -17,26 +17,89 @@
         <Label Content="现金及银行存款" HorizontalAlignment="Left" Margin="80,201,0,0" VerticalAlignment="Top"/>
         <Label Content="货币市场工具" HorizontalAlignment="Left" Margin="80,236,0,0" VerticalAlignment="Top"/>
         <Label Content="权益类资产" HorizontalAlignment="Left" Margin="80,271,0,0" VerticalAlignment="Top"/>
-        <Label Content="其他" HorizontalAlignment="Left" Margin="80,310,0,0" VerticalAlignment="Top"/>
-        <Label Content="负债" HorizontalAlignment="Left" Margin="55,351,0,0" VerticalAlignment="Top"/>
-        <Label Content="资产负债表内总负债" HorizontalAlignment="Left" Margin="67,381,0,0" VerticalAlignment="Top"/>
+        <Label Content="负债" HorizontalAlignment="Left" Margin="55,338,0,0" VerticalAlignment="Top"/>
+        <Label Content="资产负债表内总负债" HorizontalAlignment="Left" Margin="67,376,0,0" VerticalAlignment="Top"/>
         <Label Content="理财业务资金" HorizontalAlignment="Left" Margin="68,406,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="210,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="210,31,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="210,103,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="210,168,0,0" VerticalAlignment="Top"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="210,133,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="startAnaBtn" Content="开始评估" HorizontalAlignment="Left" Margin="95,461,0,0" VerticalAlignment="Top" Width="79" Height="24"/>
-        <Button x:Name="resetBtn" Content="全部清除" HorizontalAlignment="Left" Margin="210,461,0,0" VerticalAlignment="Top" Width="90" Height="24"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <Button x:Name="startAnaBtn" HorizontalAlignment="Left" Margin="95,461,0,0" VerticalAlignment="Top" Width="78" Height="24" Click="startAnaBtn_Click"  BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/citi;component/assets/btn_bingin_assess_unclicked.png"/>
+
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/citi;component/assets/btn_bingin_assess_clicked.png"/>
+
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="resetBtn"  HorizontalAlignment="Left" Margin="210,461,0,0" VerticalAlignment="Top" Width="78" Height="24"  BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/citi;component/assets/btn_reinput_unclicked.png"/>
+
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/citi;component/assets/btn_reinput_clicked.png"/>
+
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBox x:Name="asset_standard" HorizontalAlignment="Left" Height="23" Margin="210,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="cash" HorizontalAlignment="Left" Height="23" Margin="210,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="currency_market_tool" HorizontalAlignment="Left" Height="23" Margin="210,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="asset" HorizontalAlignment="Left" Height="23" Margin="210,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="cost_deposit" HorizontalAlignment="Left" Height="23" Margin="210,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="cost_finance" HorizontalAlignment="Left" Height="23" Margin="210,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
         <Frame x:Name="detailFrame" Content="" HorizontalAlignment="Left" Height="455" Margin="360,31,0,0" VerticalAlignment="Top" Width="455" NavigationUIVisibility="Hidden"/>
-        <Button Content="+展开" HorizontalAlignment="Left" Margin="280,136,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click_1"/>
-        <Button Content="+展开" HorizontalAlignment="Left" Margin="280,171,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click"/>
+        <Button x:Name="extend1" Content="+展开" HorizontalAlignment="Left" Margin="280,136,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click_1" Background="Transparent" BorderThickness="0"/>
+        <Button x:Name="extend2" Content="+展开" HorizontalAlignment="Left" Margin="280,171,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click" Background="Transparent" BorderThickness="0"/>
+        <Image HorizontalAlignment="Left" Height="246" Margin="61,68,0,0" VerticalAlignment="Top" Width="6" Source="/citi;component/assets/dotted_line_long.png"/>
+        <Image HorizontalAlignment="Left" Height="173" Margin="72,128,0,0" VerticalAlignment="Top" Width="8"  Source="/citi;component/assets/dotted_line_middle.png"/>
+        <Image HorizontalAlignment="Left" Height="61" Margin="61,376,0,0" VerticalAlignment="Top" Width="7"  Source="/citi;component/assets/dotted_line_short1.png"/>
 
     </Grid>
 </Page>

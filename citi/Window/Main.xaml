@@ -5,11 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:citi"
         mc:Ignorable="d"
-        Title="Main" Height="569" Width="1065">
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Title="Citi" Height="572" Width="1065">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="100" Margin="64,53,0,0" VerticalAlignment="Top" Width="100" Source="./avatar.png" />
-        <Button Content="新建分析" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top" Width="220" Click="Button_Click_2" Height="53"/>
-        <Button Content="历史记录" HorizontalAlignment="Left" Margin="0,280,0,0" VerticalAlignment="Top" Width="220" Click="Button_Click_3" Height="52"/>
-        <Frame x:Name="mainFrame" Content="" HorizontalAlignment="Left" Height="513" Margin="220,25,0,0" VerticalAlignment="Top" Width="837" NavigationUIVisibility="Hidden"/>
+        <Image HorizontalAlignment="Left" Height="533" Margin="200,40,0,0" VerticalAlignment="Top" Width="866" Source="/citi;component/assets/background_with_color.png"/>
+        <Image HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="1065" Source="/citi;component/assets/top.png"/>
+        <Image HorizontalAlignment="Left" Height="534" VerticalAlignment="Top" Width="201" Source="/citi;component/assets/left.png" Margin="0,39,0,0"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="64,53,0,0" VerticalAlignment="Top" Width="100" Source="/citi;component/avatar.png" />
+        <Button Content="新建分析" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_2" Height="53"  BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent">
+                    
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF677596">
+                           
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="历史记录" HorizontalAlignment="Left" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_3" Height="52"  BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent">
+
+                    </Setter>
+                    
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF677596">
+
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BorderBrush"     
+                    Storyboard.TargetProperty="Color"
+                    To="Red" />
+
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+        <Frame x:Name="mainFrame" Content="" HorizontalAlignment="Left" Height="533" Margin="201,40,0,0" VerticalAlignment="Top" Width="864" NavigationUIVisibility="Hidden" Background="Transparent"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="214,0,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF677596"/>
     </Grid>
 </Window>

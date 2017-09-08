@@ -22,7 +22,8 @@ namespace citi
         public Main()
         {
             InitializeComponent();
-        
+            newAnaPage = new AddAna();
+            mainFrame.Content = newAnaPage;
 
         }
         private Page newAnaPage;

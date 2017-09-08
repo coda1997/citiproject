@@ -24,5 +24,8 @@ namespace citi
         {
             InitializeComponent();
         }
+        public string National_debt { get { return national_debt.Text; }  }
+        public string Enterprise_debt { get { return enterprise_debt.Text; } }
+
     }
 }

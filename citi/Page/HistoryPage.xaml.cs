@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,19 @@ namespace citi
         public HistoryPage()
         {
             InitializeComponent();
-
-            list.Add(new HistoryEntry("col1","col2","col3","col4"));
-            myListView.ItemsSource = list;
+            InitView();
             
+        }
+
+        private void InitView()
+        {
+            DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record;", null);
+
+            //list.Add(new HistoryEntry("col1","col2","col3","col4"));
+            var rows = ds.Tables[0].Rows;
+            foreach (DataRow row in rows)
+                list.Add(new HistoryEntry(row[1] + "", row[2] + "", row[3] + "", row[4] + ""));
+            myListView.ItemsSource = list;
         }
     }
 }

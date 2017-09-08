@@ -13,18 +13,25 @@ namespace citi
         private String date;
         private String probability;
         private String comment;
+        private MyEntity myEntity;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public HistoryEntry() {
         }
+
         public HistoryEntry(String name, String date, String pro, String comment)
         {
             this.name = name;
             this.date = date;
             probability = pro;
             this.comment = comment;
+            
         }
+
+        public MyEntity MyEntity { set { myEntity = value; } get { return myEntity; } }
+
 
         public HistoryEntry addName(String name)
         {
