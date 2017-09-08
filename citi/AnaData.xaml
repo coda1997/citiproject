@@ -1,0 +1,15 @@
+﻿<Window x:Class="citi.AnaData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:citi"
+        mc:Ignorable="d"
+        Title="AnaData" Height="444.304" Width="659.494">
+    <Grid>
+        <Canvas HorizontalAlignment="Left" Height="224" Margin="133,121,0,0" VerticalAlignment="Top" Width="366">
+            <Path Stroke="Black" StrokeThickness="1" Data="M10,100 Q100,200 200,100"/>
+        </Canvas>
+
+    </Grid>
+</Window>

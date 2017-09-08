@@ -1,0 +1,15 @@
+﻿<Window x:Class="citi.CompareData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:citi"
+        mc:Ignorable="d"
+        Title="CompareData" Height="526.582" Width="689.873">
+    <Grid>
+        <Canvas HorizontalAlignment="Left" Height="224" Margin="143,174,0,0" VerticalAlignment="Top" Width="366">
+            <Path Stroke="Black" StrokeThickness="1" Data="M10,100 Q100,200 200,100"/>
+        </Canvas>
+
+    </Grid>
+</Window>
