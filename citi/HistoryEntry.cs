@@ -64,10 +64,10 @@ namespace citi
         }
         
 
-        public String Name { get =>name==null?"null":name; }
-        public String Date { get => date==null?"null":date; }
-        public String Probability { get => probability == null ? "null" : probability; }
-        public String Comment { get => comment == null ? "null" : comment; }
+        public String Name { get { return name; } }
+        public String Date { get { return date} }
+        public String Probability { get { return probability; } }
+        public String Comment { get { return comment; } }
 
 
         public override bool Equals(object obj)
