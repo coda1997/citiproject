@@ -1,9 +1,12 @@
-﻿using JumpKick.HttpLib;
+﻿using citi.MyWindow;
+using JumpKick.HttpLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace citi
+namespace citi.MyPage
 {
     /// <summary>
     /// LoginPage.xaml 的交互逻辑
@@ -35,24 +38,32 @@ namespace citi
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //string email = username_text.Text;
-            //string pwd = password_text.Password;
-            //if (!emailIsValid(email))
-            //{
-            //    MessageBox.Show("The email is not valid");
-            //    MyLog.FailLog("The email is not valid");
-            //}
-            //Http.Post(Constant.RegisterUrl).Form(new { email = email, password = pwd }).OnSuccess(result =>
-            //{
-            //    Window mainWindow = new Main();
-            //    mainWindow.Show();
-            //    if (currentWindow != null)
-            //        currentWindow.Hide();
-            //}).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
-            Window mainWindow = new Main();
-            mainWindow.Show();
-            if (currentWindow != null)
-                currentWindow.Hide();
+            string email = username_text.Text;
+            string pwd = password_text.Password;
+            if (!emailIsValid(email))
+            {
+                MessageBox.Show("The email is not valid");
+                MyLog.FailLog("The email is not valid");
+            }
+            Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd,remembered=false }).OnSuccess((WebHeaderCollection header,string resutlt) =>
+            {
+                Constant.Cookie = header.Get("Set-Cookie");
+                MyLog.FailLog(header.ToString());
+                MyLog.FailLog(Constant.Cookie);
+                new Thread(() => {
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                Window mainWindow = new Main();
+                mainWindow.Show();
+                if (currentWindow != null)
+                {
+                    currentWindow.Hide();
+                }
+                    }));
+                }).Start();
+
+            }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
+      
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

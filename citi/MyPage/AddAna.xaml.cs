@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace citi
+namespace citi.MyPage
 {
     /// <summary>
     /// AddAna.xaml 的交互逻辑

@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace citi
+namespace citi.MyPage
 {
     /// <summary>
     /// HistoryPage.xaml 的交互逻辑
