@@ -65,7 +65,7 @@ namespace citi
         
 
         public String Name { get { return name; } }
-        public String Date { get { return date} }
+        public String Date { get { return date; } }
         public String Probability { get { return probability; } }
         public String Comment { get { return comment; } }
 
