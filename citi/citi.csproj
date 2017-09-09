@@ -58,7 +58,7 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="JumpKick.HttpLib">
-      <HintPath>..\..\..\download\JumpKick.HttpLib.dll</HintPath>
+      <HintPath>E:\QQdata\710611305\FileRecv\JumpKick.HttpLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -94,6 +94,9 @@
     <Compile Include="MyEntity.cs" />
     <Compile Include="HistoryEntry.cs" />
     <Compile Include="MyLog.cs" />
+    <Compile Include="MyPage\IndustryPage.xaml.cs">
+      <DependentUpon>IndustryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyTest.cs" />
     <Compile Include="MyPage\AddAna.xaml.cs" />
     <Compile Include="MyPage\AddAnaDetail01.xaml.cs" />
@@ -142,6 +145,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyPage\IndustryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyPage\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\brand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets')" />
