@@ -81,5 +81,40 @@
         </Button>
         <Frame x:Name="mainFrame" Content="" HorizontalAlignment="Left" Height="533" Margin="201,40,0,0" VerticalAlignment="Top" Width="864" NavigationUIVisibility="Hidden" Background="Transparent"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="214,0,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF677596"/>
+        <Button Content="行业数据" HorizontalAlignment="Left" Margin="1,332,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_4" Height="52"  BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF677596"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="MouseOver1">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BorderBrush"     
+                                Storyboard.TargetProperty="Color"
+                                To="Red" />
+
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
     </Grid>
 </Window>
