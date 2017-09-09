@@ -94,6 +94,18 @@
     <Compile Include="MyEntity.cs" />
     <Compile Include="HistoryEntry.cs" />
     <Compile Include="MyLog.cs" />
+    <Compile Include="MyPage\AnaResult01.xaml.cs">
+      <DependentUpon>AnaResult01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\AnaResult02.xaml.cs">
+      <DependentUpon>AnaResult02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\AnaResult03.xaml.cs">
+      <DependentUpon>AnaResult03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\AnaResult04.xaml.cs">
+      <DependentUpon>AnaResult04.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyPage\IndustryPage.xaml.cs">
       <DependentUpon>IndustryPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +122,9 @@
     <Compile Include="MyPage\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyWindow\IndustryWindow.xaml.cs">
+      <DependentUpon>IndustryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SqliteHelper.cs" />
     <Compile Include="MyWindow\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
@@ -125,6 +140,22 @@
     <Page Include="MyPage\AddAnaDetail02.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyPage\AnaResult01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\AnaResult02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\AnaResult03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\AnaResult04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyPage\HistoryPage.xaml">
       <SubType>Designer</SubType>
@@ -154,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyPage\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyWindow\IndustryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

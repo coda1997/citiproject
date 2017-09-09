@@ -29,6 +29,7 @@ namespace citi.MyWindow
         }
         private Page newAnaPage;
         private Page historyPage;
+        private Page industryPage;
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -41,8 +42,14 @@ namespace citi.MyWindow
         {
             if (historyPage == null)
                 historyPage = new HistoryPage();
-            mainFrame.Content = historyPage;
-           
+            mainFrame.Content = historyPage;  
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (industryPage == null)
+                industryPage = new IndustryPage();
+            mainFrame.Content = industryPage;
         }
     }
 }
