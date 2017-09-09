@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,6 +57,9 @@ namespace citi
             if (emailIsValid(email) && pwdIsValid(pwd))
                 Http.Post(Constant.RegisterUrl).Form(new { email = email, password = pwd, password_confirm = pwdConfirm }).OnSuccess(result => {
                     MyLog.FailLog("register succeed");
+                    new Thread(() => {
+                        this.Dispatcher.Invoke(new Action(() =>
+                        {
                     if (PrePage == null||MyWindow==null) {
                         MyLog.FailLog("the prepage is null");
                         return;
@@ -64,6 +68,9 @@ namespace citi
                     {
                         MyWindow.Content = PrePage;
                     }
+                            
+                        }));
+                    }).Start();
 
                 }).OnFail(result => { MessageBox.Show("register failed"); }).Go();
             else
