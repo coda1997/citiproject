@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi"
       mc:Ignorable="d" 
-      d:DesignHeight="513" d:DesignWidth="837"
+      d:DesignHeight="533" d:DesignWidth="864"
       Title="HistoryPage">
     <Page.Resources>
         <Style x:Key="HistoryListItem" x:Name="HistoryListItemStyle" TargetType="{x:Type ListViewItem}">
@@ -49,16 +49,87 @@
     </Page.Resources>
 
     <Grid>
-        <Button Content="对比" HorizontalAlignment="Left" Margin="586,34,0,0" VerticalAlignment="Top" Width="48" Height="21"/>
-        <Button Content="编辑" HorizontalAlignment="Left" Margin="667,34,0,0" VerticalAlignment="Top" Width="48" Height="21"/>
-        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="112,100,0,0" VerticalAlignment="Top" Width="618">
+        <Button HorizontalAlignment="Left" Margin="586,34,0,0" VerticalAlignment="Top" Width="48" Height="21" BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/citi;component/assets/btn_contrast_unclicked.png"/>
+
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/citi;component/assets/btn_contrast_clicked.png"/>
+
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button  HorizontalAlignment="Left" Margin="667,34,0,0" VerticalAlignment="Top" Width="48" Height="21">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/citi;component/assets/btn_edit_unclicked.png"/>
+
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/citi;component/assets/btn_edit_clicked.png"/>
+
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="112,100,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0">
+            <ListView.Style>
+                <Style TargetType="{x:Type ListView}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/citi;component/assets/histrylist_background.png"></ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.Style>
             <ListView.Resources>
                 <Style TargetType="GridViewColumnHeader">
                     <Setter Property="Visibility" Value="Collapsed" />
                 </Style>
             </ListView.Resources>
+
             <ListView.View>
-                
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Name}" />
@@ -73,14 +144,13 @@
         <Label Content="创建时间" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
         <Label Content="违约概率" HorizontalAlignment="Left" Margin="474,70,0,0" VerticalAlignment="Top"/>
         <Label Content="备注" HorizontalAlignment="Left" Margin="618,70,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="chooseText" Content="选中项目：1" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top"/>
-        <Button Content="清除选择" HorizontalAlignment="Left" Margin="282,443,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="1" HorizontalAlignment="Left" Margin="394,440,0,0" VerticalAlignment="Top"/>
-        <Label Content="2" HorizontalAlignment="Left" Margin="416,440,0,0" VerticalAlignment="Top"/>
-        <Label Content="3" HorizontalAlignment="Left" Margin="438,440,0,0" VerticalAlignment="Top"/>
-        <Label Content="4" HorizontalAlignment="Left" Margin="460,440,0,0" VerticalAlignment="Top"/>
-        <Button Content="上一页" HorizontalAlignment="Left" Margin="586,443,0,0" VerticalAlignment="Top" Width="48"/>
-        <Button Content="下一页" HorizontalAlignment="Left" Margin="663,442,0,0" VerticalAlignment="Top" Width="52" Height="20"/>
+        <Label x:Name="chooseText" Content="选中项目：1" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="394,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Label Content="2" HorizontalAlignment="Left" Margin="416,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Label Content="3" HorizontalAlignment="Left" Margin="438,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Label Content="4" HorizontalAlignment="Left" Margin="460,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Button Content="上一页" HorizontalAlignment="Left" Margin="586,443,0,0" VerticalAlignment="Top" Width="48" Foreground="#FF677596" Background="Transparent" BorderThickness="0"/>
+        <Button Content="下一页" HorizontalAlignment="Left" Margin="663,442,0,0" VerticalAlignment="Top" Width="52" Height="20" Foreground="#FF677596" Background="Transparent" BorderThickness=" 0"/>
 
     </Grid>
 </Page>

@@ -35,20 +35,22 @@ namespace citi.MyPage
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (flag1)
+                return;
+            flag1 = true;
             if(detailPage1==null)
             detailPage1    = new AddAnaDetail();
             detailFrame.Content = detailPage1;
             if (flag2 == true)
             {
                 flag2 = false;
-                extend2.Content = "+展开";
-                extend1.Content = "-折叠";
+                extend1.Content = "+展开";
+                extend2.Content = "-折叠";
             }
             else
             {
-                flag2 = true;
+                //flag2 = true;
                 extend2.Content = "-折叠";
-                extend1.Content = "+展开";
             }
 
 
@@ -56,22 +58,24 @@ namespace citi.MyPage
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if(detailPage2==null)
+            if (flag2)
+                return;
+            flag2 = true;
+            if (detailPage2==null)
             detailPage2 = new AddAnaDetail02();
             detailFrame.Content = detailPage2;
             if (flag1 == true)
             {
                 flag1 = false;
-                extend1.Content = "+展开";
-                extend2.Content = "-折叠";
+                extend2.Content = "+展开";
+                extend1.Content = "-折叠";
             }
             else
             {
-                flag1 = true;
+                //flag1 = true;
                 extend1.Content = "-折叠";
-                extend2.Content = "+展开";
             }
-                
+
         }
 
         private void startAnaBtn_Click(object sender, RoutedEventArgs e)

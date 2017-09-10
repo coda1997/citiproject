@@ -45,25 +45,27 @@ namespace citi.MyPage
                 MessageBox.Show("The email is not valid");
                 MyLog.FailLog("The email is not valid");
             }
-            Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd,remembered=false }).OnSuccess((WebHeaderCollection header,string resutlt) =>
-            {
-                Constant.Cookie = header.Get("Set-Cookie");
-                MyLog.FailLog(header.ToString());
-                MyLog.FailLog(Constant.Cookie);
-                new Thread(() => {
-                    this.Dispatcher.Invoke(new Action(() =>
-                    {
-                Window mainWindow = new Main();
-                mainWindow.Show();
-                if (currentWindow != null)
-                {
-                    currentWindow.Hide();
-                }
-                    }));
-                }).Start();
+            //Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd,remembered=false }).OnSuccess((WebHeaderCollection header,string resutlt) =>
+            //{
+            //    Constant.Cookie = header.Get("Set-Cookie");
+            //    MyLog.FailLog(header.ToString());
+            //    MyLog.FailLog(Constant.Cookie);
+            //    new Thread(() => {
+            //        this.Dispatcher.Invoke(new Action(() =>
+            //        {
+            //    Window mainWindow = new Main();
+            //    mainWindow.Show();
+            //    if (currentWindow != null)
+            //    {
+            //        currentWindow.Hide();
+            //    }
+            //        }));
+            //    }).Start();
 
-            }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
-      
+            //}).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
+            Window mainWindow = new Main();
+            mainWindow.Show();
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
