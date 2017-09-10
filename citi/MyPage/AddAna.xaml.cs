@@ -80,36 +80,47 @@ namespace citi.MyPage
 
         private void startAnaBtn_Click(object sender, RoutedEventArgs e)
         {
-            entity.Asset_standard = asset_standard.Text;
-            entity.Cash = cash.Text;
-            entity.Currency_market_tool = currency_market_tool.Text;
-            entity.Asset = asset.Text;
-            entity.Cost_deposit = cost_deposit.Text;
-            entity.Cost_finance = cost_finance.Text;
-            if (detailPage1 == null)
-            {
-                MessageBox.Show("其他非标准化债权类投资尚未填写");
-                return;
-            }
-            if (detailPage2 == null)
-            {
-                MessageBox.Show("债权尚未填写！");
-                return;
-            }
-            entity.Trust_rate = detailPage1.Trust_rate;
-            entity.Trust_debt = detailPage1.Trust_debt;
-            entity.Debt_foundation = detailPage1.Debt_foundation;
-            entity.Trust_debtRights = detailPage1.Trust_debtRights;
-            entity.Trust_stock = detailPage1.Trust_stock;
-            entity.Trust_transfer = detailPage1.Trust_transfer;
-            entity.Receive = detailPage1.Receive;
-            entity.Self_debtRights = detailPage1.Self_debtRights;
-            entity.Other = detailPage1.Other;
-            entity.Credit = detailPage1.Credit;
-            entity.Bill = detailPage1.Bill;
-            entity.National_debt = detailPage2.National_debt;
-            entity.Enterprise_debt = detailPage2.Enterprise_debt;
-            MessageBox.Show(entity.ToString());
+            //entity.Asset_standard = asset_standard.Text;
+            //entity.Cash = cash.Text;
+            //entity.Currency_market_tool = currency_market_tool.Text;
+            //entity.Asset = asset.Text;
+            //entity.Cost_deposit = cost_deposit.Text;
+            //entity.Cost_finance = cost_finance.Text;
+
+            //For test
+            //
+            //if (detailPage1 == null)
+            //{
+            //    MessageBox.Show("其他非标准化债权类投资尚未填写");
+            //    return;
+            //}
+            //if (detailPage2 == null)
+            //{
+            //    MessageBox.Show("债权尚未填写！");
+            //    return;
+            //}
+
+            //entity.Trust_rate = detailPage1.Trust_rate;
+            //entity.Trust_debt = detailPage1.Trust_debt;
+            //entity.Debt_foundation = detailPage1.Debt_foundation;
+            //entity.Trust_debtRights = detailPage1.Trust_debtRights;
+            //entity.Trust_stock = detailPage1.Trust_stock;
+            //entity.Trust_transfer = detailPage1.Trust_transfer;
+            //entity.Receive = detailPage1.Receive;
+            //entity.Self_debtRights = detailPage1.Self_debtRights;
+            //entity.Other = detailPage1.Other;
+            //entity.Credit = detailPage1.Credit;
+            //entity.Bill = detailPage1.Bill;
+            //entity.National_debt = detailPage2.National_debt;
+            //entity.Enterprise_debt = detailPage2.Enterprise_debt;
+            //MessageBox.Show(entity.ToString());
+
+
+            //this.NavigationService.Navigate(new AnaResult01());
+            //For Test
+            this.NavigationService.Navigate(new AnaResult02());
+            //this.NavigationService.Navigate(new AnaResult03());
+            //this.NavigationService.Navigate(new AnaResult04());
 
 
 

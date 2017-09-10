@@ -2,13 +2,15 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:citi.MyPage"
       mc:Ignorable="d" 
       d:DesignHeight="533" d:DesignWidth="864"
       Title="AnaResult02">
 
     <Grid>
-        
+        <Label x:Name="label" Content="输入数据分析" Margin="336,57,342,0" VerticalAlignment="Top" Height="40"/>
+        <Label x:Name="label1" Content="输入数据饼状图" HorizontalAlignment="Left" Margin="336,466,0,0" VerticalAlignment="Top" Width="128"/>
+
     </Grid>
 </Page>

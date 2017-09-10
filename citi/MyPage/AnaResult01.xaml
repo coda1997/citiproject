@@ -8,7 +8,5 @@
       d:DesignHeight="533" d:DesignWidth="864"
       Title="AnaResult01">
 
-    <Grid>
-        
-    </Grid>
+    <Grid/>
 </Page>
