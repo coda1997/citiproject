@@ -11,6 +11,5 @@
     <Grid>
         <Label x:Name="label" Content="输入数据分析" Margin="336,57,342,0" VerticalAlignment="Top" Height="40"/>
         <Label x:Name="label1" Content="输入数据饼状图" HorizontalAlignment="Left" Margin="336,466,0,0" VerticalAlignment="Top" Width="128"/>
-
     </Grid>
 </Page>
