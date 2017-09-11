@@ -15,5 +15,26 @@
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="37,92,0,0" VerticalAlignment="Top" Width="76" Visibility="Hidden" Click="button1_Click"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="37,116,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden" Click="button2_Click"/>
 
+        <Grid HorizontalAlignment="Left" Height="349" Margin="155,116,0,0" VerticalAlignment="Top" Width="561">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0"/>
+            <Border BorderBrush="Black" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="1"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        </Grid>
+
     </Grid>
 </Page>
