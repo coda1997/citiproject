@@ -26,8 +26,8 @@
                                     <ColumnDefinition Width="150"/>
                                     <ColumnDefinition Width="150"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="" />
-                                <Label Grid.Column="1" Content="" />
+                                <Label Grid.Column="0" Content=""  />
+                                <Label Grid.Column="1" Content=""  />
                                 <Label Grid.Column="2" Content="" />
                                 <Label Grid.Column="3" Content="" />
                             </Grid>
@@ -49,7 +49,7 @@
     </Page.Resources>
 
     <Grid>
-        <Button HorizontalAlignment="Left" Margin="586,34,0,0" VerticalAlignment="Top" Width="48" Height="21" BorderThickness="0">
+        <Button HorizontalAlignment="Left" Margin="612,21,0,0" VerticalAlignment="Top" Width="48" Height="21" BorderThickness="0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">
@@ -81,7 +81,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button  HorizontalAlignment="Left" Margin="667,34,0,0" VerticalAlignment="Top" Width="48" Height="21">
+        <Button  HorizontalAlignment="Left" Margin="693,21,0,0" VerticalAlignment="Top" Width="48" Height="21">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">
@@ -113,7 +113,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="112,100,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0">
+        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="123,87,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0">
             <ListView.Style>
                 <Style TargetType="{x:Type ListView}">
                     <Setter Property="Background">
@@ -131,26 +131,28 @@
 
             <ListView.View>
                 <GridView>
+
                     <GridView.Columns>
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Name}" />
+
+                        <GridViewColumn Width="150"  DisplayMemberBinding="{Binding Path=Name}" />
                         <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Date}" />
                         <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Probability}" />
                         <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Comment}" />
                     </GridView.Columns>
                 </GridView>
-            </ListView.View>    
+            </ListView.View>
         </ListView>
-        <Label Content="分析名称" HorizontalAlignment="Left" Margin="169,70,0,0" VerticalAlignment="Top"/>
-        <Label Content="创建时间" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
-        <Label Content="违约概率" HorizontalAlignment="Left" Margin="474,70,0,0" VerticalAlignment="Top"/>
-        <Label Content="备注" HorizontalAlignment="Left" Margin="618,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="分析名称" HorizontalAlignment="Left" Margin="169,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="创建时间" HorizontalAlignment="Left" Margin="320,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="违约概率" HorizontalAlignment="Left" Margin="474,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="备注" HorizontalAlignment="Left" Margin="621,57,0,0" VerticalAlignment="Top"/>
         <Label x:Name="chooseText" Content="选中项目：1" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="1" HorizontalAlignment="Left" Margin="394,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="2" HorizontalAlignment="Left" Margin="416,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="3" HorizontalAlignment="Left" Margin="438,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="4" HorizontalAlignment="Left" Margin="460,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
-        <Button Content="上一页" HorizontalAlignment="Left" Margin="586,443,0,0" VerticalAlignment="Top" Width="48" Foreground="#FF677596" Background="Transparent" BorderThickness="0"/>
-        <Button Content="下一页" HorizontalAlignment="Left" Margin="663,442,0,0" VerticalAlignment="Top" Width="52" Height="20" Foreground="#FF677596" Background="Transparent" BorderThickness=" 0"/>
+        <Button Content="上一页" HorizontalAlignment="Left" Margin="586,443,0,0" VerticalAlignment="Top" Width="48" Foreground="#FF677596" Background="Transparent" BorderThickness="0" Click="Button_Click"/>
+        <Button Content="下一页" HorizontalAlignment="Left" Margin="663,442,0,0" VerticalAlignment="Top" Width="52" Height="20" Foreground="#FF677596" Background="Transparent" BorderThickness=" 0" Click="Button_Click_1"/>
 
     </Grid>
 </Page>

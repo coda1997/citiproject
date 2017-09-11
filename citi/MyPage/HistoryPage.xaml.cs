@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,10 @@ namespace citi.MyPage
     /// </summary>
     public partial class HistoryPage : Page
     {
-        private List<HistoryEntry> list = new List<HistoryEntry>();
-
+        //private List<HistoryEntry> list = new List<HistoryEntry>();
+        private ObservableCollection<HistoryEntry> list = new ObservableCollection<HistoryEntry>();
+        private int count = 0;
+        private DataRowCollection drc;
         public HistoryPage()
         {
             InitializeComponent();
@@ -32,12 +35,58 @@ namespace citi.MyPage
 
         private void InitView()
         {
-            DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record;", null);
+            DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record ORDER BY date desc;", null);
+            //for(int i = 0; i < 20; i++)
+            //{
+            //list.Add(new HistoryEntry("col1", "col2", "col3", "col4"));
 
-            //list.Add(new HistoryEntry("col1","col2","col3","col4"));
-            var rows = ds.Tables[0].Rows;
-            foreach (DataRow row in rows)
+            //}
+            drc = ds.Tables[0].Rows;
+            foreach (DataRow row in drc)
+            {
+                if (count > 15 )
+                    break;
                 list.Add(new HistoryEntry(row[1] + "", row[2] + "", row[3] + "", row[4] + ""));
+                count++;
+            }
+            myListView.ItemsSource = list;
+        }
+
+        private int currentPage = 1;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage == 1)
+                return;
+            ShowDateFromTo((currentPage - 2) * 15, (currentPage - 1) * 15);
+            currentPage --;
+            MyLog.FailLog("pre btn clicked");
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (currentPage == 4)
+                return;
+            ShowDateFromTo(currentPage * 15, (currentPage + 1) * 15);
+            currentPage++;
+            MyLog.FailLog("next btn clicked");
+
+        }
+
+        private void ShowDateFromTo(int start,int end)
+        {
+            if (start < 0 || end < 1)
+                return;
+            list.Clear();
+            MyLog.FailLog("the current page is "+currentPage);
+            for(int i = start; i< end; i++)
+            {
+                if (i >= drc.Count)
+                    break;
+                DataRow row = drc[i];
+                list.Add(new HistoryEntry(row[1] + "", row[2] + "", row[3] + "", row[4] + ""));
+            }
             myListView.ItemsSource = list;
         }
     }
