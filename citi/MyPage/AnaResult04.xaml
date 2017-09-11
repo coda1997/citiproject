@@ -9,6 +9,7 @@
       Title="AnaResult04">
 
     <Grid>
-        
+        <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png"/>
+
     </Grid>
 </Page>

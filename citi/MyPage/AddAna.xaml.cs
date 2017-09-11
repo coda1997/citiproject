@@ -116,9 +116,9 @@ namespace citi.MyPage
             //MessageBox.Show(entity.ToString());
 
 
-            //this.NavigationService.Navigate(new AnaResult01());
+            this.NavigationService.Navigate(new AnaResult01());
             //For Test
-            this.NavigationService.Navigate(new AnaResult02());
+            //this.NavigationService.Navigate(new AnaResult02());
             //this.NavigationService.Navigate(new AnaResult03());
             //this.NavigationService.Navigate(new AnaResult04());
 

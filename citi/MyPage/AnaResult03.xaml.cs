@@ -24,5 +24,39 @@ namespace citi.MyPage
         {
             InitializeComponent();
         }
+        private void image1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            image1.Visibility = Visibility.Hidden;
+            image2.Visibility = Visibility.Visible;
+            button.Visibility = Visibility.Visible;
+            button1.Visibility = Visibility.Visible;
+            button2.Visibility = Visibility.Visible;
+
+        }
+
+        private void image2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            image1.Visibility = Visibility.Visible;
+            image2.Visibility = Visibility.Hidden;
+            button.Visibility = Visibility.Hidden;
+            button1.Visibility = Visibility.Hidden;
+            button2.Visibility = Visibility.Hidden;
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AnaResult01());
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AnaResult02());
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AnaResult03());
+        }
     }
 }

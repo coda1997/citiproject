@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi.MyPage"
       mc:Ignorable="d" 
-      d:DesignHeight="533" d:DesignWidth="864"
+      d:DesignHeight="300" d:DesignWidth="300"
       Title="IndustryPage">
 
     <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="443,139,0,0" VerticalAlignment="Top" Height="98" Width="249"/>
-
+        
     </Grid>
 </Page>
