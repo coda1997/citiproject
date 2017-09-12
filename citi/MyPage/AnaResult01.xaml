@@ -15,8 +15,16 @@
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="37,92,0,0" VerticalAlignment="Top" Width="76" Visibility="Hidden" Click="button1_Click"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="37,116,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden" Click="button2_Click"/>
 
-        <Grid HorizontalAlignment="Left" Height="349" Margin="155,116,0,0" VerticalAlignment="Top" Width="561">
+        <Grid HorizontalAlignment="Left" Height="350" Margin="155,116,0,0" VerticalAlignment="Top" Width="580">
             <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
@@ -25,15 +33,170 @@
                 <RowDefinition Height="25" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="110"/>
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0"/>
-            <Border BorderBrush="Black" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
-            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
-            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="14"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" Background="Blue">
+                <Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,15,0,0"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4">
+                <Label x:Name="label1" Content="Label" Margin="400,0,0,0"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Background="Blue"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="0" Grid.Row="3" Grid.RowSpan="11"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="1" Grid.Row="3" Grid.RowSpan="11"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="2" Grid.Row="3" Grid.RowSpan="11"/>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="3" Grid.RowSpan="11"/>
+
+
+
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="3">
+                <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,0,0,0"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="3">
+                <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,0,0,0"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="3">
+                <Label x:Name="label4" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="3">
+                <Label x:Name="label5" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="4">
+                <Label x:Name="label6" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="4">
+                <Label x:Name="label16" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="4">
+                <Label x:Name="label26" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="4">
+                <Label x:Name="label36" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="5">
+                <Label x:Name="label7" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="5">
+                <Label x:Name="label17" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="5">
+                <Label x:Name="label27" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="5">
+                <Label x:Name="label37" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="6">
+                <Label x:Name="label8" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="6">
+                <Label x:Name="label18" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="6">
+                <Label x:Name="label28" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="6">
+                <Label x:Name="label38" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="7">
+                <Label x:Name="label9" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="7">
+                <Label x:Name="label19" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="7">
+                <Label x:Name="label29" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="7">
+                <Label x:Name="label39" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="8">
+                <Label x:Name="label10" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="8">
+                <Label x:Name="label20" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="8">
+                <Label x:Name="label30" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="8">
+                <Label x:Name="label40" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="9">
+                <Label x:Name="label11" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="9">
+                <Label x:Name="label21" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="9">
+                <Label x:Name="label31" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="9">
+                <Label x:Name="label41" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="10">
+                <Label x:Name="label12" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="10">
+                <Label x:Name="label22" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="10">
+                <Label x:Name="label32" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="10">
+                <Label x:Name="label42" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="11">
+                <Label x:Name="label13" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="11">
+                <Label x:Name="label23" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="11">
+                <Label x:Name="label33" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="11">
+                <Label x:Name="label43" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="12">
+                <Label x:Name="label14" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="12">
+                <Label x:Name="label24" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="12">
+                <Label x:Name="label34" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="12">
+                <Label x:Name="label44" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="13">
+                <Label x:Name="label15" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="13">
+                <Label x:Name="label25" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="13">
+                <Label x:Name="label35" Content="Label"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="13">
+                <Label x:Name="label45" Content="Label"/>
+            </Border>
+
         </Grid>
 
     </Grid>
