@@ -3,13 +3,27 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:oxy="http://oxyplot.org/wpf"
       xmlns:local="clr-namespace:citi.MyPage"
       mc:Ignorable="d" 
       d:DesignHeight="533" d:DesignWidth="864"
       Title="AnaResult04">
 
-    <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png"/>
+    <Page.DataContext>
+        <local:PartialData/>
+    </Page.DataContext>
 
+    <Grid>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="160" Margin="37,37,0,0" VerticalAlignment="Top" Width="118" Source="/citi;component/assets/result_catalog_frame.png" Visibility="Hidden" MouseLeftButtonDown="image2_MouseLeave" />
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="37,68,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden" Click="button_Click"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="37,92,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="37,116,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Button" HorizontalAlignment="Left" Margin="37,140,0,0" VerticalAlignment="Top" Width="74" Visibility="Hidden"  Click="button3_Click"/>
+        
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="337,51,0,0" VerticalAlignment="Top" Height="51" Width="156"/>
+
+        <oxy:PlotView Model="{Binding Model1}" Background="Transparent"  Panel.ZIndex="-1" Margin="10,78,460,86"/>
+        <oxy:PlotView Model="{Binding Model2}" Background="Transparent"  Panel.ZIndex="-1" Margin="452,78,10,81"/>
     </Grid>
 </Page>

@@ -33,6 +33,7 @@ namespace citi.MyPage
             button.Visibility = Visibility.Visible;
             button1.Visibility = Visibility.Visible;
             button2.Visibility = Visibility.Visible;
+            button3.Visibility = Visibility.Visible;
 
         }
 
@@ -43,6 +44,7 @@ namespace citi.MyPage
             button.Visibility = Visibility.Hidden;
             button1.Visibility = Visibility.Hidden;
             button2.Visibility = Visibility.Hidden;
+            button3.Visibility = Visibility.Hidden;
 
         }
 
@@ -59,6 +61,11 @@ namespace citi.MyPage
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new AnaResult03());
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AnaResult04());
         }
     }
 

@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using OxyPlot;
 using OxyPlot.Series;
-using OxyPlot.Axes;
 
 namespace citi.MyPage
 {
@@ -34,6 +33,7 @@ namespace citi.MyPage
             button.Visibility = Visibility.Visible;
             button1.Visibility = Visibility.Visible;
             button2.Visibility = Visibility.Visible;
+            button3.Visibility = Visibility.Visible;
 
         }
 
@@ -44,6 +44,7 @@ namespace citi.MyPage
             button.Visibility = Visibility.Hidden;
             button1.Visibility = Visibility.Hidden;
             button2.Visibility = Visibility.Hidden;
+            button3.Visibility = Visibility.Hidden;
 
         }
 
@@ -61,6 +62,11 @@ namespace citi.MyPage
         {
             this.NavigationService.Navigate(new AnaResult03());
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AnaResult04());
+        }
     }
 
     public class LineChartData
@@ -70,7 +76,7 @@ namespace citi.MyPage
         {
             modelP1 = new PlotModel { Title = "结果展示" };
 
-            dynamic seriesP1 = new FunctionSeries() { Title = "结果展示" };
+            dynamic seriesP1 = new FunctionSeries();
 
             seriesP1.Points.Add(new DataPoint(1, 1));
             seriesP1.Points.Add(new DataPoint(2, 2));
