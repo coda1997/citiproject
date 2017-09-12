@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OxyPlot;
+using OxyPlot.Series;
+using OxyPlot.Axes;
 
 namespace citi.MyPage
 {
@@ -59,4 +62,31 @@ namespace citi.MyPage
             this.NavigationService.Navigate(new AnaResult03());
         }
     }
+
+    public class LineChartData
+    {
+        private PlotModel modelP1;
+        public LineChartData()
+        {
+            modelP1 = new PlotModel { Title = "结果展示" };
+
+            dynamic seriesP1 = new FunctionSeries() { Title = "结果展示" };
+
+            seriesP1.Points.Add(new DataPoint(1, 1));
+            seriesP1.Points.Add(new DataPoint(2, 2));
+            seriesP1.Points.Add(new DataPoint(3, 2));
+            seriesP1.Points.Add(new DataPoint(2, 1));
+
+            modelP1.Series.Add(seriesP1);
+
+        }
+
+        public PlotModel Model1
+        {
+            get { return modelP1; }
+            set { modelP1 = value; }
+        }
+    }
+
+
 }
