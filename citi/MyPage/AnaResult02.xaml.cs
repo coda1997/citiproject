@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace citi.MyPage
 {
@@ -59,4 +61,31 @@ namespace citi.MyPage
             this.NavigationService.Navigate(new AnaResult03());
         }
     }
+
+    public class PieChartData
+    {
+        private PlotModel modelP1;
+        public PieChartData()
+        {
+            modelP1 = new PlotModel { Title = "输入数据分析" };
+
+            dynamic seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
+
+            seriesP1.Slices.Add(new PieSlice("Africa", 1030) { IsExploded = false, Fill = OxyColors.PaleVioletRed });
+            seriesP1.Slices.Add(new PieSlice("Americas", 929) { IsExploded = true });
+            seriesP1.Slices.Add(new PieSlice("Asia", 4157) { IsExploded = true });
+            seriesP1.Slices.Add(new PieSlice("Europe", 739) { IsExploded = true });
+            seriesP1.Slices.Add(new PieSlice("Oceania", 35) { IsExploded = true });
+
+            modelP1.Series.Add(seriesP1);
+
+        }
+
+        public PlotModel Model1
+        {
+            get { return modelP1; }
+            set { modelP1 = value; }
+        }
+    }
+
 }
