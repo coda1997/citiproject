@@ -9,9 +9,6 @@
       d:DesignHeight="533" d:DesignWidth="864"
       Title="AnaResult04">
 
-    <Page.DataContext>
-        <local:PartialData/>
-    </Page.DataContext>
 
     <Grid>
         <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
@@ -23,7 +20,7 @@
         
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="337,51,0,0" VerticalAlignment="Top" Height="51" Width="156"/>
 
-        <oxy:PlotView Model="{Binding Model1}" Background="Transparent"  Panel.ZIndex="-1" Margin="10,78,460,86"/>
-        <oxy:PlotView Model="{Binding Model2}" Background="Transparent"  Panel.ZIndex="-1" Margin="452,78,10,81"/>
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="10,78,460,86"/>
+        <oxy:PlotView Name="plot2"  Background="Transparent"  Panel.ZIndex="-1" Margin="452,78,10,81"/>
     </Grid>
 </Page>

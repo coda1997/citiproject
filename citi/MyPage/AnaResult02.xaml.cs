@@ -26,6 +26,7 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            plot1.Model = getModel();
         }
 
         private AddAna dataPage;
@@ -71,14 +72,11 @@ namespace citi.MyPage
         {
             this.NavigationService.Navigate(dataPage.getPage04());
         }
-    }
 
-    public class PieChartData
-    {
-        private PlotModel modelP1;
-        public PieChartData()
+        private PlotModel getModel()
         {
-            modelP1 = new PlotModel { Title = "输入数据分析" };
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP1 = new PlotModel { Title = "输入数据分析" };
 
             dynamic seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
 
@@ -90,12 +88,7 @@ namespace citi.MyPage
 
             modelP1.Series.Add(seriesP1);
 
-        }
-
-        public PlotModel Model1
-        {
-            get { return modelP1; }
-            set { modelP1 = value; }
+            return modelP1;
         }
     }
 

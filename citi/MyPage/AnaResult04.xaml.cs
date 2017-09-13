@@ -26,6 +26,8 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            plot1.Model = getModel1();
+            plot2.Model = getModel2();
         }
 
         private AddAna dataPage;
@@ -71,15 +73,11 @@ namespace citi.MyPage
         {
             this.NavigationService.Navigate(dataPage.getPage04());
         }
-    }
 
-    public class PartialData
-    {
-        private PlotModel modelP1;
-        private PlotModel modelP2;
-        public PartialData()
+        private PlotModel getModel1()
         {
-            modelP1 = new PlotModel { Title = "资产价值分布曲线" };
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP1 = new PlotModel { Title = "资产价值分布曲线" };
 
             dynamic seriesP1 = new FunctionSeries();
 
@@ -90,8 +88,13 @@ namespace citi.MyPage
 
             modelP1.Series.Add(seriesP1);
 
+            return modelP1;
+        }
 
-            modelP2 = new PlotModel { Title = "偏效应图" };
+        private PlotModel getModel2()
+        {
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP2 = new PlotModel { Title = "偏效应图" };
 
             dynamic seriesP2 = new FunctionSeries();
 
@@ -102,18 +105,7 @@ namespace citi.MyPage
 
             modelP2.Series.Add(seriesP2);
 
-        }
-
-        public PlotModel Model1
-        {
-            get { return modelP1; }
-            set { modelP1 = value; }
-        }
-
-        public PlotModel Model2
-        {
-            get { return modelP2; }
-            set { modelP2 = value; }
+            return modelP2;
         }
 
     }

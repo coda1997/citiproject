@@ -26,6 +26,7 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            plot1.Model = getModel();
         }
 
         private AddAna dataPage;
@@ -71,14 +72,11 @@ namespace citi.MyPage
         {
             this.NavigationService.Navigate(dataPage.getPage04());
         }
-    }
 
-    public class LineChartData
-    {
-        private PlotModel modelP1;
-        public LineChartData()
+        private PlotModel getModel()
         {
-            modelP1 = new PlotModel { Title = "结果展示" };
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP1 = new PlotModel { Title = "结果展示" };
 
             dynamic seriesP1 = new FunctionSeries();
 
@@ -89,14 +87,8 @@ namespace citi.MyPage
 
             modelP1.Series.Add(seriesP1);
 
-        }
-
-        public PlotModel Model1
-        {
-            get { return modelP1; }
-            set { modelP1 = value; }
+            return modelP1;
         }
     }
-
 
 }
