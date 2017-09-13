@@ -20,10 +20,13 @@ namespace citi.MyPage
     /// </summary>
     public partial class AnaResult01 : Page
     {
-        public AnaResult01()
+        public AnaResult01(AddAna pageArg)
         {
             InitializeComponent();
+            dataPage = pageArg;
         }
+
+        private AddAna dataPage;
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -49,22 +52,22 @@ namespace citi.MyPage
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult01());
+            this.NavigationService.Navigate(dataPage.getPage01());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult02());
+            this.NavigationService.Navigate(dataPage.getPage02());
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult03());
+            this.NavigationService.Navigate(dataPage.getPage03());
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult04());
+            this.NavigationService.Navigate(dataPage.getPage04());
         }
     }
 }
