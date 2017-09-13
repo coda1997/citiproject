@@ -12,10 +12,11 @@
         <Label Content="资产" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top"/>
         <Label Content="资产负债表总资产" HorizontalAlignment="Left" Margin="67,73,0,0" VerticalAlignment="Top"/>
         <Label Content="影子银行部分" HorizontalAlignment="Left" Margin="67,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="债权" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="非标准化债券类资产" HorizontalAlignment="Left" Margin="80,168,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="bond" Content="债券" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="非标准化债权类资产" HorizontalAlignment="Left" Margin="80,168,0,0" VerticalAlignment="Top"/>
         <Label Content="现金及银行存款" HorizontalAlignment="Left" Margin="80,201,0,0" VerticalAlignment="Top"/>
         <Label Content="货币市场工具" HorizontalAlignment="Left" Margin="80,236,0,0" VerticalAlignment="Top"/>
+        
         <Label Content="权益类资产" HorizontalAlignment="Left" Margin="80,271,0,0" VerticalAlignment="Top"/>
         <Label Content="负债" HorizontalAlignment="Left" Margin="55,338,0,0" VerticalAlignment="Top"/>
         <Label Content="资产负债表内总负债" HorizontalAlignment="Left" Margin="67,376,0,0" VerticalAlignment="Top"/>
@@ -94,12 +95,15 @@
         <TextBox x:Name="asset" HorizontalAlignment="Left" Height="23" Margin="210,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
         <TextBox x:Name="cost_deposit" HorizontalAlignment="Left" Height="23" Margin="210,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
         <TextBox x:Name="cost_finance" HorizontalAlignment="Left" Height="23" Margin="210,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <Frame x:Name="detailFrame" Content="" HorizontalAlignment="Left" Height="455" Margin="360,31,0,0" VerticalAlignment="Top" Width="455" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="detailFrame" Content="" HorizontalAlignment="Left" Height="332" Margin="360,31,0,0" VerticalAlignment="Top" Width="452" NavigationUIVisibility="Hidden"/>
         <Button x:Name="extend1" Content="+展开" HorizontalAlignment="Left" Margin="280,136,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click_1" Background="Transparent" BorderThickness="0"/>
         <Button x:Name="extend2" Content="+展开" HorizontalAlignment="Left" Margin="280,171,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click" Background="Transparent" BorderThickness="0"/>
         <Image HorizontalAlignment="Left" Height="246" Margin="61,68,0,0" VerticalAlignment="Top" Width="6" Source="/citi;component/assets/dotted_line_long.png"/>
         <Image HorizontalAlignment="Left" Height="173" Margin="72,128,0,0" VerticalAlignment="Top" Width="8"  Source="/citi;component/assets/dotted_line_middle.png"/>
         <Image HorizontalAlignment="Left" Height="61" Margin="61,376,0,0" VerticalAlignment="Top" Width="7"  Source="/citi;component/assets/dotted_line_short1.png"/>
-
+        <Label Content="定期存款利率" HorizontalAlignment="Left" Margin="470,376,0,0" VerticalAlignment="Top"/>
+        <Label Content="理财产品收益率" HorizontalAlignment="Left" Margin="470,406,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="bank_deposit_rate" HorizontalAlignment="Left" Height="23" Margin="597,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="financial_products" HorizontalAlignment="Left" Height="23" Margin="597,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
     </Grid>
 </Page>

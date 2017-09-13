@@ -86,6 +86,8 @@ namespace citi.MyPage
             //entity.Asset = asset.Text;
             //entity.Cost_deposit = cost_deposit.Text;
             //entity.Cost_finance = cost_finance.Text;
+            //entity.Financial_products = financial_products.Text;
+            //entity.bank_deposit_rate = bank_deposit_rate.Text;
 
             //For test
             //
@@ -113,6 +115,7 @@ namespace citi.MyPage
             //entity.Bill = detailPage1.Bill;
             //entity.National_debt = detailPage2.National_debt;
             //entity.Enterprise_debt = detailPage2.Enterprise_debt;
+            
             //MessageBox.Show(entity.ToString());
 
 

@@ -5,32 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi"
       mc:Ignorable="d" 
-      d:DesignHeight="455" d:DesignWidth="455"
+      d:DesignHeight="332" d:DesignWidth="455"
       Title="AddAnaDetail">
 
     <Grid>
-        <Label Content="收/受权益" HorizontalAlignment="Left" Margin="100,46,0,0" VerticalAlignment="Top"/>
-        <Label Content="信托贷款" HorizontalAlignment="Left" Margin="100,76,0,0" VerticalAlignment="Top"/>
-        <Label Content="委托贷款" HorizontalAlignment="Left" Margin="100,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="交易所委托债权" HorizontalAlignment="Left" Margin="100,136,0,0" VerticalAlignment="Top"/>
-        <Label Content="带回购条款的债券性融资" HorizontalAlignment="Left" Margin="100,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="信贷资产转让" HorizontalAlignment="Left" Margin="100,196,0,0" VerticalAlignment="Top"/>
-        <Label Content="应收账款" HorizontalAlignment="Left" Margin="100,226,0,0" VerticalAlignment="Top"/>
-        <Label Content="私募债权" HorizontalAlignment="Left" Margin="100,256,0,0" VerticalAlignment="Top"/>
-        <Label Content="票据类" HorizontalAlignment="Left" Margin="100,286,0,0" VerticalAlignment="Top"/>
-        <Label Content="信用证" HorizontalAlignment="Left" Margin="100,316,0,0" VerticalAlignment="Top"/>
-        <Label Content="其他非标准化债权类投资" HorizontalAlignment="Left" Margin="100,346,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="trust_rate" HorizontalAlignment="Left" Height="23" Margin="274,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" />
-        <TextBox x:Name="trust_debt" HorizontalAlignment="Left" Height="23" Margin="274,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="debt_foundation" HorizontalAlignment="Left" Height="23" Margin="274,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="trust_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="trust_stock" HorizontalAlignment="Left" Height="23" Margin="274,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="trust_transfer" HorizontalAlignment="Left" Height="23" Margin="274,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="receive" HorizontalAlignment="Left" Height="23" Margin="274,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="self_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="bill" HorizontalAlignment="Left" Height="23" Margin="274,286,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="credit" HorizontalAlignment="Left" Height="23" Margin="274,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="other" HorizontalAlignment="Left" Height="23" Margin="274,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <Label Content="收/受权益" HorizontalAlignment="Left" Margin="100,2,0,0" VerticalAlignment="Top"/>
+        <Label Content="信托贷款" HorizontalAlignment="Left" Margin="100,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="委托贷款" HorizontalAlignment="Left" Margin="100,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="交易所委托债权" HorizontalAlignment="Left" Margin="100,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="带回购条款的债券性融资" HorizontalAlignment="Left" Margin="100,122,0,0" VerticalAlignment="Top"/>
+        <Label Content="信贷资产转让" HorizontalAlignment="Left" Margin="100,152,0,0" VerticalAlignment="Top"/>
+        <Label Content="应收账款" HorizontalAlignment="Left" Margin="100,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="私募债权" HorizontalAlignment="Left" Margin="100,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="票据类" HorizontalAlignment="Left" Margin="100,242,0,0" VerticalAlignment="Top"/>
+        <Label Content="信用证" HorizontalAlignment="Left" Margin="100,272,0,0" VerticalAlignment="Top"/>
+        <Label Content="其他非标准化债权类投资" HorizontalAlignment="Left" Margin="100,302,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="trust_rate" HorizontalAlignment="Left" Height="23" Margin="274,2,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" />
+        <TextBox x:Name="trust_debt" HorizontalAlignment="Left" Height="23" Margin="274,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="debt_foundation" HorizontalAlignment="Left" Height="23" Margin="274,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="trust_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="trust_stock" HorizontalAlignment="Left" Height="23" Margin="274,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="trust_transfer" HorizontalAlignment="Left" Height="23" Margin="274,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="receive" HorizontalAlignment="Left" Height="23" Margin="274,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="self_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="bill" HorizontalAlignment="Left" Height="23" Margin="274,242,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="credit" HorizontalAlignment="Left" Height="23" Margin="274,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="other" HorizontalAlignment="Left" Height="23" Margin="274,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Page>

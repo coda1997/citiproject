@@ -27,6 +27,8 @@ namespace citi
         public string Asset { set; get; }
         public string Cost_deposit { set; get; }
         public string Cost_finance { set; get; }
+        public string bank_deposit_rate { set; get; }
+        public string Financial_products { get; set; }
         public override string ToString()
         {
             return base.ToString()+Asset_standard+National_debt+Cost_deposit;
