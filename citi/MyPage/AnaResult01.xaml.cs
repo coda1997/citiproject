@@ -24,6 +24,10 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            label1.Content = "fuck";
+            MyEntity entity = dataPage.getEntity();
+            label2.Content = entity.Asset_standard;
+            
         }
 
         private AddAna dataPage;

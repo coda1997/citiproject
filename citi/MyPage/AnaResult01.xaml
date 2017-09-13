@@ -41,10 +41,10 @@
             </Grid.ColumnDefinitions>
             <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="14"/>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" Background="Blue">
-                <Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,15,0,0"/>
+                <Label x:Name="label" Content="新编资产负债表" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,15,0,0"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4">
-                <Label x:Name="label1" Content="Label" Margin="400,0,0,0"/>
+                <Label x:Name="label1" Content="单位：人民币百万元" Margin="400,0,0,0"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Background="Blue"/>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4"/>
@@ -66,136 +66,136 @@
 
 
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="3">
-                <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,0,0,0"/>
+                <Label x:Name="label2" Content="项目" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,0,0,0"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="3">
-                <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,0,0,0"/>
+                <Label x:Name="label3" Content="金额" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,0,0,0"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="3">
-                <Label x:Name="label4" Content="Label"/>
+                <Label x:Name="label4" Content="项目"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="3">
-                <Label x:Name="label5" Content="Label"/>
+                <Label x:Name="label5" Content="金额"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="4">
-                <Label x:Name="label6" Content="Label"/>
+                <Label x:Name="label6" Content="资产："/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="4">
-                <Label x:Name="label16" Content="Label"/>
+                <Label x:Name="label16"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="4">
-                <Label x:Name="label26" Content="Label"/>
+                <Label x:Name="label26" Content="负债："/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="4">
-                <Label x:Name="label36" Content="Label"/>
+                <Label x:Name="label36" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="5">
-                <Label x:Name="label7" Content="Label"/>
+                <Label x:Name="label7" Content="原资产负债表内总资产"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="5">
-                <Label x:Name="label17" Content="Label"/>
+                <Label x:Name="label17" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="5">
-                <Label x:Name="label27" Content="Label"/>
+                <Label x:Name="label27" Content="原资产负债表内总负债"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="5">
-                <Label x:Name="label37" Content="Label"/>
+                <Label x:Name="label37" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="6">
-                <Label x:Name="label8" Content="Label"/>
+                <Label x:Name="label8" Content="债券"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="6">
-                <Label x:Name="label18" Content="Label"/>
+                <Label x:Name="label18"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="6">
-                <Label x:Name="label28" Content="Label"/>
+                <Label x:Name="label28" Content="理财业务基金"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="6">
-                <Label x:Name="label38" Content="Label"/>
+                <Label x:Name="label38" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="7">
-                <Label x:Name="label9" Content="Label"/>
+                <Label x:Name="label9" Content="非标债权类资产"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="7">
-                <Label x:Name="label19" Content="Label"/>
+                <Label x:Name="label19" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="7">
-                <Label x:Name="label29" Content="Label"/>
+                <Label x:Name="label29" Content="负债合计"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="7">
-                <Label x:Name="label39" Content="Label"/>
+                <Label x:Name="label39" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="8">
-                <Label x:Name="label10" Content="Label"/>
+                <Label x:Name="label10" Content="现金及银行存款"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="8">
-                <Label x:Name="label20" Content="Label"/>
+                <Label x:Name="label20" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="8">
-                <Label x:Name="label30" Content="Label"/>
+                <Label x:Name="label30" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="8">
-                <Label x:Name="label40" Content="Label"/>
+                <Label x:Name="label40" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="9">
-                <Label x:Name="label11" Content="Label"/>
+                <Label x:Name="label11" Content="货币类市场工具"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="9">
-                <Label x:Name="label21" Content="Label"/>
+                <Label x:Name="label21" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="9">
-                <Label x:Name="label31" Content="Label"/>
+                <Label x:Name="label31" Content="所有者权益："/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="9">
-                <Label x:Name="label41" Content="Label"/>
+                <Label x:Name="label41" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="10">
-                <Label x:Name="label12" Content="Label"/>
+                <Label x:Name="label12" Content="权益类资产"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="10">
-                <Label x:Name="label22" Content="Label"/>
+                <Label x:Name="label22" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="10">
-                <Label x:Name="label32" Content="Label"/>
+                <Label x:Name="label32" Content="原资产负债表内所有者权益"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="10">
-                <Label x:Name="label42" Content="Label"/>
+                <Label x:Name="label42" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="11">
-                <Label x:Name="label13" Content="Label"/>
+                <Label x:Name="label13" Content="其他"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="11">
-                <Label x:Name="label23" Content="Label"/>
+                <Label x:Name="label23" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="11">
-                <Label x:Name="label33" Content="Label"/>
+                <Label x:Name="label33" Content="所有者权益合计"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="11">
-                <Label x:Name="label43" Content="Label"/>
+                <Label x:Name="label43" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="12">
-                <Label x:Name="label14" Content="Label"/>
+                <Label x:Name="label14" Content="资产合计"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="12">
-                <Label x:Name="label24" Content="Label"/>
+                <Label x:Name="label24" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="12">
-                <Label x:Name="label34" Content="Label"/>
+                <Label x:Name="label34" Content="负债及所有者权益合计"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="12">
-                <Label x:Name="label44" Content="Label"/>
+                <Label x:Name="label44" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="13">
-                <Label x:Name="label15" Content="Label"/>
+                <Label x:Name="label15" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="13">
-                <Label x:Name="label25" Content="Label"/>
+                <Label x:Name="label25" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="13">
-                <Label x:Name="label35" Content="Label"/>
+                <Label x:Name="label35" />
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="13">
-                <Label x:Name="label45" Content="Label"/>
+                <Label x:Name="label45" />
             </Border>
 
         </Grid>
