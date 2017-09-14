@@ -126,6 +126,10 @@ namespace citi.MyPage
             entity.Bond = (string)bondLabel.Content;
             entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
 
+            if (!entity.IsAllSetValue())
+                return;
+
+
             string name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
             string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
             string sql = "INSERT INTO record (name,date,probability,comment,asset_standard,national_debt,enterprise_debt,trust_rate,trust_debt,debt_foundation,trust_debtRights,trust_stock,trust_transfer,receive,self_debtRights,bill,credit,other,cash,currency_market_tool,asset,cost_deposit," +

@@ -10,8 +10,8 @@
 
     <Grid>
         <Image HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="415" Source="/citi;component/assets/login_background.png"/>
-        <TextBox x:Name="username_text" HorizontalAlignment="Left" Height="28" Margin="127,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Background="Transparent" Foreground="#838eac" VerticalContentAlignment="Center" BorderThickness="0" input:InputMethod.IsInputMethodEnabled="False"/>
-        <PasswordBox x:Name="password_text" HorizontalAlignment="Left" Height="28" Margin="127,112,0,0"  VerticalAlignment="Top" Width="181" FontSize="12" Background="Transparent" Foreground="#838eac" BorderThickness="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="username_text" HorizontalAlignment="Left" Height="29" Margin="127,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Background="Transparent" Foreground="#838eac" VerticalContentAlignment="Center" BorderThickness="0" input:InputMethod.IsInputMethodEnabled="False"/>
+        <PasswordBox x:Name="password_text" HorizontalAlignment="Left" Height="28" Margin="127,107,0,0"  VerticalAlignment="Top" Width="161" FontSize="12" Background="Transparent" Foreground="#838eac" BorderThickness="0" VerticalContentAlignment="Center"/>
         <Button Content="" HorizontalAlignment="Left" Margin="166,173,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" FontSize="16" Height="32">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
