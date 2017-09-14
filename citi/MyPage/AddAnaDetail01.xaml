@@ -5,6 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi"
       mc:Ignorable="d" 
+          xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+
       d:DesignHeight="332" d:DesignWidth="455"
       Title="AddAnaDetail">
 
@@ -20,17 +22,17 @@
         <Label Content="票据类" HorizontalAlignment="Left" Margin="100,242,0,0" VerticalAlignment="Top"/>
         <Label Content="信用证" HorizontalAlignment="Left" Margin="100,272,0,0" VerticalAlignment="Top"/>
         <Label Content="其他非标准化债权类投资" HorizontalAlignment="Left" Margin="100,302,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="trust_rate" HorizontalAlignment="Left" Height="23" Margin="274,2,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_rate_TextChanged" />
-        <TextBox x:Name="trust_debt" HorizontalAlignment="Left" Height="23" Margin="274,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_debt_TextChanged"/>
-        <TextBox x:Name="debt_foundation" HorizontalAlignment="Left" Height="23" Margin="274,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="debt_foundation_TextChanged"/>
-        <TextBox x:Name="trust_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_debtRights_TextChanged"/>
-        <TextBox x:Name="trust_stock" HorizontalAlignment="Left" Height="23" Margin="274,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_stock_TextChanged"/>
-        <TextBox x:Name="trust_transfer" HorizontalAlignment="Left" Height="23" Margin="274,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_transfer_TextChanged"/>
-        <TextBox x:Name="receive" HorizontalAlignment="Left" Height="23" Margin="274,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="receive_TextChanged"/>
-        <TextBox x:Name="self_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="self_debtRights_TextChanged"/>
-        <TextBox x:Name="bill" HorizontalAlignment="Left" Height="23" Margin="274,242,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="bill_TextChanged"/>
-        <TextBox x:Name="credit" HorizontalAlignment="Left" Height="23" Margin="274,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="credit_TextChanged"/>
-        <TextBox x:Name="other" HorizontalAlignment="Left" Height="23" Margin="274,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="other_TextChanged"/>
+        <TextBox x:Name="trust_rate" HorizontalAlignment="Left" Height="23" Margin="274,2,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_rate_TextChanged" input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="trust_debt" HorizontalAlignment="Left" Height="23" Margin="274,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_debt_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="debt_foundation" HorizontalAlignment="Left" Height="23" Margin="274,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="debt_foundation_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="trust_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_debtRights_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="trust_stock" HorizontalAlignment="Left" Height="23" Margin="274,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_stock_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="trust_transfer" HorizontalAlignment="Left" Height="23" Margin="274,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="trust_transfer_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="receive" HorizontalAlignment="Left" Height="23" Margin="274,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="receive_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="self_debtRights" HorizontalAlignment="Left" Height="23" Margin="274,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="self_debtRights_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="bill" HorizontalAlignment="Left" Height="23" Margin="274,242,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="bill_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="credit" HorizontalAlignment="Left" Height="23" Margin="274,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="credit_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="other" HorizontalAlignment="Left" Height="23" Margin="274,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="other_TextChanged" input:InputMethod.IsInputMethodEnabled="False"/>
 
     </Grid>
 </Page>

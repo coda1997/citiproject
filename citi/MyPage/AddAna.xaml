@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:citi"
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="citi.MyPage.AddAna"
       mc:Ignorable="d" 
+    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
       d:DesignHeight="533" d:DesignWidth="864"
       Title="AddAna" ShowsNavigationUI="False">
 
@@ -22,10 +23,10 @@
         <Label Content="负债" HorizontalAlignment="Left" Margin="55,338,0,0" VerticalAlignment="Top"/>
         <Label Content="资产负债表内总负债" HorizontalAlignment="Left" Margin="67,376,0,0" VerticalAlignment="Top"/>
         <Label Content="理财业务资金" HorizontalAlignment="Left" Margin="68,406,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="210,31,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="210,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="210,168,0,0" VerticalAlignment="Top"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="210,133,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="wholeAssets" Content="0" HorizontalAlignment="Left" Margin="210,31,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="shadowBank" Content="0" HorizontalAlignment="Left" Margin="210,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="nonStandardAssetsLabel" Content="0" HorizontalAlignment="Left" Margin="210,168,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="bondLabel" Content="0" HorizontalAlignment="Left" Margin="210,133,0,0" VerticalAlignment="Top"/>
         <Button x:Name="startAnaBtn" HorizontalAlignment="Left" Margin="95,461,0,0" VerticalAlignment="Top" Width="78" Height="24" Click="startAnaBtn_Click"  BorderThickness="0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -90,12 +91,12 @@
                 </Style>
             </Button.Style>
         </Button>
-        <TextBox x:Name="asset_standard" HorizontalAlignment="Left" Height="23" Margin="210,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="asset_standard_TextChanged"  />
-        <TextBox x:Name="cash" HorizontalAlignment="Left" Height="23" Margin="210,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cash_TextChanged"/>
-        <TextBox x:Name="currency_market_tool" HorizontalAlignment="Left" Height="23" Margin="210,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="currency_market_tool_TextChanged"/>
-        <TextBox x:Name="asset" HorizontalAlignment="Left" Height="23" Margin="210,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="asset_TextChanged"/>
-        <TextBox x:Name="cost_deposit" HorizontalAlignment="Left" Height="23" Margin="210,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cost_deposit_TextChanged"/>
-        <TextBox x:Name="cost_finance" HorizontalAlignment="Left" Height="23" Margin="210,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cost_finance_TextChanged"/>
+        <TextBox x:Name="asset_standard" HorizontalAlignment="Left" Height="23" Margin="210,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="asset_standard_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="cash" HorizontalAlignment="Left" Height="23" Margin="210,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cash_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="currency_market_tool" HorizontalAlignment="Left" Height="23" Margin="210,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="currency_market_tool_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="asset" HorizontalAlignment="Left" Height="23" Margin="210,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="asset_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="cost_deposit" HorizontalAlignment="Left" Height="23" Margin="210,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cost_deposit_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="cost_finance" HorizontalAlignment="Left" Height="23" Margin="210,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="cost_finance_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
         <Frame x:Name="detailFrame" Content="" HorizontalAlignment="Left" Height="332" Margin="360,31,0,0" VerticalAlignment="Top" Width="452" NavigationUIVisibility="Hidden"/>
         <Button x:Name="extend1" Content="+展开" HorizontalAlignment="Left" Margin="280,136,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click_1" Background="Transparent" BorderThickness="0"/>
         <Button x:Name="extend2" Content="+展开" HorizontalAlignment="Left" Margin="280,171,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="Button_Click" Background="Transparent" BorderThickness="0"/>
@@ -104,7 +105,7 @@
         <Image HorizontalAlignment="Left" Height="61" Margin="61,376,0,0" VerticalAlignment="Top" Width="7"  Source="/citi;component/assets/dotted_line_short1.png"/>
         <Label Content="定期存款利率" HorizontalAlignment="Left" Margin="470,376,0,0" VerticalAlignment="Top"/>
         <Label Content="理财产品收益率" HorizontalAlignment="Left" Margin="470,406,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="bank_deposit_rate" HorizontalAlignment="Left" Height="23" Margin="597,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="bank_deposit_rate_TextChanged"/>
-        <TextBox x:Name="financial_products" HorizontalAlignment="Left" Height="23" Margin="597,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="financial_products_TextChanged"/>
+        <TextBox x:Name="bank_deposit_rate" HorizontalAlignment="Left" Height="23" Margin="597,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="bank_deposit_rate_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <TextBox x:Name="financial_products" HorizontalAlignment="Left" Height="23" Margin="597,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="financial_products_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
     </Grid>
 </Page>

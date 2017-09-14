@@ -20,17 +20,18 @@ namespace citi.MyPage
     /// </summary>
     public partial class AddAna : Page
     {
+        private AddAnaDetail detailPage1 ;
+        private AddAnaDetail02 detailPage2 ;
         public AddAna()
         {
             InitializeComponent();
-            
-      
+            detailPage1 = new AddAnaDetail(this);
+            detailPage2 = new AddAnaDetail02(this);
 
-            
-            
+
+
+
         }
-        private AddAnaDetail detailPage1;
-        private AddAnaDetail02 detailPage2;
         private MyEntity entity = new MyEntity();
         private bool flag1 = false, flag2 = false;
 
@@ -47,8 +48,8 @@ namespace citi.MyPage
             if (flag1)
                 return;
             flag1 = true;
-            if(detailPage1==null)
-            detailPage1    = new AddAnaDetail();
+            if (detailPage1 == null)
+                return;
             detailFrame.Content = detailPage1;
             if (flag2 == true)
             {
@@ -70,8 +71,9 @@ namespace citi.MyPage
             if (flag2)
                 return;
             flag2 = true;
-            if (detailPage2==null)
-            detailPage2 = new AddAnaDetail02();
+            if (detailPage2 == null)
+                return;
+           
             detailFrame.Content = detailPage2;
             if (flag1 == true)
             {
@@ -202,8 +204,13 @@ namespace citi.MyPage
 
         }
 
-        private void txt_time_TextChanged(object sender, TextChangedEventArgs e)
+        public void txt_time_TextChanged(object sender, TextChangedEventArgs e)
         {
+            checkType(sender, e);
+            valueChangeUpdate();
+        }
+        private void checkType(object sender, TextChangedEventArgs e) {
+
             var textBox = sender as TextBox;
             TextChange[] change = new TextChange[e.Changes.Count];
             e.Changes.CopyTo(change, 0);
@@ -218,5 +225,48 @@ namespace citi.MyPage
                 }
             }
         }
+        public void valueChangeUpdate(  ) {
+            double trust_rate =  toDouble(detailPage1.Trust_rate);
+            double trust_debt = toDouble(detailPage1.Trust_debt);
+            double debt_foundation = toDouble(detailPage1.Debt_foundation);
+            double trust_debtRights = toDouble(detailPage1.Trust_debtRights);
+            double trust_stock = toDouble(detailPage1.Trust_stock);
+            double trust_transfer = toDouble(detailPage1.Trust_transfer);
+            double receive = toDouble(detailPage1.Receive);
+            double self_debtRights = toDouble(detailPage1.Self_debtRights);
+            double other = toDouble(detailPage1.Other);
+            double credit = toDouble(detailPage1.Credit);
+            double bill = toDouble(detailPage1.Bill);
+
+            double res1 = trust_rate + trust_debt + debt_foundation + trust_debtRights + trust_stock + trust_stock
+                + trust_transfer + receive + self_debtRights + other + credit + bill;
+            nonStandardAssetsLabel.Content = String.Format("{0:F}", res1);
+
+            double national_debt = toDouble(detailPage2.National_debt);
+            double enterprise_debt = toDouble(detailPage2.Enterprise_debt);
+            double res2= national_debt + enterprise_debt;
+            bondLabel.Content = String.Format("{0:F}", res2);
+
+            double cashDouble = toDouble(cash.Text);
+            double currentMarket = toDouble(currency_market_tool.Text);
+            double assetsDouble = toDouble(asset.Text);
+            double res3 = cashDouble + currentMarket + assetsDouble;
+            shadowBank.Content = String.Format("{0:F}", res1+res2+res3);
+
+            double assetsBank = toDouble(asset_standard.Text);
+
+            wholeAssets.Content = String.Format("{0:F}", res1 + res2 + res3 + assetsBank);
+
+
+
+        }
+        private double toDouble(string value)
+        {
+            if (value.Equals(""))
+                return 0;
+            else
+                return Convert.ToDouble(value);
+        }
+       
     }
 }
