@@ -40,7 +40,79 @@ namespace citi.MyPage
 
 
 
+        private void txt_time_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            TextChange[] change = new TextChange[e.Changes.Count];
+            e.Changes.CopyTo(change, 0);
+            int offset = change[0].Offset;
+            if (change[0].AddedLength > 0)
+            {
+                double num = 0;
+                if (!Double.TryParse(textBox.Text, out num))
+                {
+                    textBox.Text = textBox.Text.Remove(offset, change[0].AddedLength);
+                    textBox.Select(offset, 0);
+                }
+            }
+        }
 
+        private void trust_rate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void trust_debt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void debt_foundation_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void trust_debtRights_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void trust_stock_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void trust_transfer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void receive_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void self_debtRights_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void bill_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void credit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
+
+        private void other_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+        }
     }
+
+
 
 }
