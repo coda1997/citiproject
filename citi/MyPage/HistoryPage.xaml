@@ -49,7 +49,7 @@
     </Page.Resources>
 
     <Grid>
-        <Button HorizontalAlignment="Left" Margin="612,21,0,0" VerticalAlignment="Top" Width="48" Height="21" BorderThickness="0">
+        <Button HorizontalAlignment="Left" Margin="612,21,0,0" VerticalAlignment="Top" Width="48" Height="21" BorderThickness="0" Click="Button_Click_2">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

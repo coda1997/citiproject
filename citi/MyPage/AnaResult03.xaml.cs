@@ -1,7 +1,9 @@
-﻿using System;
+﻿using JumpKick.HttpLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using OxyPlot;
 using OxyPlot.Series;
+using Newtonsoft.Json;
+using citi;
 
 namespace citi.MyPage
 {
@@ -77,15 +81,42 @@ namespace citi.MyPage
         {
             MyEntity entity = dataPage.getEntity();
             PlotModel modelP1 = new PlotModel { Title = "结果展示" };
-
             dynamic seriesP1 = new FunctionSeries();
+            //dynamic requestParam = new
+            //{
+            //    email = email,
+            //};
 
-            seriesP1.Points.Add(new DataPoint(1, 1));
-            seriesP1.Points.Add(new DataPoint(2, 2));
-            seriesP1.Points.Add(new DataPoint(3, 2));
-            seriesP1.Points.Add(new DataPoint(2, 1));
+            //Http.Post(Constant.OverViewUrl).Form(new { email = email, password = pwd, remembered = false }).OnSuccess((WebHeaderCollection header, string resutlt) =>
+            //   {
+            //       //MyLog.FailLog(header.ToString());
+            //       //MyLog.FailLog(Constant.Cookie);
+            //       new Thread(() =>
+            //       {
+            //           this.Dispatcher.Invoke(new Action(() =>
+            //           {
+            //               Window mainWindow = new Main();
+            //               mainWindow.Show();
+            //               if (currentWindow != null)
+            //               {
+            //                   currentWindow.Hide();
+            //               }
+            //           }));
+            //       }).Start();
 
-            modelP1.Series.Add(seriesP1);
+            //   }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
+
+            string response = "";
+            Http.Get("http://39.108.217.238:8080/history/json?format=api").OnSuccess(result => {
+                response = result;
+                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
+                int sum = 500;
+                for (int i = 0; i < sum; i++)
+                {
+                    seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
+                }
+                modelP1.Series.Add(seriesP1);
+            }).Go();
 
             return modelP1;
         }
