@@ -38,20 +38,23 @@ namespace citi
         }
         public string getAssetsTotal()
         {
-            double assetsTotal = Convert.ToDouble(Asset_standard) + Convert.ToDouble(Bond) + Convert.ToDouble(NonStandardAssets) + Convert.ToDouble(Cash) + Convert.ToDouble(Currency_market_tool) + Convert.ToDouble(Asset) + Convert.ToDouble(Other);
+            double assetsTotal = toDouble(Asset_standard) + toDouble(Bond) + toDouble(NonStandardAssets) + toDouble(Cash) + toDouble(Currency_market_tool) + toDouble(Asset) + toDouble(Other);
             return assetsTotal.ToString();
         }
         public string getLoanTotal()
         {
-            double loanTotal = Convert.ToDouble(Cost_deposit) + Convert.ToDouble(Cost_finance);
+            double loanTotal = toDouble(Cost_deposit) + toDouble(Cost_finance);
             return loanTotal.ToString();
         }
         public string getTwoTotal()
         {
-            double twoTotal = Convert.ToDouble(getLoanTotal()) + Convert.ToDouble(Trust_rate);
+            double twoTotal = toDouble(getLoanTotal()) + toDouble(Trust_rate);
             return twoTotal.ToString();
         }
-
+        private double toDouble(string value)
+        {
+            return value == null ? 0 : Convert.ToDouble(value);
+        }
 
     }
 }

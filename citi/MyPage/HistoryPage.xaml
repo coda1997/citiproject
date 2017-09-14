@@ -113,7 +113,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="123,87,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0" SelectionChanged="myListView_SelectionChanged">
+        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="123,87,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0" SelectionChanged="myListView_SelectionChanged" HorizontalContentAlignment="Center">
             <ListView.Style>
                 <Style TargetType="{x:Type ListView}">
                     <Setter Property="Background">
@@ -134,18 +134,46 @@
 
                     <GridView.Columns>
 
-                        <GridViewColumn Width="150"  DisplayMemberBinding="{Binding Path=Name}" />
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Date}" />
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Probability}" />
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Comment}" />
+                        <GridViewColumn Width="150"  x:Name="column1"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}" TextAlignment="Center" MinWidth="{Binding Path=ActualWidth,ElementName=column1}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+                        </GridViewColumn>
+                        <GridViewColumn Width="150"  x:Name="column2"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Date}" TextAlignment="Center" MinWidth="{Binding Path=ActualWidth,ElementName=column2}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+                        </GridViewColumn>
+                        <GridViewColumn Width="150"  x:Name="column3"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Probability}" TextAlignment="Center" MinWidth="{Binding Path=ActualWidth,ElementName=column3}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+                        </GridViewColumn>
+                        <GridViewColumn Width="150"  x:Name="column4"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Comment}" TextAlignment="Center" MinWidth="{Binding Path=ActualWidth,ElementName=column4}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="分析名称" HorizontalAlignment="Left" Margin="169,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="分析名称" HorizontalAlignment="Left" Margin="179,57,0,0" VerticalAlignment="Top"/>
         <Label Content="创建时间" HorizontalAlignment="Left" Margin="320,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="违约概率" HorizontalAlignment="Left" Margin="474,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="备注" HorizontalAlignment="Left" Margin="621,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="违约概率" HorizontalAlignment="Left" Margin="482,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="备注" HorizontalAlignment="Left" Margin="636,57,0,0" VerticalAlignment="Top"/>
         <Label x:Name="chooseText" Content="选中项目：0" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="1" HorizontalAlignment="Left" Margin="394,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="2" HorizontalAlignment="Left" Margin="416,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>

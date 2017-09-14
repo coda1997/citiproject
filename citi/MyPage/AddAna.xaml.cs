@@ -126,9 +126,31 @@ namespace citi.MyPage
             entity.Bond = (string)bondLabel.Content;
             entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
 
-            string sql = "INSERT INTO citi1  ";
+            string name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
+            string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
+            string sql = "INSERT INTO record (name,date,probability,comment,asset_standard,national_debt,enterprise_debt,trust_rate,trust_debt,debt_foundation,trust_debtRights,trust_stock,trust_transfer,receive,self_debtRights,bill,credit,other,cash,currency_market_tool,asset,cost_deposit," +
+                "cost_finance) VALUES('新建分析-"+name+"','"+date+"',"+"'-'"+","+"'--'"+",'"+
+                entity.Asset_standard+"','"+
+                entity.National_debt+"','"+
+                entity.Enterprise_debt+"','"+
+                entity.Trust_rate+"','"+
+                entity.Trust_debt+"','"+
+                entity.Debt_foundation+"','"+
+                entity.Trust_debtRights+"','"+
+                entity.Trust_stock+"','"+
+                entity.Trust_transfer+"','"+
+                entity.Receive+"','"+
+                entity.Self_debtRights+"','"+
+                entity.Bill+"','"+
+                entity.Credit+"','"+
+                entity.Other+"','"+
+                entity.Cash+"','"+
+                entity.Currency_market_tool+"','"+
+                entity.Asset+"','"+
+                entity.Cost_deposit+"','"+
+                entity.Cost_finance+"');";
 
-
+            SqliteHelper.ExecuteSQLWithoutResult(sql);
             ana01 = new AnaResult01(this);
             ana02 = new AnaResult02(this);
             ana03 = new AnaResult03(this);
