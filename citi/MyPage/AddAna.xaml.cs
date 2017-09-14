@@ -24,6 +24,10 @@ namespace citi.MyPage
         {
             InitializeComponent();
             
+      
+
+            
+            
         }
         private AddAnaDetail detailPage1;
         private AddAnaDetail02 detailPage2;
@@ -145,10 +149,74 @@ namespace citi.MyPage
         {
             return ana03;
         }
+
+        private void asset_standard_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender,e);
+        }
+
         public Page getPage04()
         {
             return ana04;
         }
 
+        private void cash_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void currency_market_tool_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void asset_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void cost_deposit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void cost_finance_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void bank_deposit_rate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void financial_products_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_time_TextChanged(sender, e);
+
+        }
+
+        private void txt_time_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            TextChange[] change = new TextChange[e.Changes.Count];
+            e.Changes.CopyTo(change, 0);
+            int offset = change[0].Offset;
+            if (change[0].AddedLength > 0)
+            {
+                double num = 0;
+                if (!Double.TryParse(textBox.Text, out num))
+                {
+                    textBox.Text = textBox.Text.Remove(offset, change[0].AddedLength);
+                    textBox.Select(offset, 0);
+                }
+            }
+        }
     }
 }
