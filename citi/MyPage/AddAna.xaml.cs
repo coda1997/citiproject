@@ -126,8 +126,7 @@ namespace citi.MyPage
             entity.Bond = (string)bondLabel.Content;
             entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
 
-            if (!entity.IsAllSetValue())
-                return;
+           
 
 
             string name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
