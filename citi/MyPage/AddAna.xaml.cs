@@ -124,6 +124,8 @@ namespace citi.MyPage
             entity.Enterprise_debt = detailPage2.Enterprise_debt;
             //MessageBox.Show(entity.ToString());
 
+            string sql = "INSERT INTO ";
+
 
             ana01 = new AnaResult01(this);
             ana02 = new AnaResult02(this);

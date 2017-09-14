@@ -38,8 +38,19 @@ namespace citi
             loginPage.CurrentWindow = this;
         }
 
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Constant.MinWindow();
+        }
 
-       
+        private void loginFrame_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -113,7 +113,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="123,87,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0">
+        <ListView x:Name="myListView" HorizontalAlignment="Left" Height="326" Margin="123,87,0,0" VerticalAlignment="Top" Width="618" BorderThickness="0" SelectionChanged="myListView_SelectionChanged">
             <ListView.Style>
                 <Style TargetType="{x:Type ListView}">
                     <Setter Property="Background">
@@ -146,7 +146,7 @@
         <Label Content="创建时间" HorizontalAlignment="Left" Margin="320,57,0,0" VerticalAlignment="Top"/>
         <Label Content="违约概率" HorizontalAlignment="Left" Margin="474,57,0,0" VerticalAlignment="Top"/>
         <Label Content="备注" HorizontalAlignment="Left" Margin="621,57,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="chooseText" Content="选中项目：1" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
+        <Label x:Name="chooseText" Content="选中项目：0" HorizontalAlignment="Left" Margin="169,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="1" HorizontalAlignment="Left" Margin="394,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="2" HorizontalAlignment="Left" Margin="416,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
         <Label Content="3" HorizontalAlignment="Left" Margin="438,440,0,0" VerticalAlignment="Top" Foreground="#FF677596"/>
