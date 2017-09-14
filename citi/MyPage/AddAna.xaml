@@ -59,7 +59,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="resetBtn"  HorizontalAlignment="Left" Margin="210,461,0,0" VerticalAlignment="Top" Width="78" Height="24"  BorderThickness="0">
+        <Button x:Name="resetBtn"  HorizontalAlignment="Left" Margin="210,461,0,0" VerticalAlignment="Top" Width="78" Height="24"  BorderThickness="0" Click="resetBtn_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

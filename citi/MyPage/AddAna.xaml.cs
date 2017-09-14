@@ -125,9 +125,15 @@ namespace citi.MyPage
             //MessageBox.Show(entity.ToString());
             entity.Bond = (string)bondLabel.Content;
             entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
+            entity.bank_deposit_rate = bank_deposit_rate.Text;
+            entity.Financial_products = financial_products.Text;
 
-           
-
+            if (entity.IsAllSetValue())
+            {
+                Console.WriteLine("null safe");
+                return;
+            }
+            
 
             string name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
             string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
@@ -289,6 +295,12 @@ namespace citi.MyPage
 
 
         }
+
+        private void resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         private double toDouble(string value)
         {
             if (value.Equals(""))

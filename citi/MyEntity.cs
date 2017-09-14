@@ -32,10 +32,7 @@ namespace citi
         public string Bond { get; set; }                //债券
         public string NonStandardAssets { get; set; }   //非标准化债权资产
 
-        public override string ToString()
-        {
-            return base.ToString()+Asset_standard+National_debt+Cost_deposit;
-        }
+      
         public string getAssetsTotal()
         {
             double assetsTotal = toDouble(Asset_standard) + toDouble(Bond) + toDouble(NonStandardAssets) + toDouble(Cash) + toDouble(Currency_market_tool) + toDouble(Asset) + toDouble(Other);
@@ -56,9 +53,13 @@ namespace citi
             return value.Equals("") ? 0 : Convert.ToDouble(value);
         }
         public bool IsAllSetValue() {
-            return Asset_standard != null && National_debt != null && Enterprise_debt != null && Trust_rate != null && Trust_debt != null && Debt_foundation != null && Trust_debtRights != null && Trust_stock != null && Trust_transfer != null && Receive != null &&
-                Self_debtRights != null && Bill != null && Credit != null && Other != null && Cash != null && Currency_market_tool != null && Asset != null && Cost_deposit != null && Cost_finance != null && bank_deposit_rate != null &&
-                Financial_products != null && Bond != null && NonStandardAssets != null;
+            return Asset_standard.Equals("") || National_debt.Equals("") || Enterprise_debt.Equals("") || Trust_rate.Equals("") ||
+                Trust_debt.Equals("") || Debt_foundation.Equals("") || Trust_debtRights.Equals("") || Trust_stock.Equals("") ||
+                Trust_transfer.Equals("") || Receive.Equals("") || Self_debtRights.Equals("") || Bill.Equals("") ||
+                Credit.Equals("") || Other.Equals("") || Cash.Equals("") || Currency_market_tool.Equals("") ||
+                Asset.Equals("") || Cost_deposit.Equals("") || Cost_finance.Equals("") || bank_deposit_rate.Equals("") ||
+                Financial_products.Equals("") || Bond.Equals("") || NonStandardAssets.Equals("");
         }
+
     }
 }
