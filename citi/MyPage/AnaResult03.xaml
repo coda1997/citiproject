@@ -18,6 +18,8 @@
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
 
-        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="78,107,82,8"/>
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="110,131,108,46"/>
+        <Image x:Name="image" Margin="110,131,108,0" VerticalAlignment="Top" Height="356" Source="/citi;component/assets/chart2_background.png" Panel.ZIndex="-2"/>
+        <Label x:Name="label" FontSize="20" Foreground="#838ead" Content="Label" HorizontalAlignment="Left" Margin="693,70,0,0" VerticalAlignment="Top" Width="101"/>
     </Grid>
 </Page>

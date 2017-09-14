@@ -82,6 +82,7 @@ namespace citi.MyPage
             MyEntity entity = dataPage.getEntity();
             PlotModel modelP1 = new PlotModel { Title = "结果展示" };
             dynamic seriesP1 = new FunctionSeries();
+
             //dynamic requestParam = new
             //{
             //    email = email,
@@ -107,7 +108,8 @@ namespace citi.MyPage
             //   }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
 
             string response = "";
-            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result => {
+            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2015").OnSuccess(result =>
+            {
                 response = result;
                 JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
                 int sum = 500;
@@ -116,8 +118,10 @@ namespace citi.MyPage
                     seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
                 }
                 modelP1.Series.Add(seriesP1);
+                
             }).Go();
 
+            label.Content = "违约概率：";
             return modelP1;
         }
     }
