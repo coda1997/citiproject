@@ -53,7 +53,7 @@ namespace citi
         }
         private double toDouble(string value)
         {
-            return value == null ? 0 : Convert.ToDouble(value);
+            return value.Equals("") ? 0 : Convert.ToDouble(value);
         }
 
     }
