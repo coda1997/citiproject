@@ -8,10 +8,10 @@
          WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="NoResize"
-        Title="Login" Height="228" Width="415">
-    <Grid>
-        <Frame x:Name="loginFrame" Content="" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="415" NavigationUIVisibility="Hidden" MouseLeftButtonDown="loginFrame_MouseLeftButtonDown"/>
-        <Button Margin="391,0,0,216" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click_1">
+        Title="Login" Height="240" Width="420" Background="Transparent">
+    <Grid Background="Transparent">
+        <Frame x:Name="loginFrame" Content="" HorizontalAlignment="Left" Height="247" VerticalAlignment="Top" Width="431" NavigationUIVisibility="Hidden" MouseLeftButtonDown="loginFrame_MouseLeftButtonDown" Background="Transparent"/>
+        <Button Margin="369,0,28,215" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click_1" Width="23">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="Transparent">
@@ -28,13 +28,13 @@
                     </Setter>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FFE20000" />
+                            <Setter Property="Background" Value="#FFFC4A2D" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="368,0,0,216" Width="23" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click">
+        <Button HorizontalAlignment="Left" Margin="345,0,0,216" Width="23" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="Transparent">

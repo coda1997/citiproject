@@ -92,32 +92,82 @@ namespace citi.MyPage
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (num == 1 || history1 == null||history2==null)
+            if (num == 1 || entity1 == null||entity2==null)
                 return;
+
+            MyEntity entity_1 = entity1;
+            MyEntity entity_2 = entity2;
+
+
 
         }
 
         private int num = 0;
-        private HistoryEntry history1;
-        private HistoryEntry history2;
+        private MyEntity entity1;
+        private MyEntity entity2;
         private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DataRow dataRow;
             num =(num+1)%2;
             if (num == 1)
             {
-                chooseText.Content = "选中项目 1/2";
                 
+                chooseText.Content = "选中项目 1/2";
+                dataRow = drc[(currentPage - 1) * 15 + myListView.SelectedIndex];
+                entity1 = new MyEntity();
+                entity1.Asset_standard = (string)dataRow[5];
+                entity1.National_debt = (string)dataRow[6];
+                entity1.Enterprise_debt = (string)dataRow[7];
+                entity1.Trust_rate = (string)dataRow[8];
+                entity1.Trust_debt = (string)dataRow[9];
+                entity1.Debt_foundation = (string)dataRow[10];
+                entity1.Trust_debtRights = (string)dataRow[11];
+                entity1.Trust_stock = (string)dataRow[12];
+                entity1.Trust_transfer = (string)dataRow[13];
+                entity1.Receive = (string)dataRow[14];
+                entity1.Self_debtRights = (string)dataRow[15];
+                entity1.Bill = (string)dataRow[16];
+                entity1.Credit = (string)dataRow[17];
+                entity1.Other = (string)dataRow[18];
+                entity1.Cash = (string)dataRow[19];
+                entity1.Currency_market_tool = (string)dataRow[20];
+                entity1.Asset = (string)dataRow[21];
+                entity1.Cost_deposit = (string)dataRow[22];
+                entity1.Cost_finance = (string)dataRow[23];
             }
             else
             {
+                dataRow = drc[(currentPage - 1) * 15 + myListView.SelectedIndex];
+
                 chooseText.Content = "选中项目 2/2";
+                entity2.Asset_standard = (string)dataRow[5];
+                entity2.National_debt = (string)dataRow[6];
+                entity2.Enterprise_debt = (string)dataRow[7];
+                entity2.Trust_rate = (string)dataRow[8];
+                entity2.Trust_debt = (string)dataRow[9];
+                entity2.Debt_foundation = (string)dataRow[10];
+                entity2.Trust_debtRights = (string)dataRow[11];
+                entity2.Trust_stock = (string)dataRow[12];
+                entity2.Trust_transfer = (string)dataRow[13];
+                entity2.Receive = (string)dataRow[14];
+                entity2.Self_debtRights = (string)dataRow[15];
+                entity2.Bill = (string)dataRow[16];
+                entity2.Credit = (string)dataRow[17];
+                entity2.Other = (string)dataRow[18];
+                entity2.Cash = (string)dataRow[19];
+                entity2.Currency_market_tool = (string)dataRow[20];
+                entity2.Asset = (string)dataRow[21];
+                entity2.Cost_deposit = (string)dataRow[22];
+                entity2.Cost_finance = (string)dataRow[23];
             }
-            MyLog.FailLog(sender.ToString());
+            
+            MyLog.FailLog(myListView.SelectedIndex+"");
         }
 
         private HistoryEntry GetHistoryEntry(object sender)
         {
-            return null; 
+          
+            return null;
         }
     }
 }

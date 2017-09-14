@@ -6,9 +6,7 @@
       xmlns:local="clr-namespace:citi"
       mc:Ignorable="d" 
           xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
-
-      d:DesignHeight="228" d:DesignWidth="415"
-      Title="LoginPage">
+      Title="LoginPage" Height="231.868" Width="419.995">
 
     <Grid>
         <Image HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="415" Source="/citi;component/assets/login_background.png"/>

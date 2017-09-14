@@ -63,6 +63,7 @@ namespace citi.MyPage
             //    }).Start();
 
             //}).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
+            currentWindow.Hide();
             Window mainWindow = new Main();
             mainWindow.Show();
 

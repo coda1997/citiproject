@@ -72,6 +72,14 @@ namespace citi
             }
             return ds;
         }
+        public static void ExecuteSQLWithoutResult(string cmd) {
+            SQLiteCommand sQLiteCommand = new SQLiteCommand();
+            using (SQLiteConnection connection = GetConnection())
+            {
+                PrepareCommand(sQLiteCommand, connection, cmd, null);
+                sQLiteCommand.ExecuteNonQuery();
+            }
+        }
 
         //public static List<T> GetTableData<T>(string cmdText,params object[] parameters)where T : class
         //{
