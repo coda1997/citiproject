@@ -10,7 +10,8 @@ namespace citi
 {
     class SqliteHelper
     {
-        private static readonly string m_DataSource = "citihistory.db";
+        private static readonly string m_DataSource =  "citihistory.db";
+
 
         private static readonly string m_ConnectionString;
 

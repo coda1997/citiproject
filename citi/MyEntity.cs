@@ -55,6 +55,10 @@ namespace citi
         {
             return value.Equals("") ? 0 : Convert.ToDouble(value);
         }
-
+        public bool IsAllSetValue() {
+            return Asset_standard != null && National_debt != null && Enterprise_debt != null && Trust_rate != null && Trust_debt != null && Debt_foundation != null && Trust_debtRights != null && Trust_stock != null && Trust_transfer != null && Receive != null &&
+                Self_debtRights != null && Bill != null && Credit != null && Other != null && Cash != null && Currency_market_tool != null && Asset != null && Cost_deposit != null && Cost_finance != null && bank_deposit_rate != null &&
+                Financial_products != null && Bond != null && NonStandardAssets != null;
+        }
     }
 }
