@@ -81,8 +81,8 @@ namespace citi.MyPage
         {
             MyEntity entity = dataPage.getEntity();
             PlotModel modelP1 = new PlotModel { Title = " " };
-            dynamic seriesP1 = new FunctionSeries();
-            dynamic seriesP2 = new LineSeries();
+            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
+            dynamic seriesP2 = new LineSeries() { Color = OxyColor.Parse("#e9445f") } ;
 
             //dynamic requestParam = new
             //{
@@ -120,7 +120,6 @@ namespace citi.MyPage
                 }
                 seriesP2.Points.Add(new DataPoint(data.cost, 0));
                 seriesP2.Points.Add(new DataPoint(data.cost, 0.06));
-
 
                 modelP1.Series.Add(seriesP1);
                 modelP1.Series.Add(seriesP2);

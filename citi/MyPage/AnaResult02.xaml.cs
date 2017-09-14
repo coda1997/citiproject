@@ -85,14 +85,14 @@ namespace citi.MyPage
             string asset = entity.Asset;            //权益类资产
             string other = entity.Other;
 
-            PlotModel modelP1 = new PlotModel { Title = "输入数据分析" };
+            PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new PieSeries { StrokeThickness = 1, AngleSpan = 360, StartAngle = 0 };
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset_standard)) { Fill = OxyColor.Parse("#5a95be") });
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(bond)) { Fill = OxyColor.Parse("#b4bbd5") });
-            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(nonStandardAssets)) { Fill = OxyColor.Parse("#a1a7be") });
-            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(cash)) { Fill = OxyColor.Parse("#8e93a7") });
-            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(currency_market_tool)) { Fill = OxyColor.Parse("#7b7f90") });
-            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset)) { Fill = OxyColor.Parse("#656977") });
+            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(nonStandardAssets)) { Fill = OxyColor.Parse("#9DA5BE") });
+            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(cash)) { Fill = OxyColor.Parse("#8691A7") });
+            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(currency_market_tool)) { Fill = OxyColor.Parse("#717D90") });
+            seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset)) { Fill = OxyColor.Parse("#5A6777") });
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(other)) { Fill = OxyColor.Parse("#d5d5d5") });
             modelP1.Series.Add(seriesP1);
 

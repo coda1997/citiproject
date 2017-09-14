@@ -18,10 +18,17 @@
         <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="42,136,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
-        
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="337,51,0,0" VerticalAlignment="Top" Height="51" Width="156"/>
 
-        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="10,78,460,86"/>
-        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="452,78,10,81"/>
+        <Label x:Name="label" FontSize="24" Content="偏效应分析" Foreground="#838ead" Margin="368,37,366,0" VerticalAlignment="Top" Height="43"/>
+
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="37,136,433,81"/>
+        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="452,136,10,81"/>
+        <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="165,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="610,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" FontSize="16" Content="Label" HorizontalAlignment="Left" Margin="47,454,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" FontSize="16" Content="Label" HorizontalAlignment="Left" Margin="782,498,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" FontSize="16" Content="Label" HorizontalAlignment="Left" Margin="47,498,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="image" HorizontalAlignment="Left"  Margin="42,487,0,0" VerticalAlignment="Top"  Source="/citi;component/assets/line_dividing.png"/>
+        <Label x:Name="label6" Foreground="#838ead" FontSize="12" Content="当前收益率对应的：" HorizontalAlignment="Left" Margin="64,476,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using OxyPlot;
 using OxyPlot.Series;
+using JumpKick.HttpLib;
+using Newtonsoft.Json;
 
 namespace citi.MyPage
 {
@@ -77,16 +79,29 @@ namespace citi.MyPage
         private PlotModel getModel1()
         {
             MyEntity entity = dataPage.getEntity();
-            PlotModel modelP1 = new PlotModel { Title = "资产价值分布曲线" };
+            PlotModel modelP1 = new PlotModel { Title = " " };
 
-            dynamic seriesP1 = new FunctionSeries();
+            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
 
-            seriesP1.Points.Add(new DataPoint(1, 1));
-            seriesP1.Points.Add(new DataPoint(2, 2));
-            seriesP1.Points.Add(new DataPoint(3, 2));
-            seriesP1.Points.Add(new DataPoint(2, 1));
+            string response = "";
+            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result =>
+            {
+                response = result;
+                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
+                int sum = 500;
+                for (int i = 0; i < sum; i++)
+                {
+                    seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
+                }
 
-            modelP1.Series.Add(seriesP1);
+                modelP1.Series.Add(seriesP1);
+
+                //this.Dispatcher.Invoke(new Action(() =>
+                //{
+                //    label.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                //}));
+
+            }).Go();
 
             return modelP1;
         }
@@ -94,7 +109,7 @@ namespace citi.MyPage
         private PlotModel getModel2()
         {
             MyEntity entity = dataPage.getEntity();
-            PlotModel modelP2 = new PlotModel { Title = "偏效应图" };
+            PlotModel modelP2 = new PlotModel { Title = " " };
 
             dynamic seriesP2 = new FunctionSeries();
 

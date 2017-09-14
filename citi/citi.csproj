@@ -321,6 +321,16 @@
     <Resource Include="assets\menu_word_clicked2.png" />
     <Resource Include="assets\menu_word_clicked3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\bottomaround.png" />
+    <Resource Include="assets\left3right4.png" />
+    <Resource Include="assets\mainpie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\background_compare.png" />
+    <Resource Include="assets\background_industry.png" />
+    <Resource Include="assets\background_partial.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
