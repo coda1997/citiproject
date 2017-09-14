@@ -22,10 +22,15 @@ namespace citi.MyPage
     /// </summary>
     public partial class AnaResult04 : Page
     {
-        public AnaResult04()
+        public AnaResult04(AddAna pageArg)
         {
             InitializeComponent();
+            dataPage = pageArg;
+            plot1.Model = getModel1();
+            plot2.Model = getModel2();
         }
+
+        private AddAna dataPage;
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -51,32 +56,28 @@ namespace citi.MyPage
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult01());
+            this.NavigationService.Navigate(dataPage.getPage01());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult02());
+            this.NavigationService.Navigate(dataPage.getPage02());
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult03());
+            this.NavigationService.Navigate(dataPage.getPage03());
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult04());
+            this.NavigationService.Navigate(dataPage.getPage04());
         }
-    }
 
-    public class PartialData
-    {
-        private PlotModel modelP1;
-        private PlotModel modelP2;
-        public PartialData()
+        private PlotModel getModel1()
         {
-            modelP1 = new PlotModel { Title = "资产价值分布曲线" };
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP1 = new PlotModel { Title = "资产价值分布曲线" };
 
             dynamic seriesP1 = new FunctionSeries();
 
@@ -87,8 +88,13 @@ namespace citi.MyPage
 
             modelP1.Series.Add(seriesP1);
 
+            return modelP1;
+        }
 
-            modelP2 = new PlotModel { Title = "偏效应图" };
+        private PlotModel getModel2()
+        {
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP2 = new PlotModel { Title = "偏效应图" };
 
             dynamic seriesP2 = new FunctionSeries();
 
@@ -99,18 +105,7 @@ namespace citi.MyPage
 
             modelP2.Series.Add(seriesP2);
 
-        }
-
-        public PlotModel Model1
-        {
-            get { return modelP1; }
-            set { modelP1 = value; }
-        }
-
-        public PlotModel Model2
-        {
-            get { return modelP2; }
-            set { modelP2 = value; }
+            return modelP2;
         }
 
     }

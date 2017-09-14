@@ -22,10 +22,15 @@ namespace citi.MyPage
     /// </summary>
     public partial class AnaResult02 : Page
     {
-        public AnaResult02()
+        public AnaResult02(AddAna pageArg)
         {
             InitializeComponent();
+            dataPage = pageArg;
+            plot1.Model = getModel();
         }
+
+        private AddAna dataPage;
+
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
             image1.Visibility = Visibility.Hidden;
@@ -50,31 +55,28 @@ namespace citi.MyPage
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult01());
+            this.NavigationService.Navigate(dataPage.getPage01());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult02());
+            this.NavigationService.Navigate(dataPage.getPage02());
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult03());
+            this.NavigationService.Navigate(dataPage.getPage03());
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AnaResult04());
+            this.NavigationService.Navigate(dataPage.getPage04());
         }
-    }
 
-    public class PieChartData
-    {
-        private PlotModel modelP1;
-        public PieChartData()
+        private PlotModel getModel()
         {
-            modelP1 = new PlotModel { Title = "输入数据分析" };
+            MyEntity entity = dataPage.getEntity();
+            PlotModel modelP1 = new PlotModel { Title = "输入数据分析" };
 
             dynamic seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
 
@@ -86,12 +88,7 @@ namespace citi.MyPage
 
             modelP1.Series.Add(seriesP1);
 
-        }
-
-        public PlotModel Model1
-        {
-            get { return modelP1; }
-            set { modelP1 = value; }
+            return modelP1;
         }
     }
 
