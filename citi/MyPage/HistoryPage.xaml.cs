@@ -92,7 +92,32 @@ namespace citi.MyPage
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            if (num == 1 || history1 == null||history2==null)
+                return;
 
+        }
+
+        private int num = 0;
+        private HistoryEntry history1;
+        private HistoryEntry history2;
+        private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            num =(num+1)%2;
+            if (num == 1)
+            {
+                chooseText.Content = "选中项目 1/2";
+                
+            }
+            else
+            {
+                chooseText.Content = "选中项目 2/2";
+            }
+            MyLog.FailLog(sender.ToString());
+        }
+
+        private HistoryEntry GetHistoryEntry(object sender)
+        {
+            return 
         }
     }
 }
