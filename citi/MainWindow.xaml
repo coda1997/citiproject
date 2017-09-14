@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:citi"
         mc:Ignorable="d"
-        Title="Login" Height="350" Width="525">
+         WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Title="Login" Height="228" Width="415">
     <Grid>
-        <Frame x:Name="loginFrame" Content="" HorizontalAlignment="Left" Height="322" VerticalAlignment="Top" Width="520"/>
+        <Frame x:Name="loginFrame" Content="" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="415" NavigationUIVisibility="Hidden" MouseLeftButtonDown="loginFrame_MouseLeftButtonDown"/>
+        <Button Margin="391,0,0,216" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click_1">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent">
+
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFE20000" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="368,0,0,216" Width="23" RenderTransformOrigin="-2.267,1.857" Height="12" VerticalAlignment="Bottom" Click="Button_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent">
+
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF677596" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>

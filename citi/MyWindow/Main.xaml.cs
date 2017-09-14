@@ -51,5 +51,10 @@ namespace citi.MyWindow
                 industryPage = new IndustryPage();
             mainFrame.Content = industryPage;
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

@@ -117,7 +117,7 @@ namespace citi.MyPage
 
         private HistoryEntry GetHistoryEntry(object sender)
         {
-            return 
+            return null; 
         }
     }
 }
