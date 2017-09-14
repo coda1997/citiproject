@@ -5,10 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:citi.MyPage"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="533" d:DesignWidth="864"
       Title="IndustryPage">
 
     <Grid>
-        
+        <Label x:Name="label" Foreground="#838eac" FontSize="18" Content="行业违约概率变化趋势" Margin="334,42,336,0" VerticalAlignment="Top" Height="34"/>
+        <Image x:Name="image" Height="376" Margin="74,102,72,0" VerticalAlignment="Top" Source="/citi;component/assets/chart1.png"/>
+        <Button x:Name="button" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="231,324,0,0" VerticalAlignment="Top" Width="19" Click="button_Click"/>
+        <Button x:Name="button1" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="421,233,0,0" VerticalAlignment="Top" Width="19" Click="button1_Click"/>
+        <Button x:Name="button2" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="609,198,0,0" VerticalAlignment="Top" Width="19" Click="button2_Click"/>
+
     </Grid>
 </Page>

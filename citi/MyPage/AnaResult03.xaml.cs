@@ -107,7 +107,7 @@ namespace citi.MyPage
             //   }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
 
             string response = "";
-            Http.Get("http://39.108.217.238:8080/history/json?format=api").OnSuccess(result => {
+            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result => {
                 response = result;
                 JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
                 int sum = 500;

@@ -19,7 +19,7 @@ namespace citi.MyWindow
     /// </summary>
     public partial class IndustryWindow : Window
     {
-        public IndustryWindow()
+        public IndustryWindow(int year)
         {
             InitializeComponent();
         }
