@@ -123,8 +123,10 @@ namespace citi.MyPage
             entity.National_debt = detailPage2.National_debt;
             entity.Enterprise_debt = detailPage2.Enterprise_debt;
             //MessageBox.Show(entity.ToString());
+            entity.Bond = (string)bondLabel.Content;
+            entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
 
-            string sql = "INSERT INTO ";
+            string sql = "INSERT INTO citi1  ";
 
 
             ana01 = new AnaResult01(this);

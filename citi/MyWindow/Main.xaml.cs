@@ -56,5 +56,15 @@ namespace citi.MyWindow
         {
             this.DragMove();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Constant.MinWindow();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

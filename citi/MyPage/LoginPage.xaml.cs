@@ -42,7 +42,7 @@ namespace citi.MyPage
             string pwd = password_text.Password;
             if (!emailIsValid(email))
             {
-                MessageBox.Show("The email is not valid");
+                tipsText.Content = "The email is not valid";
                 MyLog.FailLog("The email is not valid");
             }
             //Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd,remembered=false }).OnSuccess((WebHeaderCollection header,string resutlt) =>

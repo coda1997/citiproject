@@ -47,6 +47,7 @@
             </Button.Style>
 
         </Button>
+        <Label x:Name="tipsText" Content="" HorizontalAlignment="Left" Margin="134,148,0,0" VerticalAlignment="Top" Foreground="#FFCCCFF3"/>
 
     </Grid>
 </Page>
