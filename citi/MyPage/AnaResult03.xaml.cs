@@ -80,8 +80,9 @@ namespace citi.MyPage
         private PlotModel getModel()
         {
             MyEntity entity = dataPage.getEntity();
-            PlotModel modelP1 = new PlotModel { Title = "结果展示" };
+            PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new FunctionSeries();
+            dynamic seriesP2 = new LineSeries();
 
             //dynamic requestParam = new
             //{
@@ -108,7 +109,7 @@ namespace citi.MyPage
             //   }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
 
             string response = "";
-            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2015").OnSuccess(result =>
+            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result =>
             {
                 response = result;
                 JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
@@ -117,11 +118,20 @@ namespace citi.MyPage
                 {
                     seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
                 }
+                seriesP2.Points.Add(new DataPoint(data.cost, 0));
+                seriesP2.Points.Add(new DataPoint(data.cost, 0.06));
+
+
                 modelP1.Series.Add(seriesP1);
-                
+                modelP1.Series.Add(seriesP2);
+
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    label.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                }));
+
             }).Go();
 
-            label.Content = "违约概率：";
             return modelP1;
         }
     }

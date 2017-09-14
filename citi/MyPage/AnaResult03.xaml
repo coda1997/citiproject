@@ -20,6 +20,9 @@
 
         <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="110,131,108,46"/>
         <Image x:Name="image" Margin="110,131,108,0" VerticalAlignment="Top" Height="356" Source="/citi;component/assets/chart2_background.png" Panel.ZIndex="-2"/>
-        <Label x:Name="label" FontSize="20" Foreground="#838ead" Content="Label" HorizontalAlignment="Left" Margin="693,70,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label x:Name="label" FontSize="20" Foreground="#838ead" Content="Label" HorizontalAlignment="Left" Margin="575,72,0,0" VerticalAlignment="Top" Width="181"/>
+        <Label x:Name="label1" Content="结果展示" Foreground="#838ead" FontSize="24" HorizontalAlignment="Left" Margin="379,40,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="label2" Content="资产/人民币百万元" HorizontalAlignment="Left" Margin="753,450,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="资产价值概率密度/E-6" HorizontalAlignment="Left" Margin="110,140,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
