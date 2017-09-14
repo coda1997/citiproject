@@ -24,9 +24,8 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
-            label1.Content = "fuck";
             MyEntity entity = dataPage.getEntity();
-            label2.Content = entity.Asset_standard;
+            //label2.Content = entity.Asset_standard;
             
         }
 
@@ -40,7 +39,7 @@ namespace citi.MyPage
             button1.Visibility = Visibility.Visible;
             button2.Visibility = Visibility.Visible;
             button3.Visibility = Visibility.Visible;
-
+            label46.Visibility = Visibility.Visible;
         }
 
         private void image2_MouseLeave(object sender, MouseEventArgs e)
@@ -51,7 +50,7 @@ namespace citi.MyPage
             button1.Visibility = Visibility.Hidden;
             button2.Visibility = Visibility.Hidden;
             button3.Visibility = Visibility.Hidden;
-
+            label46.Visibility = Visibility.Hidden;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
