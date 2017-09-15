@@ -28,7 +28,7 @@ namespace citi.MyWindow
 
         }
         private Page newAnaPage;
-        private Page historyPage;
+        private HistoryPage historyPage;
         private Page industryPage;
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -42,7 +42,13 @@ namespace citi.MyWindow
         {
             if (historyPage == null)
                 historyPage = new HistoryPage();
+            else
+            {
+                historyPage.UpdataData();
+            }
+                
             mainFrame.Content = historyPage;  
+
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

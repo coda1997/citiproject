@@ -32,7 +32,10 @@ namespace citi.MyPage
             InitView();
             
         }
-
+        public void UpdataData()
+        {
+            InitView();
+        }
         private void InitView()
         {
             DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record ORDER BY date desc;", null);
