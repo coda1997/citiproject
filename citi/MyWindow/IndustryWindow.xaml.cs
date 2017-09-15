@@ -15,6 +15,8 @@ using OxyPlot;
 using OxyPlot.Series;
 using Newtonsoft.Json;
 using JumpKick.HttpLib;
+using System.Net;
+using System.Threading;
 
 namespace citi.MyWindow
 {
@@ -58,6 +60,42 @@ namespace citi.MyWindow
         }
 
 
+        //private PlotModel getModel2(int year)
+        //{
+        //    PlotModel modelP2 = new PlotModel { Title = "a" };
+        //    dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
+        //    dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
+
+        //    string response = "";
+        //    Http.Get(geturl(year)).OnSuccess(result =>
+        //    {
+
+        //        response = result;
+        //        JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
+        //        int sum = 500;
+        //        for (int i = 0; i < sum; i++)
+        //        {
+        //            seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
+        //        }
+        //        seriesP22.Points.Add(new DataPoint(data.cost, 0));
+        //        seriesP22.Points.Add(new DataPoint(data.cost, 0.06));
+
+        //        modelP2.Series.Add(seriesP21);
+        //        modelP2.Series.Add(seriesP22);
+
+
+        //        this.Dispatcher.Invoke(new Action(() =>
+        //        {
+        //            //label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+        //            label2.Content = data.points[0][50].ToString();
+        //        }));
+
+        //    }).Go();
+
+        //    return modelP2;
+        //}
+
+
         private PlotModel getModel2(int year)
         {
             PlotModel modelP2 = new PlotModel { Title = "a" };
@@ -67,30 +105,41 @@ namespace citi.MyWindow
             string response = "";
             Http.Get(geturl(year)).OnSuccess(result =>
             {
-                response = result;
-                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
-                int sum = 500;
-                for (int i = 0; i < sum; i++)
+
+                new Thread(() =>
                 {
-                    seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-                }
-                seriesP22.Points.Add(new DataPoint(data.cost, 0));
-                seriesP22.Points.Add(new DataPoint(data.cost, 0.06));
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                        response = result;
+                        JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
+                        int sum = 500;
+                        for (int i = 0; i < sum; i++)
+                        {
+                            seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
+                        }
+                        seriesP22.Points.Add(new DataPoint(data.cost, 0));
+                        seriesP22.Points.Add(new DataPoint(data.cost, 0.06));
 
-                modelP2.Series.Add(seriesP21);
-                modelP2.Series.Add(seriesP22);
+                        modelP2.Series.Add(seriesP21);
+                        modelP2.Series.Add(seriesP22);
+
+                    }));
 
 
-                this.Dispatcher.Invoke(new Action(() =>
-                {
-                    //label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
-                    label2.Content = data.points[0][50].ToString();
-                }));
+                });
+
+                //this.Dispatcher.Invoke(new Action(() =>
+                //{
+                //    //label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                //    label2.Content = data.points[0][50].ToString();
+                //}));
 
             }).Go();
 
             return modelP2;
         }
+
+
 
         private double[] getPieData(int year)
         {

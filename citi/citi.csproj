@@ -117,6 +117,7 @@
     </ApplicationDefinition>
     <Compile Include="Constant.cs" />
     <Compile Include="JsonOverview.cs" />
+    <Compile Include="JsonPartial.cs" />
     <Compile Include="MyEntity.cs" />
     <Compile Include="HistoryEntry.cs" />
     <Compile Include="MyLog.cs" />

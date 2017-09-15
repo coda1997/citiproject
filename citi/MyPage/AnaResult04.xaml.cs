@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
 using OxyPlot;
 using OxyPlot.Series;
 using JumpKick.HttpLib;
@@ -28,11 +29,16 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            item = 0;
+            //jData = getData();
             plot1.Model = getModel1();
             plot2.Model = getModel2();
+
         }
 
         private AddAna dataPage;
+        private int item;
+        //JsonPartial jData;
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -78,29 +84,26 @@ namespace citi.MyPage
 
         private PlotModel getModel1()
         {
-            MyEntity entity = dataPage.getEntity();
             PlotModel modelP1 = new PlotModel { Title = " " };
-
             dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
 
-            string response = "";
-            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result =>
+
+            MyEntity entity = dataPage.getEntity();
+            string response;
+            Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
             {
-                response = result;
-                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
-                int sum = 500;
-                for (int i = 0; i < sum; i++)
+                this.Dispatcher.Invoke(new Action(() =>
                 {
-                    seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-                }
-
-                modelP1.Series.Add(seriesP1);
-
-                //this.Dispatcher.Invoke(new Action(() =>
-                //{
-                //    label.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
-                //}));
-
+                    response = result;
+                    JsonPartial tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
+                    int sum = 500;
+                    for (int i = 0; i < sum; i++)
+                    {
+                        seriesP1.Points.Add(new DataPoint(tmp.assets[0][i], tmp.assets[1][i]));
+                    }
+                    modelP1.Series.Add(seriesP1);
+                    label5.Content = response;
+                }));
             }).Go();
 
             return modelP1;
@@ -108,21 +111,77 @@ namespace citi.MyPage
 
         private PlotModel getModel2()
         {
+
+            PlotModel modelP1 = new PlotModel { Title = " " };
+            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
+
+
             MyEntity entity = dataPage.getEntity();
-            PlotModel modelP2 = new PlotModel { Title = " " };
+            string response;
+            Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
+            {
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    response = result;
+                    JsonPartial tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
+                    int sum = 500;
+                    for (int i = 0; i < sum; i++)
+                    {
+                        seriesP1.Points.Add(new DataPoint(tmp.derivative[0][i], tmp.derivative[1][i]));
+                    }
+                    modelP1.Series.Add(seriesP1);
+                }));
 
-            dynamic seriesP2 = new FunctionSeries();
+            }).Go();
 
-            seriesP2.Points.Add(new DataPoint(1, 1));
-            seriesP2.Points.Add(new DataPoint(2, 2));
-            seriesP2.Points.Add(new DataPoint(3, 2));
-            seriesP2.Points.Add(new DataPoint(2, 1));
-
-            modelP2.Series.Add(seriesP2);
-
-            return modelP2;
+            return modelP1;
         }
 
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            item = comboBox.SelectedIndex;
+            //jData = getData();
+            //plot1.Model = getModel1();
+            //plot2.Model = getModel2();
+        }
+
+        private string getParam(int index)
+        {
+            switch (index)
+            {
+                case 0: return "national_debt";
+                case 1: return "enterprise_debt";
+                case 2: return "trust_rate";
+                case 3: return "trust_debt";
+                case 4: return "debt_foundation";
+                case 5: return "trust_debtRights";
+                case 6: return "trust_stock";
+                case 7: return "trust_transfer";
+                case 8: return "receive";
+                case 9: return "self_debtRights";
+                case 10: return "bill";
+                case 11: return "credit";
+                case 12: return "other";
+                case 13: return "cash";
+                case 14: return "currency_market_tool";
+                case 15: return "asset";
+            }
+            return "";
+        }
+
+        //private JsonPartial getData()
+        //{
+        //    MyEntity entity = dataPage.getEntity();
+        //    JsonPartial tmp = new JsonPartial();
+        //    string response;
+        //    Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
+        //    {
+        //        response = result;
+        //        tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
+        //    }).Go();
+
+        //    return tmp;
+        //}
     }
 
 }
