@@ -17,6 +17,8 @@ using OxyPlot;
 using OxyPlot.Series;
 using JumpKick.HttpLib;
 using Newtonsoft.Json;
+using System.Threading;
+using System.IO;
 
 namespace citi.MyPage
 {
@@ -30,7 +32,7 @@ namespace citi.MyPage
             InitializeComponent();
             dataPage = pageArg;
             item = 0;
-            //jData = getData();
+            jData = getData();
             plot1.Model = getModel1();
             plot2.Model = getModel2();
 
@@ -38,7 +40,7 @@ namespace citi.MyPage
 
         private AddAna dataPage;
         private int item;
-        //JsonPartial jData;
+        JsonPartial jData;
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -87,24 +89,12 @@ namespace citi.MyPage
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
 
-
-            MyEntity entity = dataPage.getEntity();
-            string response;
-            Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
+            int sum = 500;
+            for (int i = 0; i < sum; i++)
             {
-                this.Dispatcher.Invoke(new Action(() =>
-                {
-                    response = result;
-                    JsonPartial tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
-                    int sum = 500;
-                    for (int i = 0; i < sum; i++)
-                    {
-                        seriesP1.Points.Add(new DataPoint(tmp.assets[0][i], tmp.assets[1][i]));
-                    }
-                    modelP1.Series.Add(seriesP1);
-                    label5.Content = response;
-                }));
-            }).Go();
+                seriesP1.Points.Add(new DataPoint(jData.assets[0][i], jData.assets[1][i]));
+            }
+            modelP1.Series.Add(seriesP1);
 
             return modelP1;
         }
@@ -115,24 +105,12 @@ namespace citi.MyPage
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
 
-
-            MyEntity entity = dataPage.getEntity();
-            string response;
-            Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
+            int sum = 500;
+            for (int i = 0; i < sum; i++)
             {
-                this.Dispatcher.Invoke(new Action(() =>
-                {
-                    response = result;
-                    JsonPartial tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
-                    int sum = 500;
-                    for (int i = 0; i < sum; i++)
-                    {
-                        seriesP1.Points.Add(new DataPoint(tmp.derivative[0][i], tmp.derivative[1][i]));
-                    }
-                    modelP1.Series.Add(seriesP1);
-                }));
-
-            }).Go();
+                seriesP1.Points.Add(new DataPoint(jData.derivative[0][i], jData.derivative[1][i]));
+            }
+            modelP1.Series.Add(seriesP1);
 
             return modelP1;
         }
@@ -140,9 +118,9 @@ namespace citi.MyPage
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             item = comboBox.SelectedIndex;
-            //jData = getData();
-            //plot1.Model = getModel1();
-            //plot2.Model = getModel2();
+            jData = getData();
+            plot1.Model = getModel1();
+            plot2.Model = getModel2();
         }
 
         private string getParam(int index)
@@ -169,19 +147,31 @@ namespace citi.MyPage
             return "";
         }
 
-        //private JsonPartial getData()
-        //{
-        //    MyEntity entity = dataPage.getEntity();
-        //    JsonPartial tmp = new JsonPartial();
-        //    string response;
-        //    Http.Post("http://39.108.217.238:8080/partial_history/?format=json").Form(new { which = getParam(item) }).OnSuccess(result =>
-        //    {
-        //        response = result;
-        //        tmp = JsonConvert.DeserializeObject<JsonPartial>(response);
-        //    }).Go();
+        private JsonPartial getData()
+        {
+            MyEntity entity = dataPage.getEntity();
 
-        //    return tmp;
-        //}
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://39.108.217.238:8080/partial_history/");
+            request.Method = "POST";
+            var postData = "which=" + getParam(item);
+            var encodeData = Encoding.ASCII.GetBytes(postData);
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = encodeData.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(encodeData, 0, encodeData.Length);
+            }
+
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
+            string json = streamReader.ReadToEnd();
+
+            JsonPartial data = JsonConvert.DeserializeObject<JsonPartial>(json);
+
+            return data;
+        }
     }
 
 }

@@ -133,6 +133,9 @@
     <Compile Include="MyPage\AnaResult04.xaml.cs">
       <DependentUpon>AnaResult04.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyPage\ComparePage.xaml.cs">
+      <DependentUpon>ComparePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyPage\IndustryPage.xaml.cs">
       <DependentUpon>IndustryPage.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyPage\AnaResult04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\ComparePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

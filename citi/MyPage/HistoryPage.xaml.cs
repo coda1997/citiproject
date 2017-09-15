@@ -98,6 +98,8 @@ namespace citi.MyPage
             MyEntity entity_1 = entity1;
             MyEntity entity_2 = entity2;
 
+            this.NavigationService.Navigate(new ComparePage(entity_1, entity_2));
+
 
 
         }

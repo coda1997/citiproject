@@ -21,10 +21,10 @@
 
         <Label x:Name="label" FontSize="24" Content="偏效应分析" Foreground="#838ead" Margin="368,37,366,0" VerticalAlignment="Top" Height="43"/>
 
-        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="10,159,452,130"/>
-        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="452,159,10,130"/>
-        <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="160,103,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="604,104,0,0" VerticalAlignment="Top"/>
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="0,159,462,130"/>
+        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="435,159,27,130"/>
+        <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="140,104,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="612,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" FontSize="16" Content="收益率：" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Width="93"/>
         <Label x:Name="label4" FontSize="16" Content="违约概率变化率：" HorizontalAlignment="Left" Margin="684,457,0,0" VerticalAlignment="Top" Width="138"/>
         <Label x:Name="label5" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="113"/>
