@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:citi"
         mc:Ignorable="d"
          WindowStyle="None"
+                WindowStartupLocation="CenterScreen"
+
         AllowsTransparency="True"
         ResizeMode="NoResize"
         Title="Login" Height="240" Width="420" Background="Transparent">

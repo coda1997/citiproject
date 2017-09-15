@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Title="Citi" Height="572" Width="1065">
     <Grid>
