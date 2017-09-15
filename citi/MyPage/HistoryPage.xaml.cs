@@ -140,6 +140,8 @@ namespace citi.MyPage
                 dataRow = drc[(currentPage - 1) * 15 + myListView.SelectedIndex];
 
                 chooseText.Content = "选中项目 2/2";
+                entity2 = new MyEntity();
+
                 entity2.Asset_standard = dataRow[5]+"";
                 entity2.National_debt = dataRow[6]+"";
                 entity2.Enterprise_debt = dataRow[7]+"";
