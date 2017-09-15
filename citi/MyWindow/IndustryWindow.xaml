@@ -8,12 +8,12 @@
         mc:Ignorable="d"
         Title="历史行情" Height="400" Width="800">
     <Grid>
-        <!--<Image x:Name="image" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="222" Margin="402,74,0,0" VerticalAlignment="Top" Width="380" Source="/citi;component/assets/background_industry.png"/>-->
+        <Image x:Name="image" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="222" Margin="388,74,0,0" VerticalAlignment="Top" Width="380" Source="/citi;component/assets/background_industry.png"/>
         <Image x:Name="image1" HorizontalAlignment="Left" Height="103" Margin="35,251,0,0" VerticalAlignment="Top" Width="306" Source="/citi;component/assets/left3right4.png"/>
         <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="35,22,451,118"/>
-        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="402,74,10,73"/>
+        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="388,22,24,73"/>
         <Label x:Name="label" Content="投资比例" HorizontalAlignment="Left" Margin="35,22,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="违约概率分析" HorizontalAlignment="Left" Margin="402,22,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="599,47,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="608,22,0,0" VerticalAlignment="Top" Width="130"/>
     </Grid>
 </Window>
