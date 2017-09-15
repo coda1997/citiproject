@@ -36,8 +36,8 @@ namespace citi.MyPage
             label37.Content = entity.Cost_deposit;     //定期存款
             label38.Content = entity.Cost_finance;        //理财产品
             label39.Content = entity.getLoanTotal();
-            label42.Content = entity.Trust_rate;
-            label43.Content = entity.Trust_rate;
+            label42.Content = Convert.ToDouble(entity.getAssetsTotal()) - Convert.ToDouble(entity.getLoanTotal());
+            label43.Content = Convert.ToDouble(entity.getAssetsTotal()) - Convert.ToDouble(entity.getLoanTotal());
             label44.Content = entity.getTwoTotal();
 
     }

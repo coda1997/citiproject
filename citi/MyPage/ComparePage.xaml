@@ -10,6 +10,16 @@
       Title="ComparePage">
 
     <Grid>
-        
+        <Label x:Name="label" Foreground="#838eac" Content="A分析" FontSize="24" HorizontalAlignment="Left" Margin="180,29,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Foreground="#838eac" Content="B分析" FontSize="24" HorizontalAlignment="Left" Margin="590,29,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="image" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="210" Margin="42,96,0,0" VerticalAlignment="Top" Width="356" Source="/citi;component/assets/background_compare.png"/>
+        <Image x:Name="image1" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="210" Margin="458,96,0,0" VerticalAlignment="Top" Width="356" Source="/citi;component/assets/background_compare.png"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="140" Margin="245,370,0,0" VerticalAlignment="Top" Width="139" Source="/citi;component/assets/bottomaround.png"/>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="137" Margin="662,370,0,0" VerticalAlignment="Top" Width="140" Source="/citi;component/assets/bottomaround.png"/>
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="42,96,480,227"/>
+        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="458,96,62,227"/>
+        <oxy:PlotView Name="plot3" Background="Transparent"  Panel.ZIndex="-1" Margin="28,325,624,26"/>
+        <oxy:PlotView Name="plot4" Background="Transparent"  Panel.ZIndex="-1" Margin="458,325,207,26"/>
+
     </Grid>
 </Page>

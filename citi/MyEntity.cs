@@ -45,8 +45,9 @@ namespace citi
         }
         public string getTwoTotal()
         {
-            double twoTotal = toDouble(getLoanTotal()) + toDouble(Trust_rate);
-            return twoTotal.ToString();
+            //double twoTotal = toDouble(getLoanTotal()) + toDouble(Trust_rate);
+            //return twoTotal.ToString();
+            return getAssetsTotal();
         }
         private double toDouble(string value)
         {

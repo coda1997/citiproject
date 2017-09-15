@@ -24,5 +24,6 @@
         <Label x:Name="label1" Content="结果展示" Foreground="#838ead" FontSize="24" HorizontalAlignment="Left" Margin="379,40,0,0" VerticalAlignment="Top" Width="109"/>
         <Label x:Name="label2" Content="资产/人民币百万元" HorizontalAlignment="Left" Margin="753,450,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="资产价值概率密度/E-6" HorizontalAlignment="Left" Margin="110,140,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="根据您输入的经营数据，预测未来资不抵债的违约概率为。您未来的资产价值分布如上所示。" HorizontalAlignment="Left" Margin="180,498,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
