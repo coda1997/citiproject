@@ -107,5 +107,7 @@
         <Label Content="理财产品收益率" HorizontalAlignment="Left" Margin="460,406,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="bank_deposit_rate" HorizontalAlignment="Left" Height="23" Margin="634,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="bank_deposit_rate_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
         <TextBox x:Name="financial_products" HorizontalAlignment="Left" Height="23" Margin="634,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="financial_products_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
+        <Label Content="%" HorizontalAlignment="Left" Margin="754,376,0,0" VerticalAlignment="Top"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="754,406,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
