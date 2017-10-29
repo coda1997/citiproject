@@ -109,7 +109,7 @@
                 <Label x:Name="label18" FontSize="14" HorizontalAlignment="Right"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="6">
-                <Label x:Name="label28" FontSize="14" Content="理财业务基金" Margin="-26,0,26,0"/>
+                <Label x:Name="label28" FontSize="14" Content="理财业务基金"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="6">
                 <Label x:Name="label38" FontSize="14" HorizontalAlignment="Right"/>
