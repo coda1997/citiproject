@@ -26,8 +26,8 @@ namespace citi.MyPage
             InitializeComponent();
             prePage = page;
         }
-        public string National_debt { get { return national_debt.Text; }  }
-        public string Enterprise_debt { get { return enterprise_debt.Text; } }
+        public string National_debt { get { return national_debt.Text; } set { national_debt.Text = "0"; }  }
+        public string Enterprise_debt { get { return enterprise_debt.Text; } set { enterprise_debt.Text = "0"; } }
 
         private void national_debt_TextChanged(object sender, TextChangedEventArgs e)
         {

@@ -298,7 +298,30 @@ namespace citi.MyPage
 
         private void resetBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            //main
+            asset_standard.Text = "0";
+            cash.Text = "0";
+            currency_market_tool.Text = "0";
+            asset.Text = "0";
+            cost_deposit.Text = "0";
+            cost_finance.Text = "0";
+            bank_deposit_rate.Text = "0";
+            financial_products.Text = "0";
+            //detail page 1
+            detailPage1.Trust_rate = "0";
+            detailPage1.Trust_debt = "0";
+            detailPage1.Debt_foundation = "0";
+            detailPage1.Trust_debtRights = "0";
+            detailPage1.Trust_stock = "0";
+            detailPage1.Trust_transfer = "0";
+            detailPage1.Receive = "0";
+            detailPage1.Self_debtRights = "0";
+            detailPage1.Bill = "0";
+            detailPage1.Credit = "0";
+            detailPage1.Other = "0";
+            //detail page 2
+            detailPage2.National_debt = "0";
+            detailPage2.Enterprise_debt = "0";
         }
 
         private double toDouble(string value)
