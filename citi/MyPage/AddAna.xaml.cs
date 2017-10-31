@@ -30,7 +30,6 @@ namespace citi.MyPage
 
 
 
-
         }
         private MyEntity entity = new MyEntity();
         private bool flag1 = false, flag2 = false;
