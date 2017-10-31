@@ -45,33 +45,39 @@ namespace citi.MyPage
                 tipsText.Content = "The email is not valid";
                 MyLog.FailLog("The email is not valid");
             }
-            Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd, remembered = false }).OnSuccess((WebHeaderCollection header, string resutlt) =>
-               {
-                
-                   new Thread(() =>
-                   {
-                       this.Dispatcher.Invoke(new Action(() =>
-                       {
-                           Window mainWindow = new Main();
-                           mainWindow.Show();
-                           if (currentWindow != null)
-                           {
-                               currentWindow.Hide();
-                           }
-                       }));
-                   }).Start();
+            //Http.Post(Constant.LoginUrl).Form(new { email = email, password = pwd, remembered = false }).OnSuccess((WebHeaderCollection header, string resutlt) =>
+            //   {
 
-               }).OnFail(exception => {
-                   new Thread(() =>
-                   {
-                       this.Dispatcher.Invoke(new Action(() =>
-                       {
-                           tipsText.Content = "网络或密码错误，请重试";
-                           
-                       }));
-                   }).Start();
-               }).Go();
-         
+            //       new Thread(() =>
+            //       {
+            //           this.Dispatcher.Invoke(new Action(() =>
+            //           {
+            //               Window mainWindow = new Main();
+            //               mainWindow.Show();
+            //               if (currentWindow != null)
+            //               {
+            //                   currentWindow.Hide();
+            //               }
+            //           }));
+            //       }).Start();
+
+            //   }).OnFail(exception => {
+            //       new Thread(() =>
+            //       {
+            //           this.Dispatcher.Invoke(new Action(() =>
+            //           {
+            //               tipsText.Content = "网络或密码错误，请重试";
+
+            //           }));
+            //       }).Start();
+            //   }).Go();
+            Window mainWindow = new Main();
+            mainWindow.Show();
+            if (currentWindow != null)
+            {
+                currentWindow.Hide();
+            }
+
 
         }
 
