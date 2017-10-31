@@ -26,11 +26,19 @@ namespace citi.MyPage
     /// </summary>
     public partial class AnaResult03 : Page
     {
-        public AnaResult03(AddAna pageArg)
+        String name;
+        public AnaResult03(AddAna pageArg,String name)
         {
+            this.name = name;
             InitializeComponent();
             dataPage = pageArg;
             plot1.Model = getModel();
+        }
+
+        private void updataHistory(String probability)
+        {
+            String sql = "update record set probability= '" + probability + "' where name = '"+name+"';";
+            SqliteHelper.ExecuteSQLWithoutResult(sql);
         }
 
         private AddAna dataPage;
@@ -126,10 +134,12 @@ namespace citi.MyPage
 
                 this.Dispatcher.Invoke(new Action(() =>
                 {
-                    label.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                    String probability = (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                    label.Content = "违约概率：" + probability;
+                    updataHistory(probability);
                 }));
 
-            }).Go();
+            }).OnFail(res=> { Console.WriteLine("ana result03 fail" + res); }).Go();
 
             return modelP1;
         }

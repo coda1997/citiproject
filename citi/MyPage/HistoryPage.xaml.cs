@@ -38,7 +38,7 @@ namespace citi.MyPage
         }
         private void InitView()
         {
-            DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record ORDER BY date desc;", null);
+            DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record ORDER BY date DESC,name desc", null);
             //for(int i = 0; i < 20; i++)
             //{
             //list.Add(new HistoryEntry("col1", "col2", "col3", "col4"));

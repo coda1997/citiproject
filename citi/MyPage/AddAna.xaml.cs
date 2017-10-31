@@ -161,7 +161,7 @@ namespace citi.MyPage
             SqliteHelper.ExecuteSQLWithoutResult(sql);
             ana01 = new AnaResult01(this);
             ana02 = new AnaResult02(this);
-            ana03 = new AnaResult03(this);
+            ana03 = new AnaResult03(this,"新建分析-"+name);
             ana04 = new AnaResult04(this);
 
             this.NavigationService.Navigate(ana01);

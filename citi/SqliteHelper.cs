@@ -81,6 +81,42 @@ namespace citi
                 sQLiteCommand.ExecuteNonQuery();
             }
         }
+        public static MyEntity GetEntity(String name)
+        {
+            MyEntity myEntity =null;
+            String sql = "SELECT * from record where name = " + "'" + name + "';";
+            DataSet ds = ExecuteDataset(sql, null);
+            if (ds != null)
+            {
+                myEntity = new MyEntity();
+                DataRowCollection drc = ds.Tables[0].Rows;
+                if (drc.Count > 0)
+                {
+                    DataRow dataRow = drc[0];
+                    myEntity.Asset_standard = dataRow[5] + "";
+                    myEntity.National_debt = dataRow[6] + "";
+                    myEntity.Enterprise_debt = dataRow[7] + "";
+                    myEntity.Trust_rate = dataRow[8] + "";
+                    myEntity.Trust_debt = dataRow[9] + "";
+                    myEntity.Debt_foundation = dataRow[10] + "";
+                    myEntity.Trust_debtRights = dataRow[11] + "";
+                    myEntity.Trust_stock = dataRow[12] + "";
+                    myEntity.Trust_transfer = dataRow[13] + "";
+                    myEntity.Receive = dataRow[14] + "";
+                    myEntity.Self_debtRights = dataRow[15] + "";
+                    myEntity.Bill = dataRow[16] + "";
+                    myEntity.Credit = dataRow[17] + "";
+                    myEntity.Other = dataRow[18] + "";
+                    myEntity.Cash = dataRow[19] + "";
+                    myEntity.Currency_market_tool = dataRow[20] + "";
+                    myEntity.Asset = dataRow[21] + "";
+                    myEntity.Cost_deposit = dataRow[22] + "";
+                    myEntity.Cost_finance = dataRow[23] + "";
+                }
+            }
+
+            return myEntity;
+        }
 
         //public static List<T> GetTableData<T>(string cmdText,params object[] parameters)where T : class
         //{
