@@ -1,4 +1,5 @@
 ﻿using citi.MyPage;
+using DMSkin.WPF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace citi.MyWindow
     /// <summary>
     /// Main.xaml 的交互逻辑
     /// </summary>
-    public partial class Main : Window
+    public partial class Main : DMSkinWindow
     {
         public Main()
         {
@@ -59,10 +60,10 @@ namespace citi.MyWindow
             mainFrame.Content = industryPage;
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
+        //private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    this.DragMove();
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -11,18 +11,30 @@
 
 
     <Grid>
-        <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
-        <Image x:Name="image2" HorizontalAlignment="Left" Height="170" Margin="37,37,0,0" VerticalAlignment="Top" Width="136" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden" />
-        <Button x:Name="button" Foreground="#838ead"  Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="新编资产负债表" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top" Width="118"  Click="button_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button1" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="输入数据分析" HorizontalAlignment="Left" Margin="42,108,0,0" VerticalAlignment="Top" Width="118"  Click="button1_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="42,136,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
-        <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
 
         <Label x:Name="label" FontSize="24" Content="偏效应分析" Foreground="#838ead" Margin="368,37,366,0" VerticalAlignment="Top" Height="43"/>
-
-        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1" Margin="0,159,462,130"/>
-        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="435,159,27,130"/>
+        <Grid Margin="20,159,452,130">
+            <Border CornerRadius="3" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>
+                </Border.Effect>
+            </Border>
+            <Border Background="White"  CornerRadius="3">
+        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1"/>
+            </Border>
+        </Grid>
+        <Grid Margin="452,159,20,130">
+            <Border CornerRadius="3" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>
+                </Border.Effect>
+            </Border>
+            <Border Background="White"  CornerRadius="3">
+        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="1,1,0,0" RenderTransformOrigin="0.5,0.5">
+              
+                </oxy:PlotView>
+            </Border>
+        </Grid>
         <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="140,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="612,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" FontSize="16" Content="收益率：" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Width="93"/>
@@ -30,8 +42,8 @@
         <!--<Label x:Name="label5" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="113"/>-->
         <Image x:Name="image" HorizontalAlignment="Left"  Margin="42,443,0,0" VerticalAlignment="Top"  Source="/citi;component/assets/line_dividing.png"/>
         <Label x:Name="label6" Foreground="#838ead" FontSize="12" Content="当前收益率对应的：" HorizontalAlignment="Left" Margin="64,432,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="image3" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="10,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>
-        <Image x:Name="image4" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="452,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>
+        <!--<Image x:Name="image3" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="10,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>-->
+        <!--<Image x:Name="image4" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="452,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>-->
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="672,46,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="comboBox_SelectionChanged">
             <ComboBoxItem Name="s1" Content="国债"  />
             <ComboBoxItem Name="s2" Content="企业债" />
@@ -50,5 +62,12 @@
             <ComboBoxItem Name="s15" Content="货币市场工具" />
             <ComboBoxItem Name="s16" Content="权益类投资" />
         </ComboBox>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="170" Margin="37,37,0,0" VerticalAlignment="Top" Width="136" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden" />
+        <Button x:Name="button" Foreground="#838ead"  Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="新编资产负债表" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top" Width="118"  Click="button_Click" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="button1" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="输入数据分析" HorizontalAlignment="Left" Margin="42,108,0,0" VerticalAlignment="Top" Width="118"  Click="button1_Click" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="42,136,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
+        <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
     </Grid>
 </Page>

@@ -64,8 +64,8 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSkin">
-      <HintPath>..\..\..\download\CSkin 16.1.14.2\CSkin 4.0\CSkin.dll</HintPath>
+    <Reference Include="DMSkin.WPF">
+      <HintPath>..\..\..\download\DMSkin.WPF.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -75,6 +75,12 @@
     </Reference>
     <Reference Include="JumpKick.HttpLib">
       <HintPath>..\JumpKick.HttpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts">
+      <HintPath>..\..\..\download\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf">
+      <HintPath>..\..\..\download\LiveCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -236,6 +242,10 @@
     <Page Include="MyWindow\RegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\DMSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

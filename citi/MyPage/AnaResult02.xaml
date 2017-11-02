@@ -10,6 +10,19 @@
       Title="AnaResult02">
 
     <Grid>
+        <Grid Margin="42,108,344,108">
+            <Border CornerRadius="3" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>
+                </Border.Effect>
+            </Border>
+            <Border Background="Transparent"  CornerRadius="3">
+                <oxy:PlotView Name="plot1" Background="Transparent" Panel.ZIndex="-1" Margin="0,0,0,27"/>
+
+            </Border>
+        </Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="253" Margin="560,145,0,0" VerticalAlignment="Top" Width="232" Source="/citi;component/assets/mainpie.png"/>
+        <Label x:Name="label" Content="输入数据分析" FontSize="24" Foreground="#838eac" HorizontalAlignment="Left" Margin="356,40,0,0" VerticalAlignment="Top" Width="164"/>
         <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="170" Margin="37,37,0,0" VerticalAlignment="Top" Width="136" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden" />
         <Button x:Name="button" Foreground="#838ead"  Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="新编资产负债表" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top" Width="118"  Click="button_Click" FontSize="16" Visibility="Hidden"/>
@@ -17,9 +30,5 @@
         <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="42,136,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
-
-        <oxy:PlotView Name="plot1" Margin="37,92,344,108" Background="Transparent" Panel.ZIndex="-1"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="253" Margin="560,145,0,0" VerticalAlignment="Top" Width="232" Source="/citi;component/assets/mainpie.png"/>
-        <Label x:Name="label" Content="输入数据分析" FontSize="24" Foreground="#838eac" HorizontalAlignment="Left" Margin="356,40,0,0" VerticalAlignment="Top" Width="164"/>
     </Grid>
 </Page>
