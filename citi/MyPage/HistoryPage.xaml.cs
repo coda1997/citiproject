@@ -111,13 +111,18 @@ namespace citi.MyPage
         private MyEntity entity2;
         private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (drc.Count == 0)
+                return;
             DataRow dataRow;
             num =(num+1)%2;
+            int index = (currentPage - 1) * 15 + myListView.SelectedIndex;
+            if (index < 0 || index > drc.Count)
+                return;
             if (num == 1)
             {
                 
                 chooseText.Content = "选中项目 1/2";
-                dataRow = drc[(currentPage - 1) * 15 + myListView.SelectedIndex];
+                dataRow = drc[index];
                 entity1 = new MyEntity();
                 entity1.Asset_standard = dataRow[5]+"";
                 entity1.National_debt = dataRow[6]+"";
@@ -141,7 +146,7 @@ namespace citi.MyPage
             }
             else
             {
-                dataRow = drc[(currentPage - 1) * 15 + myListView.SelectedIndex];
+                dataRow = drc[index];
 
                 chooseText.Content = "选中项目 2/2";
                 entity2 = new MyEntity();
