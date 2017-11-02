@@ -30,27 +30,18 @@ namespace citi.MyPage
             InitializeComponent();
             entity1 = e1;
             entity2 = e2;
-            plot1.Model = getModel1();
-            plot2.Model = getModel2();
-            plot3.Model = getModel3();
-            plot4.Model = getModel4();
+            getPreData();
         }
 
         private MyEntity entity1;
         private MyEntity entity2;
 
-        private PlotModel getModel1()
+        private PlotModel getModel1(JsonOverview data)
         {
             PlotModel modelP2 = new PlotModel { Title = " " };
             dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
             dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://39.108.217.238:8080/history/?format=json&year=2016");
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream responseStream = response.GetResponseStream();
-            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
-            string json = streamReader.ReadToEnd();
-            JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
             int sum = 500;
             for (int i = 0; i < sum; i++)
             {
@@ -64,19 +55,31 @@ namespace citi.MyPage
 
             return modelP2;
         }
+        private void getPreData()
+        {
+            
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Constant.HistoryUrl);
+            Console.WriteLine(request.Timeout);
+            
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
+            string json = streamReader.ReadToEnd();
+            JsonOverview data= JsonConvert.DeserializeObject<JsonOverview>(json);
 
-        private PlotModel getModel2()
+            plot1.Model = getModel1(data);
+            plot2.Model = getModel2(data);
+            plot3.Model = getModel3();
+            plot4.Model = getModel4();
+        }
+
+        private PlotModel getModel2(JsonOverview data)
         {
             PlotModel modelP2 = new PlotModel { Title = " " };
             dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
             dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://39.108.217.238:8080/history/?format=json&year=2016");
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream responseStream = response.GetResponseStream();
-            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
-            string json = streamReader.ReadToEnd();
-            JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
+
             int sum = 500;
             for (int i = 0; i < sum; i++)
             {

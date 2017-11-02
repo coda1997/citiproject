@@ -35,6 +35,7 @@ namespace citi.MyWindow
         {
             if (newAnaPage == null)
                 newAnaPage = new AddAna();
+            
             mainFrame.Content = newAnaPage;
         }
 

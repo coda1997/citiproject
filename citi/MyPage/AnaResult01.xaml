@@ -17,22 +17,22 @@
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
 
-        <Grid HorizontalAlignment="Left" Height="350" Margin="155,116,0,0" VerticalAlignment="Top" Width="580" Panel.ZIndex="-1">
+        <Grid HorizontalAlignment="Left" Height="425" Margin="156,76,0,0" VerticalAlignment="Top" Width="580" Panel.ZIndex="-1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="180"/>
@@ -58,7 +58,7 @@
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="4"/>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="4"/>
             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="4"/>
+            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="4"/>
             <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="0" Grid.Row="3" Grid.RowSpan="11"/>
             <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="1" Grid.Row="3" Grid.RowSpan="11"/>
             <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="2" Grid.Row="3" Grid.RowSpan="11"/>

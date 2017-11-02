@@ -38,12 +38,10 @@ namespace citi.MyPage
         }
         private void InitView()
         {
+            count = 0;
+            list.Clear();
             DataSet ds = SqliteHelper.ExecuteDataset("SELECT * FROM record ORDER BY date DESC,name desc", null);
-            //for(int i = 0; i < 20; i++)
-            //{
-            //list.Add(new HistoryEntry("col1", "col2", "col3", "col4"));
-
-            //}
+       
             drc = ds.Tables[0].Rows;
             foreach (DataRow row in drc)
             {
@@ -52,6 +50,7 @@ namespace citi.MyPage
                 list.Add(new HistoryEntry(row[1] + "", row[2] + "", row[3] + "", row[4] + ""));
                 count++;
             }
+            
             myListView.ItemsSource = list;
         }
 
