@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="chart" id="container">
+
+    </div>
+
+    <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script>
+        function get_data(container,data,name){
+            var points = data.assets;
+            var x = points[0];
+            var y = points[1];
+            var e  = [];
+            for(var i =0;i<x.length;i++){
+                e[i]=[];
+                e[i][0]=x[i];
+            }
+
+        }
+
+
+        $(function () {
+            // create the chart
+            $('#container').highcharts({
+                chart: {
+                    events: {
+                        redraw: function () {
+                            var label = this.renderer.label('The chart was just redrawn', 100, 120)
+                            .attr({
+                                fill: Highcharts.getOptions().colors[0],
+                                padding: 10,
+                                r: 5,
+                                zIndex: 8
+                            })
+                            .css({
+                                color: '#FFFFFF'
+                            })
+                            .add();
+                            setTimeout(function () {
+                                label.fadeOut();
+                            }, 1000);
+                        }
+                    }
+                },
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+                series: [{
+                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                }]
+            });
+            // activate the button
+            // $('#button').click(function () {
+            //     var chart = $('#container').highcharts();
+            //     chart.addSeries({
+            //         data: [216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5]
+            //     });
+            //     $('#button').unbind('click');
+            // });
+        });
+
+    </script>
+</body>
+</html>

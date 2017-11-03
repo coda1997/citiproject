@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body scroll='no'>
+
+    <div class="chart" id="container" style="height:100%;width:100%">
+
+    </div>
+
+    <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script>
+        function get_data(container,data,name){
+            var points = data.assets;
+            var x = points[0];
+            var y = points[1];
+            var e  = [];
+            for(var i =0;i<x.length;i++){
+                e[i]=[];
+                e[i][0]=x[i];
+            }
+
+        }
+
+    $(document).ready(function(){
+        $.get("http://39.108.217.238:8080/history_2016/", function(data){
+            var cost=data.cost;
+            var probability=data.probability;
+            var points=data.points;
+
+            probability = parseFloat(probability*100);
+            probability = probability.toFixed(2);
+            $("#probability").text(probability+"%");
+
+            var x=points[0];
+            var y=points[1];
+            var e=[];
+            for(var i=0;i<x.length;i++){
+                e[i]=[];
+                e[i][0]=x[i];
+                e[i][1]=y[i];
+            }
+            var colors = Highcharts.getOptions().colors;
+            Highcharts.chart('container', {
+                chart: {
+                    zoomType: 'x'
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: '资产价值分布图'
+                },
+                xAxis: {
+                    labels: {
+                        formatter: function () {
+                            return Highcharts.numberFormat(this.value,0,'.',',');
+                        }
+                    },
+                    plotLines: [{ // mark the weekend
+                        color: 'red',
+                        width: 2,
+                        value: cost,
+                        dashStyle: 'Solid',
+                        label: {
+                            text: '负债线: '+cost.toString(),
+                            verticalAlign: 'top',
+                            textAlign: 'left',
+                            rotation: 0,
+                            style: {
+                                color: 'red',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        zIndex: 5
+                    }],
+                    plotBands: [{ // mark the weekend
+                        color: null,
+                        zIndex: 5,
+                        from: 0,
+                        to: cost,
+                        label: {
+                            text: '红色区域为违约区域',
+                            align: 'right',
+                            verticalAlign: 'bottom',
+                            x: -10,
+                            y: -10
+                        }
+                    }],
+                    title: {
+                        text: '资产 / 人民币百万元',
+                        align: 'high'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: '资产价值概率密度 / E-6'
+                    }
+                },
+                tooltip: {
+
+                    formatter: function () {
+                        return '资产：'+ Highcharts.numberFormat(this.x,3,'.',',') +'<br/>'+
+                            '资产价值概率密度：' + '<b>'+ Highcharts.numberFormat(this.y, 2) + '</b>E-6';
+
+                    }/*,
+                 valueDecimals: 2*/
+                },
+                series: [{
+                    color: colors[3],
+                    type: 'areaspline',
+                    data: e,
+                    name: '资产价值分布曲线',
+                    zoneAxis: 'x',
+                    zones: [{
+                        value: cost,
+                        color: colors[2]
+                    }]
+                }]
+            });
+        },'json')
+
+
+
+    });
+
+        
+    </script>
+</body>
+</html>

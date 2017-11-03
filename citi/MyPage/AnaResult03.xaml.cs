@@ -18,6 +18,7 @@ using OxyPlot;
 using OxyPlot.Series;
 using Newtonsoft.Json;
 using citi;
+using System.IO;
 
 namespace citi.MyPage
 {
@@ -32,7 +33,12 @@ namespace citi.MyPage
             this.name = name;
             InitializeComponent();
             dataPage = pageArg;
-            plot1.Model = getModel();
+            initChart();
+        }
+
+        private void initChart()
+        {
+            webBrower.NavigateToString(new StreamReader("./demo.html").ReadToEnd());
         }
 
         private void updataHistory(String probability)
@@ -90,33 +96,17 @@ namespace citi.MyPage
             MyEntity entity = dataPage.getEntity();
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-            dynamic seriesP2 = new LineSeries() { Color = OxyColor.Parse("#e9445f") } ;
+            dynamic seriesP2 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
 
             //dynamic requestParam = new
             //{
             //    email = email,
             //};
 
-            //Http.Post(Constant.OverViewUrl).Form(new { email = email, password = pwd, remembered = false }).OnSuccess((WebHeaderCollection header, string resutlt) =>
-            //   {
-            //       //MyLog.FailLog(header.ToString());
-            //       //MyLog.FailLog(Constant.Cookie);
-            //       new Thread(() =>
-            //       {
-            //           this.Dispatcher.Invoke(new Action(() =>
-            //           {
-            //               Window mainWindow = new Main();
-            //               mainWindow.Show();
-            //               if (currentWindow != null)
-            //               {
-            //                   currentWindow.Hide();
-            //               }
-            //           }));
-            //       }).Start();
-
-            //   }).OnFail(exception => MyLog.FailLog(exception.Message)).Go();
 
             string response = "";
+
+            #region 错误示范
             Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result =>
             {
                 response = result;
@@ -139,7 +129,11 @@ namespace citi.MyPage
                     updataHistory(probability);
                 }));
 
-            }).OnFail(res=> { Console.WriteLine("ana result03 fail" + res); }).Go();
+            }).OnFail(res => { Console.WriteLine("ana result03 fail" + res); }).Go();
+            #endregion
+
+
+
 
             return modelP1;
         }

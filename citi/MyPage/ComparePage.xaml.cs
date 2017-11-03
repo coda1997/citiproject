@@ -17,12 +17,17 @@ using OxyPlot.Series;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using System.Reflection;
+using System.Threading;
+using System.Windows.Interop;
+using JumpKick.HttpLib;
 
 namespace citi.MyPage
 {
     /// <summary>
     /// ComparePage.xaml 的交互逻辑
     /// </summary>
+    [System.Runtime.InteropServices.ComVisible(true)]
     public partial class ComparePage : Page
     {
         public ComparePage(MyEntity e1, MyEntity e2)
@@ -30,7 +35,64 @@ namespace citi.MyPage
             InitializeComponent();
             entity1 = e1;
             entity2 = e2;
-            getPreData();
+            //getPreData();
+            //webBrowser1.Navigate(uriMap);
+            initView();
+            
+
+
+        }
+        
+        private void initView()
+        {
+            string content1 = new StreamReader("./demoCom01.html").ReadToEnd();
+            Http.Get(Constant.HistoryUrl).OnSuccess(haha =>
+            {
+                string res = processHtml(content1, haha);
+                Console.WriteLine(res);
+                new Thread(() =>
+                {
+                    //System.Threading.Thread.Sleep(2000);
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                        webBrowser1.NavigateToString(res);
+                    }));
+                }).Start();
+            }).OnFail(result =>
+            {
+                Console.WriteLine(result);
+            }).Go();
+            
+            //webBrowser1.LoadCompleted += (ss, ee) =>
+            // {
+            //     var jsCode = "getChart(" + entity1 + ");";
+            //     dynamic doc = webBrowser1.Document;
+            //     webBrowser1.InvokeScript("execScript",new Object[] { jsCode,"JavaScript"});
+            // };
+
+            //plot3.Model = getModel3();
+            //plot4.Model = getModel4();
+
+            //new Thread(() =>
+            //{
+            //    System.Threading.Thread.Sleep(2000);
+            //    this.Dispatcher.Invoke(new Action(() =>
+            //    {
+            //        webBrowser2.NavigateToString(new StreamReader("./demoCom02.html").ReadToEnd());
+            //    }));
+            //}).Start();
+
+                
+        }
+
+        private string processHtml(string content,string data)
+        {
+            int start = content.IndexOf('@');
+            string l = content.Substring(0, start);
+            string m = content.Substring(start+1);
+            string n = "var data = "+data;
+            return l+n+m;
+
         }
 
         private MyEntity entity1;
@@ -67,8 +129,8 @@ namespace citi.MyPage
             string json = streamReader.ReadToEnd();
             JsonOverview data= JsonConvert.DeserializeObject<JsonOverview>(json);
 
-            plot1.Model = getModel1(data);
-            plot2.Model = getModel2(data);
+            //plot1.Model = getModel1(data);
+            //plot2.Model = getModel2(data);
             plot3.Model = getModel3();
             plot4.Model = getModel4();
         }
@@ -142,7 +204,6 @@ namespace citi.MyPage
             return modelP1;
         }
 
-        
-
+      
     }
 }
