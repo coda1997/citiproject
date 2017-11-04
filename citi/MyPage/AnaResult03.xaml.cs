@@ -38,7 +38,7 @@ namespace citi.MyPage
 
         private void initChart()
         {
-            webBrower.NavigateToString(new StreamReader("./demo.html").ReadToEnd());
+            WebHelper.ConstructHTML(this, webBrower, Constant.OverViewUrl, dataPage.getEntity(), Constant.DeChart);
         }
 
         private void updataHistory(String probability)

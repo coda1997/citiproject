@@ -15,7 +15,10 @@ namespace citi
         public static readonly string OverViewUrl = "http://39.108.217.238/overview/";
         public static readonly string PartialUrl = "http://39.108.217.238/partial/";
         public static readonly string HistoryUrl = "http://39.108.217.238:8080/history/?format=json&year=2016";
-       // public static string Cookie;
+        public static readonly string DeChart = "./ demoCom01.html";
+        public static readonly string PartialChart = "./ demoCom02.html";
+
+        // public static string Cookie;
         public static int MaxValue = 100;
         public static int MinValue = -1;
         public static void MinWindow()

@@ -210,6 +210,7 @@
     <Compile Include="MyWindow\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WebHelper.cs" />
     <Page Include="MyPage\AddAna.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

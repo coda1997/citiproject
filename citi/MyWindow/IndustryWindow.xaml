@@ -1,11 +1,24 @@
-﻿<Window x:Class="citi.MyWindow.IndustryWindow"
+﻿<DMSkin:DMSkinWindow x:Class="citi.MyWindow.IndustryWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:DMSkin="clr-namespace:DMSkin.WPF;assembly=DMSkin.WPF"
+        xmlns:local="clr-namespace:citi.MyWindow"
+
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:oxy="http://oxyplot.org/wpf"
-        xmlns:local="clr-namespace:citi.MyWindow"
         mc:Ignorable="d"
+        WindowStyle="None"
+        DMShowMax="False"
+        DMShowMin="True"
+        DMShowClose="True"
+        DMWindowShadowSize="10"  
+        DMSystemButtonForeground="#FF666666"
+        DMSystemButtonHoverColor="#33000000"
+        DMWindowShadowColor="#FFC8C8C8" 
+        DMSystemButtonShadowEffect="0"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="历史行情" Height="400" Width="800">
     <Grid>
         <Image x:Name="image" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="222" Margin="388,74,0,0" VerticalAlignment="Top" Width="380" Source="/citi;component/assets/background_industry.png"/>
@@ -16,4 +29,4 @@
         <Label x:Name="label1" Content="违约概率分析" HorizontalAlignment="Left" Margin="402,22,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="608,22,0,0" VerticalAlignment="Top" Width="130"/>
     </Grid>
-</Window>
+</DMSkin:DMSkinWindow>

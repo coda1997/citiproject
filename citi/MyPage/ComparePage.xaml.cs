@@ -45,7 +45,7 @@ namespace citi.MyPage
         
         private void initView()
         {
-            string content1 = new StreamReader("./demoCom01.html").ReadToEnd();
+            string content1 = new StreamReader(Constant.DeChart).ReadToEnd();
             Http.Get(Constant.HistoryUrl).OnSuccess(haha =>
             {
                 string res = processHtml(content1, haha);
@@ -62,27 +62,31 @@ namespace citi.MyPage
             {
                 Console.WriteLine(result);
             }).Go();
-            
-            //webBrowser1.LoadCompleted += (ss, ee) =>
-            // {
-            //     var jsCode = "getChart(" + entity1 + ");";
-            //     dynamic doc = webBrowser1.Document;
-            //     webBrowser1.InvokeScript("execScript",new Object[] { jsCode,"JavaScript"});
-            // };
 
-            //plot3.Model = getModel3();
-            //plot4.Model = getModel4();
 
-            //new Thread(() =>
-            //{
-            //    System.Threading.Thread.Sleep(2000);
-            //    this.Dispatcher.Invoke(new Action(() =>
-            //    {
-            //        webBrowser2.NavigateToString(new StreamReader("./demoCom02.html").ReadToEnd());
-            //    }));
-            //}).Start();
-
+            Http.Get(Constant.HistoryUrl).OnSuccess(haha =>
+            {
                 
+                string res = processHtml(content1, haha);
+                Console.WriteLine(res);
+                new Thread(() =>
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                        webBrowser2.NavigateToString(res);
+                    }));
+                }).Start();
+            }).OnFail(result =>
+            {
+                Console.WriteLine(result);
+            }).Go();
+            plot3.Model = getModel3();
+            plot4.Model = getModel4();
+
+          
+
+
         }
 
         private string processHtml(string content,string data)

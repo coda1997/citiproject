@@ -18,13 +18,15 @@ using JumpKick.HttpLib;
 using System.Net;
 using System.Threading;
 using System.IO;
+using DMSkin.WPF;
+
 
 namespace citi.MyWindow
 {
     /// <summary>
     /// IndustryWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class IndustryWindow : Window
+    public partial class IndustryWindow : DMSkinWindow
     {
         public IndustryWindow(int year)
         {

@@ -38,6 +38,7 @@ namespace citi.MyPage
         private Page ana02;
         private Page ana03;
         private Page ana04;
+        private string name = null;
 
 
 
@@ -134,7 +135,7 @@ namespace citi.MyPage
             }
             
 
-            string name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
+            name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
             string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
             string sql = "INSERT INTO record (name,date,probability,comment,asset_standard,national_debt,enterprise_debt,trust_rate,trust_debt,debt_foundation,trust_debtRights,trust_stock,trust_transfer,receive,self_debtRights,bill,credit,other,cash,currency_market_tool,asset,cost_deposit," +
                 "cost_finance) VALUES('新建分析-"+name+"','"+date+"',"+"'-'"+","+"'--'"+",'"+
@@ -160,9 +161,9 @@ namespace citi.MyPage
 
             SqliteHelper.ExecuteSQLWithoutResult(sql);
             ana01 = new AnaResult01(this);
-            ana02 = new AnaResult02(this);
-            ana03 = new AnaResult03(this,"新建分析-"+name);
-            ana04 = new AnaResult04(this);
+            //ana02 = new AnaResult02(this);
+            //ana03 = new AnaResult03(this,"新建分析-"+name);
+            //ana04 = new AnaResult04(this);
 
             this.NavigationService.Navigate(ana01);
 
@@ -175,14 +176,28 @@ namespace citi.MyPage
         }
         public Page getPage01()
         {
+            if (ana01 == null)
+            {
+                ana01 = new AnaResult01(this);
+            }
             return ana01;
         }
         public Page getPage02()
         {
+            if (ana02 == null)
+            {
+                ana02 = new AnaResult02(this);
+            }
             return ana02;
         }
         public Page getPage03()
         {
+            if (ana03 == null)
+            {
+                if(name!=null)
+                    ana03 = new AnaResult03(this,"新建分析-" + name);
+                
+            }
             return ana03;
         }
 
@@ -193,6 +208,10 @@ namespace citi.MyPage
 
         public Page getPage04()
         {
+            if (ana04 == null)
+            {
+                ana04 = new AnaResult04(this);
+            }
             return ana04;
         }
 
