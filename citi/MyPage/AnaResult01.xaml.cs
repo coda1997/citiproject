@@ -25,16 +25,16 @@ namespace citi.MyPage
             InitializeComponent();
             dataPage = pageArg;
             MyEntity entity = dataPage.getEntity();
-            label17.Content = entity.Asset_standard;      //标准资产
-            label18.Content = entity.Bond;
-            label19.Content = entity.NonStandardAssets;
-            label20.Content = entity.Cash;               //现金及银行存款
-            label21.Content = entity.Currency_market_tool;//货币市场工具
-            label22.Content = entity.Asset;            //权益类资产
-            label23.Content = entity.Other;
+            label17.Content = entity.asset_standard;      //标准资产
+            label18.Content = entity.bond;
+            label19.Content = entity.nonStandardAssets;
+            label20.Content = entity.cash;               //现金及银行存款
+            label21.Content = entity.currency_market_tool;//货币市场工具
+            label22.Content = entity.asset;            //权益类资产
+            label23.Content = entity.other;
             label24.Content = entity.getAssetsTotal();
-            label37.Content = entity.Cost_deposit;     //定期存款
-            label38.Content = entity.Cost_finance;        //理财产品
+            label37.Content = entity.cost_deposit;     //定期存款
+            label38.Content = entity.cost_finance;        //理财产品
             label39.Content = entity.getLoanTotal();
             label42.Content = Convert.ToDouble(entity.getAssetsTotal()) - Convert.ToDouble(entity.getLoanTotal());
             label43.Content = Convert.ToDouble(entity.getAssetsTotal()) - Convert.ToDouble(entity.getLoanTotal());

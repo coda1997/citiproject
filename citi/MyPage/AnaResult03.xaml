@@ -17,7 +17,7 @@
                 </Border.Effect>
             </Border>
             <Border Background="White"  CornerRadius="3" Margin="10">
-                <WebBrowser x:Name="webBrower"></WebBrowser>
+                <WebBrowser x:Name="webBroswer"></WebBrowser>
                 <!--<oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1"/>-->
             </Border>
         </Grid>

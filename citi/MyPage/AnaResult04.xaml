@@ -20,7 +20,7 @@
                 </Border.Effect>
             </Border>
             <Border Background="White"  CornerRadius="3">
-        <oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1"/>
+                <WebBrowser x:Name="webBrowser1"></WebBrowser>
             </Border>
         </Grid>
         <Grid Margin="452,159,20,130">
@@ -30,9 +30,7 @@
                 </Border.Effect>
             </Border>
             <Border Background="White"  CornerRadius="3">
-        <oxy:PlotView Name="plot2" Background="Transparent"  Panel.ZIndex="-1" Margin="1,1,0,0" RenderTransformOrigin="0.5,0.5">
-              
-                </oxy:PlotView>
+                <WebBrowser x:Name="webBrowser2"></WebBrowser>
             </Border>
         </Grid>
         <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="140,104,0,0" VerticalAlignment="Top"/>

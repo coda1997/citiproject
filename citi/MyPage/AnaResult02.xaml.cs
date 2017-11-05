@@ -77,13 +77,13 @@ namespace citi.MyPage
         {
             MyEntity entity = dataPage.getEntity();
 
-            string asset_standard = entity.Asset_standard;      //标准资产
-            string bond = entity.Bond;
-            string nonStandardAssets = entity.NonStandardAssets;
-            string cash = entity.Cash;               //现金及银行存款
-            string currency_market_tool = entity.Currency_market_tool;//货币市场工具
-            string asset = entity.Asset;            //权益类资产
-            string other = entity.Other;
+            string asset_standard = entity.asset_standard;      //标准资产
+            string bond = entity.bond;
+            string nonStandardAssets = entity.nonStandardAssets;
+            string cash = entity.cash;               //现金及银行存款
+            string currency_market_tool = entity.currency_market_tool;//货币市场工具
+            string asset = entity.asset;            //权益类资产
+            string other = entity.other;
 
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new PieSeries { StrokeThickness = 1, AngleSpan = 360, StartAngle = 0 };

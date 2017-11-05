@@ -45,8 +45,9 @@ namespace citi.MyPage
         
         private void initView()
         {
+            Console.WriteLine("Json: \n" + entity1.ToJson() + "\n" + entity2.ToJson());
             string content1 = new StreamReader(Constant.DeChart).ReadToEnd();
-            Http.Get(Constant.HistoryUrl).OnSuccess(haha =>
+            Http.Post(Constant.OverViewUrl).Body("application/json",entity1.ToJson()).OnSuccess(haha =>
             {
                 string res = processHtml(content1, haha);
                 Console.WriteLine(res);
@@ -60,13 +61,13 @@ namespace citi.MyPage
                 }).Start();
             }).OnFail(result =>
             {
-                Console.WriteLine(result);
+                Console.WriteLine(result.Message);
             }).Go();
 
 
-            Http.Get(Constant.HistoryUrl).OnSuccess(haha =>
+            Http.Post(Constant.OverViewUrl).Body("application/json", entity2.ToJson()).OnSuccess(haha =>
             {
-                
+
                 string res = processHtml(content1, haha);
                 Console.WriteLine(res);
                 new Thread(() =>
@@ -162,13 +163,13 @@ namespace citi.MyPage
 
         private PlotModel getModel3()
         {
-            string asset_standard = entity1.Asset_standard;      //标准资产
-            string bond = entity1.Bond;
-            string nonStandardAssets = entity1.NonStandardAssets;
-            string cash = entity1.Cash;               //现金及银行存款
-            string currency_market_tool = entity1.Currency_market_tool;//货币市场工具
-            string asset = entity1.Asset;            //权益类资产
-            string other = entity1.Other;
+            string asset_standard = entity1.asset_standard;      //标准资产
+            string bond = entity1.bond;
+            string nonStandardAssets = entity1.nonStandardAssets;
+            string cash = entity1.cash;               //现金及银行存款
+            string currency_market_tool = entity1.currency_market_tool;//货币市场工具
+            string asset = entity1.asset;            //权益类资产
+            string other = entity1.other;
 
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new PieSeries { StrokeThickness = 1, AngleSpan = 360, StartAngle = 0 };
@@ -186,13 +187,13 @@ namespace citi.MyPage
 
         private PlotModel getModel4()
         {
-            string asset_standard = entity2.Asset_standard;      //标准资产
-            string bond = entity2.Bond;
-            string nonStandardAssets = entity2.NonStandardAssets;
-            string cash = entity2.Cash;               //现金及银行存款
-            string currency_market_tool = entity2.Currency_market_tool;//货币市场工具
-            string asset = entity2.Asset;            //权益类资产
-            string other = entity2.Other;
+            string asset_standard = entity2.asset_standard;      //标准资产
+            string bond = entity2.bond;
+            string nonStandardAssets = entity2.nonStandardAssets;
+            string cash = entity2.cash;               //现金及银行存款
+            string currency_market_tool = entity2.currency_market_tool;//货币市场工具
+            string asset = entity2.asset;            //权益类资产
+            string other = entity2.other;
 
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new PieSeries { StrokeThickness = 1, AngleSpan = 360, StartAngle = 0 };

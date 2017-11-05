@@ -33,14 +33,14 @@ namespace citi.MyPage
             dataPage = pageArg;
             item = 0;
             jData = getData();
-            plot1.Model = getModel1();
-            plot2.Model = getModel2();
+            getMode();
+            //plot2.Model = getModel2();
 
         }
 
         private AddAna dataPage;
         private int item;
-        JsonPartial jData;
+        string jData;
 
         private void image1_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -84,43 +84,31 @@ namespace citi.MyPage
             this.NavigationService.Navigate(dataPage.getPage04());
         }
 
-        private PlotModel getModel1()
+        private void getMode()
         {
-            PlotModel modelP1 = new PlotModel { Title = " " };
-            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
+            string content1 = new StreamReader(Constant.PartialChart).ReadToEnd();
+            webBrowser1.NavigateToString(WebHelper.processHTML(content1, jData));
 
-            int sum = 500;
-            for (int i = 0; i < sum; i++)
+            new Thread(() =>
             {
-                seriesP1.Points.Add(new DataPoint(jData.assets[0][i], jData.assets[1][i]));
-            }
-            modelP1.Series.Add(seriesP1);
+                System.Threading.Thread.Sleep(1000);
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    string content2 = new StreamReader(Constant.PartialChart2).ReadToEnd();
+                    webBrowser2.NavigateToString(WebHelper.processHTML(content2, jData));
 
-            return modelP1;
+                }));
+            }).Start();
         }
 
-        private PlotModel getModel2()
-        {
-
-            PlotModel modelP1 = new PlotModel { Title = " " };
-            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-
-            int sum = 500;
-            for (int i = 0; i < sum; i++)
-            {
-                seriesP1.Points.Add(new DataPoint(jData.derivative[0][i], jData.derivative[1][i]));
-            }
-            modelP1.Series.Add(seriesP1);
-
-            return modelP1;
-        }
+     
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             item = comboBox.SelectedIndex;
             jData = getData();
-            plot1.Model = getModel1();
-            plot2.Model = getModel2();
+            getMode();
+            //plot2.Model = getModel2();
         }
 
         private string getParam(int index)
@@ -147,13 +135,13 @@ namespace citi.MyPage
             return "";
         }
 
-        private JsonPartial getData()
+        private string getData()
         {
             MyEntity entity = dataPage.getEntity();
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://39.108.217.238:8080/partial_history/");
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Constant.PartialUrl);
             request.Method = "POST";
-            var postData = "which=" + getParam(item);
+            var postData = "which=" + getParam(item)+entity.ToJson();
             var encodeData = Encoding.ASCII.GetBytes(postData);
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = encodeData.Length;
@@ -168,9 +156,9 @@ namespace citi.MyPage
             StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
             string json = streamReader.ReadToEnd();
 
-            JsonPartial data = JsonConvert.DeserializeObject<JsonPartial>(json);
+            
 
-            return data;
+            return json;
         }
     }
 

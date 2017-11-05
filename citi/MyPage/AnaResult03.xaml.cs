@@ -38,7 +38,34 @@ namespace citi.MyPage
 
         private void initChart()
         {
-            WebHelper.ConstructHTML(this, webBrower, Constant.OverViewUrl, dataPage.getEntity(), Constant.DeChart);
+            ConstructHTML(Constant.OverViewUrl, dataPage.getEntity(), Constant.DeChart);
+        }
+        private void ConstructHTML( String url, MyEntity entity, String webSource)
+        {
+            string content = new StreamReader(webSource).ReadToEnd();
+            Http.Post(url).Body(entity.ToJson()).OnSuccess(result =>
+            {
+                string res = processHTML(content, result);
+                new Thread(() =>
+                {
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                        webBroswer.NavigateToString(res);
+                    }));
+                }).Start();
+
+            }).OnFail(result =>
+            {
+                Console.WriteLine(":post chart failed" + result);
+            }).Go();
+        }
+        private string processHTML(string content, string data)
+        {
+            int start = content.IndexOf('@');
+            string l = content.Substring(0, start);
+            string m = content.Substring(start + 1);
+            string n = "var data = " + data;
+            return l + n + m;
         }
 
         private void updataHistory(String probability)

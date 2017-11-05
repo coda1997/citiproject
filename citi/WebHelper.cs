@@ -1,9 +1,11 @@
 ﻿using JumpKick.HttpLib;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -50,7 +52,7 @@ namespace citi
                 Console.WriteLine(":post chart failed" + result);
             }).Go();
         }
-        private static string processHTML(string content, string data)
+        public static string processHTML(string content, string data)
         {
             int start = content.IndexOf('@');
             string l = content.Substring(0, start);
@@ -58,5 +60,6 @@ namespace citi
             string n = "var data = " + data;
             return l + n + m;
         }
+       
     }
 }

@@ -32,7 +32,7 @@ namespace citi.MyWindow
         {
             InitializeComponent();
             
-            plot2.Model = getModel2(year);
+            getModel2(year);
             plot1.Model = getModel1(year);
         }
 
@@ -63,43 +63,10 @@ namespace citi.MyWindow
         }
 
 
-        //private PlotModel getModel2(int year)
-        //{
-        //    PlotModel modelP2 = new PlotModel { Title = "a" };
-        //    dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-        //    dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
-
-        //    string response = "";
-        //    Http.Get(geturl(year)).OnSuccess(result =>
-        //    {
-
-        //        response = result;
-        //        JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
-        //        int sum = 500;
-        //        for (int i = 0; i < sum; i++)
-        //        {
-        //            seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-        //        }
-        //        seriesP22.Points.Add(new DataPoint(data.cost, 0));
-        //        seriesP22.Points.Add(new DataPoint(data.cost, 0.06));
-
-        //        modelP2.Series.Add(seriesP21);
-        //        modelP2.Series.Add(seriesP22);
 
 
-        //        this.Dispatcher.Invoke(new Action(() =>
-        //        {
-        //            //label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
-        //            label2.Content = data.points[0][50].ToString();
-        //        }));
 
-        //    }).Go();
-
-        //    return modelP2;
-        //}
-
-
-        private PlotModel getModel2(int year)
+        private void getModel2(int year)
         {
             PlotModel modelP2 = new PlotModel { Title = " " };
             dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
@@ -111,20 +78,12 @@ namespace citi.MyWindow
             StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
             string json = streamReader.ReadToEnd();
             JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
-            int sum = 500;
-            for (int i = 0; i < sum; i++)
-            {
-                seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-            }
-            seriesP22.Points.Add(new DataPoint(data.cost, 0));
-            seriesP22.Points.Add(new DataPoint(data.cost, 0.3));
-
-            modelP2.Series.Add(seriesP21);
-            modelP2.Series.Add(seriesP22);
-
+            string content = new StreamReader(Constant.PartialChart2).ReadToEnd();
+            webBroswer.NavigateToString(WebHelper.processHTML(content,json));
+         
             label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
 
-            return modelP2;
+      
         }
 
 

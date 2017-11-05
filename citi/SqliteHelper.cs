@@ -93,25 +93,25 @@ namespace citi
                 if (drc.Count > 0)
                 {
                     DataRow dataRow = drc[0];
-                    myEntity.Asset_standard = dataRow[5] + "";
-                    myEntity.National_debt = dataRow[6] + "";
-                    myEntity.Enterprise_debt = dataRow[7] + "";
-                    myEntity.Trust_rate = dataRow[8] + "";
-                    myEntity.Trust_debt = dataRow[9] + "";
-                    myEntity.Debt_foundation = dataRow[10] + "";
-                    myEntity.Trust_debtRights = dataRow[11] + "";
-                    myEntity.Trust_stock = dataRow[12] + "";
-                    myEntity.Trust_transfer = dataRow[13] + "";
-                    myEntity.Receive = dataRow[14] + "";
-                    myEntity.Self_debtRights = dataRow[15] + "";
-                    myEntity.Bill = dataRow[16] + "";
-                    myEntity.Credit = dataRow[17] + "";
-                    myEntity.Other = dataRow[18] + "";
-                    myEntity.Cash = dataRow[19] + "";
-                    myEntity.Currency_market_tool = dataRow[20] + "";
-                    myEntity.Asset = dataRow[21] + "";
-                    myEntity.Cost_deposit = dataRow[22] + "";
-                    myEntity.Cost_finance = dataRow[23] + "";
+                    myEntity.asset_standard = dataRow[5] + "";
+                    myEntity.national_debt = dataRow[6] + "";
+                    myEntity.enterprise_debt = dataRow[7] + "";
+                    myEntity.trust_rate = dataRow[8] + "";
+                    myEntity.trust_debt = dataRow[9] + "";
+                    myEntity.debt_foundation = dataRow[10] + "";
+                    myEntity.trust_debtRights = dataRow[11] + "";
+                    myEntity.trust_stock = dataRow[12] + "";
+                    myEntity.trust_transfer = dataRow[13] + "";
+                    myEntity.receive = dataRow[14] + "";
+                    myEntity.self_debtRights = dataRow[15] + "";
+                    myEntity.bill = dataRow[16] + "";
+                    myEntity.credit = dataRow[17] + "";
+                    myEntity.other = dataRow[18] + "";
+                    myEntity.cash = dataRow[19] + "";
+                    myEntity.currency_market_tool = dataRow[20] + "";
+                    myEntity.asset = dataRow[21] + "";
+                    myEntity.cost_deposit = dataRow[22] + "";
+                    myEntity.cost_finance = dataRow[23] + "";
                 }
             }
 

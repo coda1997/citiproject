@@ -91,12 +91,12 @@ namespace citi.MyPage
 
         private void startAnaBtn_Click(object sender, RoutedEventArgs e)
         {
-            entity.Asset_standard = asset_standard.Text;
-            entity.Cash = cash.Text;
-            entity.Currency_market_tool = currency_market_tool.Text;
-            entity.Asset = asset.Text;
-            entity.Cost_deposit = cost_deposit.Text;
-            entity.Cost_finance = cost_finance.Text;
+            entity.asset_standard = asset_standard.Text;
+            entity.cash = cash.Text;
+            entity.currency_market_tool = currency_market_tool.Text;
+            entity.asset = asset.Text;
+            entity.cost_deposit = cost_deposit.Text;
+            entity.cost_finance = cost_finance.Text;
 
             if (detailPage1 == null)
             {
@@ -109,24 +109,24 @@ namespace citi.MyPage
                 return;
             }
 
-            entity.Trust_rate = detailPage1.Trust_rate;
-            entity.Trust_debt = detailPage1.Trust_debt;
-            entity.Debt_foundation = detailPage1.Debt_foundation;
-            entity.Trust_debtRights = detailPage1.Trust_debtRights;
-            entity.Trust_stock = detailPage1.Trust_stock;
-            entity.Trust_transfer = detailPage1.Trust_transfer;
-            entity.Receive = detailPage1.Receive;
-            entity.Self_debtRights = detailPage1.Self_debtRights;
-            entity.Other = detailPage1.Other;
-            entity.Credit = detailPage1.Credit;
-            entity.Bill = detailPage1.Bill;
-            entity.National_debt = detailPage2.National_debt;
-            entity.Enterprise_debt = detailPage2.Enterprise_debt;
+            entity.trust_rate = detailPage1.Trust_rate;
+            entity.trust_debt = detailPage1.Trust_debt;
+            entity.debt_foundation = detailPage1.Debt_foundation;
+            entity.trust_debtRights = detailPage1.Trust_debtRights;
+            entity.trust_stock = detailPage1.Trust_stock;
+            entity.trust_transfer = detailPage1.Trust_transfer;
+            entity.receive = detailPage1.Receive;
+            entity.self_debtRights = detailPage1.Self_debtRights;
+            entity.other = detailPage1.Other;
+            entity.credit = detailPage1.Credit;
+            entity.bill = detailPage1.Bill;
+            entity.national_debt = detailPage2.National_debt;
+            entity.enterprise_debt = detailPage2.Enterprise_debt;
             //MessageBox.Show(entity.ToString());
-            entity.Bond = (string)bondLabel.Content;
-            entity.NonStandardAssets = (string)nonStandardAssetsLabel.Content;
+            entity.bond = (string)bondLabel.Content;
+            entity.nonStandardAssets = (string)nonStandardAssetsLabel.Content;
             entity.bank_deposit_rate = bank_deposit_rate.Text;
-            entity.Financial_products = financial_products.Text;
+            entity.financial_products = financial_products.Text;
 
             if (entity.IsAllSetValue())
             {
@@ -139,25 +139,27 @@ namespace citi.MyPage
             string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
             string sql = "INSERT INTO record (name,date,probability,comment,asset_standard,national_debt,enterprise_debt,trust_rate,trust_debt,debt_foundation,trust_debtRights,trust_stock,trust_transfer,receive,self_debtRights,bill,credit,other,cash,currency_market_tool,asset,cost_deposit," +
                 "cost_finance) VALUES('新建分析-"+name+"','"+date+"',"+"'-'"+","+"'--'"+",'"+
-                entity.Asset_standard+"','"+
-                entity.National_debt+"','"+
-                entity.Enterprise_debt+"','"+
-                entity.Trust_rate+"','"+
-                entity.Trust_debt+"','"+
-                entity.Debt_foundation+"','"+
-                entity.Trust_debtRights+"','"+
-                entity.Trust_stock+"','"+
-                entity.Trust_transfer+"','"+
-                entity.Receive+"','"+
-                entity.Self_debtRights+"','"+
-                entity.Bill+"','"+
-                entity.Credit+"','"+
-                entity.Other+"','"+
-                entity.Cash+"','"+
-                entity.Currency_market_tool+"','"+
-                entity.Asset+"','"+
-                entity.Cost_deposit+"','"+
-                entity.Cost_finance+"');";
+                entity.asset_standard+"','"+
+                entity.national_debt+"','"+
+                entity.enterprise_debt+"','"+
+                entity.trust_rate+"','"+
+                entity.trust_debt+"','"+
+                entity.debt_foundation+"','"+
+                entity.trust_debtRights+"','"+
+                entity.trust_stock+"','"+
+                entity.trust_transfer+"','"+
+                entity.receive+"','"+
+                entity.self_debtRights+"','"+
+                entity.bill+"','"+
+                entity.credit+"','"+
+                entity.other+"','"+
+                entity.cash+"','"+
+                entity.currency_market_tool+"','"+
+                entity.asset+"','"+
+                entity.cost_deposit+"','"+
+                entity.cost_finance+
+                entity.bank_deposit_rate+
+                entity.financial_products+"');";
 
             SqliteHelper.ExecuteSQLWithoutResult(sql);
             ana01 = new AnaResult01(this);
