@@ -21,6 +21,7 @@ namespace citi.MyWindow
     /// </summary>
     public partial class Main : DMSkinWindow
     {
+
         public Main()
         {
             InitializeComponent();

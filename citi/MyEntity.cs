@@ -62,30 +62,29 @@ namespace citi
                 asset.Equals("") || cost_deposit.Equals("") || cost_finance.Equals("") || bank_deposit_rate.Equals("") ||
                 financial_products.Equals("") || bond.Equals("") || nonStandardAssets.Equals("");
         }
-        public string ToJson() {
+        public string ToForm() {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("{");
-            stringBuilder.Append("\"asset_standard\" :" + asset_standard + ","
-                + "\"national_debt\" :" + national_debt + ","
-                + "\"enterprise_debt\" :" + enterprise_debt + ","
-                + "\"trust_rate\" :" + trust_rate + ","
-                + "\"trust_debt\" :" + trust_debt + ","
-                + "\"debt_foundation\" :" + debt_foundation + ","
-                + "\"trust_debtRights\" :" + trust_debtRights + ","
-                + "\"trust_stock\" :" + trust_stock + ","
-                + "\"trust_transfer\" :" + trust_transfer + ","
-                + "\"receive\" :" + receive + ","
-                + "\"self_debtRights\" :" + self_debtRights + ","
-                + "\"bill\" :" + bill + ","
-                + "\"credit\" :" + credit + ","
-                + "\"cash\" :" + cash + ","
-                + "\"currency_market_tool\" :" + currency_market_tool + ","
-                + "\"asset\" :" + asset + ","
-                + "\"cost_deposit\" :" + cost_deposit + ","
-                + "\"cost_finance\" :" + cost_finance + ","
-                + "\"bank_deposit_rate\" :" + bank_deposit_rate + ","
-                + "\"financial_products\" :" + financial_products);
-            stringBuilder.Append("}");
+            stringBuilder.Append("asset_standard=" + asset_standard + "&"
+                + "national_debt=" + national_debt + "&"
+                + "enterprise_debt=" + enterprise_debt + "&"
+                + "trust_rate=" + trust_rate + "&"
+                + "trust_debt=" + trust_debt + "&"
+                + "debt_foundation=" + debt_foundation + "&"
+                + "trust_debtRights=" + trust_debtRights + "&"
+                + "trust_stock=" + trust_stock + "&"
+                + "trust_transfer=" + trust_transfer + "&"
+                + "receive=" + receive + "&"
+                + "self_debtRights=" + self_debtRights + "&"
+                + "bill=" + bill + "&"
+                + "credit=" + credit + "&"
+                + "other=" + other + "&"
+                + "cash=" + cash + "&"
+                + "currency_market_tool=" + currency_market_tool + "&"
+                + "asset=" + asset + "&"
+                + "cost_deposit=" + cost_deposit + "&"
+                + "cost_finance=" + cost_finance + "&"
+                + "bank_deposit_rate=" + bank_deposit_rate + "&"
+                + "financial_products=" + financial_products);
             return stringBuilder.ToString();
         }
        

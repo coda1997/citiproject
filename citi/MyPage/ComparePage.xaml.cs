@@ -45,9 +45,10 @@ namespace citi.MyPage
         
         private void initView()
         {
-            Console.WriteLine("Json: \n" + entity1.ToJson() + "\n" + entity2.ToJson());
-            string content1 = new StreamReader(Constant.DeChart).ReadToEnd();
-            Http.Post(Constant.OverViewUrl).Body("application/json",entity1.ToJson()).OnSuccess(haha =>
+            Console.WriteLine("Json: \n" + entity1.ToForm() + "\n" + entity2.ToForm());
+            string content1 = new StreamReader(Constant.CompareChart).ReadToEnd();
+
+            Http.Post(Constant.OverViewUrl).Body(Constant.DataType, entity1.ToForm()).OnSuccess(haha =>
             {
                 string res = processHtml(content1, haha);
                 Console.WriteLine(res);
@@ -65,7 +66,7 @@ namespace citi.MyPage
             }).Go();
 
 
-            Http.Post(Constant.OverViewUrl).Body("application/json", entity2.ToJson()).OnSuccess(haha =>
+            Http.Post(Constant.OverViewUrl).Body(Constant.DataType,entity2.ToForm()).OnSuccess(haha =>
             {
 
                 string res = processHtml(content1, haha);

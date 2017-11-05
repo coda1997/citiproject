@@ -17,14 +17,14 @@
         DMWindowShadowColor="#FFC8C8C8" 
         DMSystemButtonShadowEffect="0"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="CanResizeWithGrip"
         Title="Citi" Height="572" Width="1065">
     <Grid>
         <Image HorizontalAlignment="Left" Height="533" Margin="200,40,0,0" VerticalAlignment="Top" Width="866" Source="/citi;component/assets/background_with_color.png"/>
         <Image HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="1065" Source="/citi;component/assets/top.png"/>
         <!--MouseLeftButtonDown="Image_MouseLeftButtonDown"-->
         <Image HorizontalAlignment="Left" Height="534" VerticalAlignment="Top" Width="201" Source="/citi;component/assets/left.png" Margin="0,39,0,0"/>
-        <Image HorizontalAlignment="Left" Height="49" Margin="33,51,0,0" VerticalAlignment="Top" Width="136" Source="/citi;component/assets/brand.png" />
+        <Image HorizontalAlignment="Left" Height="26" Margin="10,8,0,0" VerticalAlignment="Top" Width="73" Source="/citi;component/assets/brand.png" />
         <Image HorizontalAlignment="Left" Height="157" Margin="0,227,0,0" VerticalAlignment="Top" Width="201" Source="/citi;component/assets/menu_word.png"/>
         <Button Content="" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_2" Height="53"  BorderThickness="0">
             <Button.Style>
@@ -122,5 +122,6 @@
                 </Style>
             </Button.Style>
         </Button>
+        <Image Margin="38,104,914,356" Source="/citi;component/ignition_logo.png" Stretch="Fill"/>
     </Grid>
 </DMSkin:DMSkinWindow>

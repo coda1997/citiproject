@@ -13,7 +13,7 @@
     <Grid>
        
        
-        <Grid Margin="56,96,494,257">
+        <Grid Margin="56,96,439,213">
             <Border CornerRadius="3" Background="White">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="1" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>
@@ -21,12 +21,13 @@
             </Border>
             <Border Background="White"  CornerRadius="3">
             <!--<oxy:PlotView x:Name="plot1" Background="White"  Panel.ZIndex="-1" Margin="10"/>-->
-                <WebBrowser x:Name="webBrowser1"></WebBrowser>
+                <WebBrowser x:Name="webBrowser1" ></WebBrowser>
+                
             </Border>
 
             
         </Grid>
-        <Grid Margin="484,96,62,257">
+        <Grid Margin="458,96,51,213">
             <Border CornerRadius="3" Background="White">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="1" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>

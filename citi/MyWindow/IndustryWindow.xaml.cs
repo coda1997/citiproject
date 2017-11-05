@@ -68,22 +68,30 @@ namespace citi.MyWindow
 
         private void getModel2(int year)
         {
-            PlotModel modelP2 = new PlotModel { Title = " " };
-            dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-            dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
+            new Thread(() => 
+            {
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(geturl(year));
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream responseStream = response.GetResponseStream();
-            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
-            string json = streamReader.ReadToEnd();
-            JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
-            string content = new StreamReader(Constant.DeChart).ReadToEnd();
-            string res = WebHelper.processHTML(content, json);
-            webBroswer.NavigateToString(res);
-            Console.WriteLine(res);
+                PlotModel modelP2 = new PlotModel { Title = " " };
+                dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
+                dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
+
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(geturl(year));
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream responseStream = response.GetResponseStream();
+                StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
+                string json = streamReader.ReadToEnd();
+                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
+                string content = new StreamReader(Constant.DeChart).ReadToEnd();
+                string res = WebHelper.processHTML(content, json);
+                Console.WriteLine(res);
          
-            label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
+                    webBroswer.NavigateToString(res);
+                }));
+                
+            }).Start();
 
       
         }

@@ -31,9 +31,13 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
+            //comboBox.SelectedIndex = 0;
             item = 0;
-            jData = getData();
-            getMode();
+            new Thread(()=> {
+                jData = getData();
+                getMode();
+            }).Start();
+            
             //plot2.Model = getModel2();
 
         }
@@ -86,11 +90,14 @@ namespace citi.MyPage
 
         private void getMode()
         {
-            string content1 = new StreamReader(Constant.PartialChart).ReadToEnd();
-            webBrowser1.NavigateToString(WebHelper.processHTML(content1, jData));
 
             new Thread(() =>
             {
+                string content1 = new StreamReader(Constant.PartialChart).ReadToEnd();
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    webBrowser1.NavigateToString(WebHelper.processHTML(content1, jData));
+                }));
                 System.Threading.Thread.Sleep(1000);
                 this.Dispatcher.Invoke(new Action(() =>
                 {
@@ -106,8 +113,10 @@ namespace citi.MyPage
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             item = comboBox.SelectedIndex;
-            jData = getData();
-            getMode();
+            new Thread(() => {
+                jData = getData();
+                getMode();
+            }).Start();
             //plot2.Model = getModel2();
         }
 
@@ -141,7 +150,7 @@ namespace citi.MyPage
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Constant.PartialUrl);
             request.Method = "POST";
-            var postData = "which=" + getParam(item)+entity.ToJson();
+            var postData = "which=" + getParam(item)+"&"+entity.ToForm();
             var encodeData = Encoding.ASCII.GetBytes(postData);
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = encodeData.Length;

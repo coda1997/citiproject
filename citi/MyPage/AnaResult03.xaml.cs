@@ -43,9 +43,11 @@ namespace citi.MyPage
         private void ConstructHTML( String url, MyEntity entity, String webSource)
         {
             string content = new StreamReader(webSource).ReadToEnd();
-            Http.Post(url).Body(entity.ToJson()).OnSuccess(result =>
+            Http.Post(url).Body(Constant.DataType,entity.ToForm()).OnSuccess(result =>
             {
                 string res = processHTML(content, result);
+                JsonOverview json = JsonConvert.DeserializeObject<JsonOverview>(result);
+                updataHistory(json.probability+"");
                 new Thread(() =>
                 {
                     this.Dispatcher.Invoke(new Action(() =>
@@ -118,52 +120,7 @@ namespace citi.MyPage
             this.NavigationService.Navigate(dataPage.getPage04());
         }
 
-        private PlotModel getModel()
-        {
-            MyEntity entity = dataPage.getEntity();
-            PlotModel modelP1 = new PlotModel { Title = " " };
-            dynamic seriesP1 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-            dynamic seriesP2 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
-
-            //dynamic requestParam = new
-            //{
-            //    email = email,
-            //};
-
-
-            string response = "";
-
-            #region 错误示范
-            Http.Get("http://39.108.217.238:8080/history/?format=json&year=2016").OnSuccess(result =>
-            {
-                response = result;
-                JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(response);
-                int sum = 500;
-                for (int i = 0; i < sum; i++)
-                {
-                    seriesP1.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-                }
-                seriesP2.Points.Add(new DataPoint(data.cost, 0));
-                seriesP2.Points.Add(new DataPoint(data.cost, 0.06));
-
-                modelP1.Series.Add(seriesP1);
-                modelP1.Series.Add(seriesP2);
-
-                this.Dispatcher.Invoke(new Action(() =>
-                {
-                    String probability = (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
-                    label.Content = "违约概率：" + probability;
-                    updataHistory(probability);
-                }));
-
-            }).OnFail(res => { Console.WriteLine("ana result03 fail" + res); }).Go();
-            #endregion
-
-
-
-
-            return modelP1;
-        }
+  
     }
 
 }

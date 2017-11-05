@@ -22,17 +22,16 @@
             </Border>
         </Grid>
         <Image x:Name="image" Margin="110,131,108,0" VerticalAlignment="Top" Height="356" Source="/citi;component/assets/chart2_background.png" Panel.ZIndex="-2"/>
-        <Label x:Name="label" FontSize="20" Foreground="#838ead" Content="Label" HorizontalAlignment="Left" Margin="575,72,0,0" VerticalAlignment="Top" Width="181"/>
         <Label x:Name="label1" Content="结果展示" Foreground="#838ead" FontSize="24" HorizontalAlignment="Left" Margin="379,40,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="label2" Content="资产/人民币百万元" HorizontalAlignment="Left" Margin="753,450,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="资产价值概率密度/E-6" HorizontalAlignment="Left" Margin="110,140,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="资产/人民币百万元" HorizontalAlignment="Left" Margin="753,450,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Label x:Name="label4" Content="根据您输入的经营数据，您未来的资产价值分布如上所示。" HorizontalAlignment="Left" Margin="243,498,0,0" VerticalAlignment="Top"/>
         <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
-        <Image x:Name="image2" HorizontalAlignment="Left" Height="170" Margin="37,37,0,0" VerticalAlignment="Top" Width="136" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden" />
-        <Button x:Name="button" Foreground="#838ead"  Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="新编资产负债表" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top" Width="118"  Click="button_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button1" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="输入数据分析" HorizontalAlignment="Left" Margin="42,108,0,0" VerticalAlignment="Top" Width="118"  Click="button1_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="42,136,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
-        <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="42,164,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
-        <Label x:Name="label46" Foreground="#838ead" Content="目录" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="94" Margin="37,24,0,0" VerticalAlignment="Top" Width="552" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden"/>
+        <Button x:Name="button" Foreground="#838ead"  Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="新编资产负债表" HorizontalAlignment="Left" Margin="87,48,0,0" VerticalAlignment="Top" Width="118"  Click="button_Click" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="button1" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="输入数据分析" HorizontalAlignment="Left" Margin="210,48,0,0" VerticalAlignment="Top" Width="118"  Click="button1_Click" FontSize="16"  Visibility="Hidden"/>
+        <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="333,48,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="456,48,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
+        <Label x:Name="label46" Foreground="#838ead" Content="" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
+
     </Grid>
 </Page>
