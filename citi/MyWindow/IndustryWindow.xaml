@@ -32,7 +32,7 @@
                     <DropShadowEffect ShadowDepth="0" Color="#FFC8C8C8" Opacity="0.3" BlurRadius="20"/>
                 </Border.Effect>
             </Border>
-            <Border Background="White"  CornerRadius="3" Margin="10">
+            <Border Background="White"  CornerRadius="3" Margin="0,0,0,24">
                 <WebBrowser x:Name="webBroswer"></WebBrowser>
                 <!--<oxy:PlotView Name="plot1" Background="Transparent"  Panel.ZIndex="-1"/>-->
             </Border>

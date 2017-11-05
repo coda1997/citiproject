@@ -78,8 +78,10 @@ namespace citi.MyWindow
             StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
             string json = streamReader.ReadToEnd();
             JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
-            string content = new StreamReader(Constant.PartialChart2).ReadToEnd();
-            webBroswer.NavigateToString(WebHelper.processHTML(content,json));
+            string content = new StreamReader(Constant.DeChart).ReadToEnd();
+            string res = WebHelper.processHTML(content, json);
+            webBroswer.NavigateToString(res);
+            Console.WriteLine(res);
          
             label2.Content = "违约概率：" + (Convert.ToDouble(data.probability) * 100).ToString("f2") + "%";
 
