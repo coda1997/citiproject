@@ -26,19 +26,22 @@ namespace citi.MyPage
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+    
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Window industry = new IndustryWindow(2014);
             industry.Show();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
+
             Window industry = new IndustryWindow(2015);
             industry.Show();
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void Image_MouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
         {
             Window industry = new IndustryWindow(2016);
             industry.Show();

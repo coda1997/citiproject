@@ -40,7 +40,7 @@ namespace citi.MyPage
             label43.Content = Convert.ToDouble(entity.getAssetsTotal()) - Convert.ToDouble(entity.getLoanTotal());
             label44.Content = entity.getTwoTotal();
 
-    }
+        }
 
         private AddAna dataPage;
 

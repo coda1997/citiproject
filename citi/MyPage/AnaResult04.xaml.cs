@@ -31,15 +31,19 @@ namespace citi.MyPage
         {
             InitializeComponent();
             dataPage = pageArg;
-            //comboBox.SelectedIndex = 0;
-            item = 0;
-            new Thread(()=> {
-                jData = getData();
-                getMode();
-            }).Start();
-            
-            //plot2.Model = getModel2();
+            comboBox.SelectedIndex = 0;
+            //item = 0;
+            //new Thread(()=> {
+            //    jData = getData();
+            //    getMode();
+            //}).Start();
 
+            //plot2.Model = getModel2();
+            new Thread(()=> 
+            {
+                string content1 = new StreamReader(Constant.PartialChart).ReadToEnd();
+                WebHelper.ConstructHTML(this, webBrowser1, Constant.OverViewUrl, dataPage.getEntity(), Constant.IndustryChart);
+            }).Start();
         }
 
         private AddAna dataPage;
@@ -93,11 +97,7 @@ namespace citi.MyPage
 
             new Thread(() =>
             {
-                string content1 = new StreamReader(Constant.PartialChart).ReadToEnd();
-                this.Dispatcher.Invoke(new Action(() =>
-                {
-                    webBrowser1.NavigateToString(WebHelper.processHTML(content1, jData));
-                }));
+              
                 System.Threading.Thread.Sleep(1000);
                 this.Dispatcher.Invoke(new Action(() =>
                 {
@@ -168,6 +168,33 @@ namespace citi.MyPage
             
 
             return json;
+        }
+
+        private void profitTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string content = profitTextBox.Text;
+            float profit=0;
+            if (!float.TryParse(content,out profit)) {
+                return;
+            }
+
+            JsonPartial jsonPartial = JsonConvert.DeserializeObject<JsonPartial>(jData);
+            float bias = 100;
+            int index = 0; ;
+            for (int i = 0; i < jsonPartial.derivative.Count(); i++)
+            {
+                float temp = Math.Abs(jsonPartial.derivative[i][0] - bias);
+                if (bias > temp)
+                {
+                    bias = temp;
+                    index = i;
+                }
+            }
+
+            proText.Content = "违约概率：" + jsonPartial.assets[index][1] + " %";
+            changeText.Content = "违约概率变化率：" + jsonPartial.derivative[index][1] + " %";
+            
+           
         }
     }
 

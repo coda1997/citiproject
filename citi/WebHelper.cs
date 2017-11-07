@@ -19,7 +19,7 @@ namespace citi
     {
         public static void ConstructHTML(Page p,WebBrowser webBrowser, String url, MyEntity entity, String webSource) {
             string content = new StreamReader(webSource).ReadToEnd();
-            Http.Post(url).Form(JsonConvert.SerializeObject(entity)).OnSuccess(result =>
+            Http.Post(url).Body(Constant.DataType,entity.ToForm()).OnSuccess(result =>
             {
                 string res = processHTML(content, result);
                 new Thread(() =>
@@ -59,7 +59,7 @@ namespace citi
             int start = content.IndexOf('@');
             string l = content.Substring(0, start);
             string m = content.Substring(start + 1);
-            string n = "var data = " + data;
+            string n = "var data = " + data+";";
             return l + n + m;
         }
        

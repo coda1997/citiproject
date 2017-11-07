@@ -81,7 +81,7 @@ namespace citi.MyWindow
                 StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = streamReader.ReadToEnd();
                 JsonOverview data = JsonConvert.DeserializeObject<JsonOverview>(json);
-                string content = new StreamReader(Constant.DeChart).ReadToEnd();
+                string content = new StreamReader(Constant.IndustryChart).ReadToEnd();
                 string res = WebHelper.processHTML(content, json);
                 Console.WriteLine(res);
          

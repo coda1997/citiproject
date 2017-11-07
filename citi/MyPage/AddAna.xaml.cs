@@ -22,11 +22,13 @@ namespace citi.MyPage
     {
         private AddAnaDetail detailPage1 ;
         private AddAnaDetail02 detailPage2 ;
+
         public AddAna()
         {
             InitializeComponent();
             detailPage1 = new AddAnaDetail(this);
             detailPage2 = new AddAnaDetail02(this);
+            
 
 
 
@@ -138,7 +140,7 @@ namespace citi.MyPage
             name = DateTime.Now.ToLocalTime().ToString("hh:mm:ss");
             string date = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
             string sql = "INSERT INTO record (name,date,probability,comment,asset_standard,national_debt,enterprise_debt,trust_rate,trust_debt,debt_foundation,trust_debtRights,trust_stock,trust_transfer,receive,self_debtRights,bill,credit,other,cash,currency_market_tool,asset,cost_deposit," +
-                "cost_finance) VALUES('新建分析-"+name+"','"+date+"',"+"'-'"+","+"'--'"+",'"+
+                "cost_finance,bank_deposit_rate,financial_products) VALUES('新建分析-" + name+"','"+date+"',"+"'-'"+","+"'--'"+",'"+
                 entity.asset_standard+"','"+
                 entity.national_debt+"','"+
                 entity.enterprise_debt+"','"+
@@ -157,15 +159,15 @@ namespace citi.MyPage
                 entity.currency_market_tool+"','"+
                 entity.asset+"','"+
                 entity.cost_deposit+"','"+
-                entity.cost_finance+
-                entity.bank_deposit_rate+
+                entity.cost_finance+"','"+
+                entity.bank_deposit_rate+ "','" +
                 entity.financial_products+"');";
 
             SqliteHelper.ExecuteSQLWithoutResult(sql);
             ana01 = new AnaResult01(this);
-            //ana02 = new AnaResult02(this);
-            //ana03 = new AnaResult03(this,"新建分析-"+name);
-            //ana04 = new AnaResult04(this);
+            ana02 = new AnaResult02(this);
+            ana03 = new AnaResult03(this, "新建分析-" + name);
+            ana04 = new AnaResult04(this);
 
             this.NavigationService.Navigate(ana01);
 

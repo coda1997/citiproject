@@ -10,10 +10,11 @@
 
     <Grid>
         <Label x:Name="label" Foreground="#838eac" FontSize="18" Content="行业违约概率变化趋势" Margin="334,42,336,0" VerticalAlignment="Top" Height="34"/>
-        <Image x:Name="image" Height="376" Margin="74,102,72,0" VerticalAlignment="Top" Source="/citi;component/assets/chart1.png"/>
-        <Button x:Name="button" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="231,324,0,0" VerticalAlignment="Top" Width="19" Click="button_Click"/>
-        <Button x:Name="button1" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="421,233,0,0" VerticalAlignment="Top" Width="19" Click="button1_Click"/>
-        <Button x:Name="button2" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="609,198,0,0" VerticalAlignment="Top" Width="19" Click="button2_Click"/>
+        <Image x:Name="image" Height="376" Margin="76,102,70,0" VerticalAlignment="Top" Source="/citi;component/assets/chart1.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="226,318,0,0" VerticalAlignment="Top" Width="32" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="/citi;component/assets/transparent_background.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="415,226,0,0" VerticalAlignment="Top" Width="32" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" Source="/citi;component/assets/transparent_background.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="606,190,0,0" VerticalAlignment="Top" Width="32" MouseLeftButtonDown="Image_MouseLeftButtonDown_2" Source="/citi;component/assets/transparent_background.png"/>
+
 
     </Grid>
 </Page>

@@ -17,7 +17,7 @@ namespace citi
         public static readonly string HistoryUrl = "http://39.108.217.238:8080/history/?format=json&year=2016";
         public static readonly string DeChart = "./demoCom01.html";
         public static readonly string CompareChart = "./demoCom04.html";
-
+        public static readonly string IndustryChart = "./demoCom05.html";
         public static readonly string PartialChart = "./demoCom02.html";
         public static readonly string PartialChart2 = "./demoCom03.html";
         public static readonly string DataType = "application/x-www-form-urlencoded";

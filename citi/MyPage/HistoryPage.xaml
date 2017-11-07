@@ -81,7 +81,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button  HorizontalAlignment="Left" Margin="693,21,0,0" VerticalAlignment="Top" Width="48" Height="21">
+        <Button  HorizontalAlignment="Left" Margin="693,21,0,0" VerticalAlignment="Top" Width="48" Height="21" Visibility="Hidden">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

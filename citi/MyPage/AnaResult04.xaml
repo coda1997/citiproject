@@ -35,14 +35,14 @@
         </Grid>
         <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="140,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="612,104,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" FontSize="16" Content="收益率：" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Width="93"/>
-        <!--<Label x:Name="label4" FontSize="16" Content="违约概率变化率：" HorizontalAlignment="Left" Margin="684,457,0,0" VerticalAlignment="Top" Width="138"/>-->
-        <!--<Label x:Name="label5" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="113"/>-->
+        <Label x:Name="label3" FontSize="16" Content="收益率：" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Width="93" Visibility="Hidden"/>
+        <Label x:Name="changeText" FontSize="16" Content="违约概率变化率：" HorizontalAlignment="Left" Margin="638,457,0,0" VerticalAlignment="Top" Width="138"/>
+        <Label x:Name="proText" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="113"/>
         <Image x:Name="image" HorizontalAlignment="Left"  Margin="42,443,0,0" VerticalAlignment="Top"  Source="/citi;component/assets/line_dividing.png"/>
         <Label x:Name="label6" Foreground="#838ead" FontSize="12" Content="当前收益率对应的：" HorizontalAlignment="Left" Margin="64,432,0,0" VerticalAlignment="Top"/>
         <!--<Image x:Name="image3" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="10,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>-->
         <!--<Image x:Name="image4" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="452,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>-->
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="672,46,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="comboBox_SelectionChanged">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="672,46,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="comboBox_SelectionChanged" Background="Transparent">
             <ComboBoxItem Name="s1" Content="国债"  />
             <ComboBoxItem Name="s2" Content="企业债" />
             <ComboBoxItem Name="s3" Content="收，受益权" />
@@ -67,5 +67,9 @@
         <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="333,48,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="456,48,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
+        <Label Content="选择市场：" HorizontalAlignment="Left" Margin="602,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="利润率：" HorizontalAlignment="Left" Margin="42,408,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="profitTextBox" HorizontalAlignment="Left" Height="23" Margin="100,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" VerticalContentAlignment="Center"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="165,410,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

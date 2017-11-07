@@ -10,189 +10,7 @@
 
     <Grid>
 
-        <Grid HorizontalAlignment="Left" Height="425" Margin="186,76,0,0" VerticalAlignment="Top" Width="580" Panel.ZIndex="-1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180"/>
-                <ColumnDefinition Width="110"/>
-                <ColumnDefinition Width="180"/>
-                <ColumnDefinition Width="110"/>
-            </Grid.ColumnDefinitions>
-            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="14"/>
-            <Border BorderBrush="Black" BorderThickness="1,1,1,1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" Background="#d8d8f8">
-                <Label x:Name="label" FontSize="18" Content="新编资产负债表" VerticalAlignment="Top" Margin="222,10,222,0" HorizontalAlignment="Center"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4">
-                <Label x:Name="label1" FontSize="14" Content="单位：人民币百万元" Margin="428,0,0,-1"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Background="#d8d8f8"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="4"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="0" Grid.Row="3" Grid.RowSpan="11"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="1" Grid.Row="3" Grid.RowSpan="11"/>
-            <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="2" Grid.Row="3" Grid.RowSpan="11"/>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="3" Grid.RowSpan="11"/>
-
-
-
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="3">
-                <Label x:Name="label2" FontSize="14" Content="项目" VerticalAlignment="Top" Margin="72,0,70,0" HorizontalAlignment="Center"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="3">
-                <Label x:Name="label3" FontSize="14" Content="金额" VerticalAlignment="Top" Margin="36,0" HorizontalAlignment="Center"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="3">
-                <Label x:Name="label4" FontSize="14" Content="项目" Margin="70,0,71,0" HorizontalAlignment="Center"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="3">
-                <Label x:Name="label5" FontSize="14" Content="金额" Margin="33,0,35,0" HorizontalAlignment="Center"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="4">
-                <Label x:Name="label6" FontSize="14" Content="资产："/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="4">
-                <Label x:Name="label16" FontSize="14"  HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="4">
-                <Label x:Name="label26" FontSize="14" Content="负债："/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="4">
-                <Label x:Name="label36" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="5">
-                <Label x:Name="label7" FontSize="14" Content="原资产负债表内总资产"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="5">
-                <Label x:Name="label17" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="5">
-                <Label x:Name="label27" FontSize="14" Content="原资产负债表内总负债"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="5">
-                <Label x:Name="label37" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="6">
-                <Label x:Name="label8" FontSize="14" Content="债券"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="6">
-                <Label x:Name="label18" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="6">
-                <Label x:Name="label28" FontSize="14" Content="理财业务基金"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="6">
-                <Label x:Name="label38" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="7">
-                <Label x:Name="label9" FontSize="14" Content="非标债权类资产"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="7">
-                <Label x:Name="label19" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="7">
-                <Label x:Name="label29" FontSize="14" Content="负债合计"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="7">
-                <Label x:Name="label39" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="8">
-                <Label x:Name="label10" FontSize="14" Content="现金及银行存款"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="8">
-                <Label x:Name="label20" FontSize="14" HorizontalAlignment="Right" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="8">
-                <Label x:Name="label30" FontSize="14" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="8">
-                <Label x:Name="label40" FontSize="14" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="9">
-                <Label x:Name="label11" FontSize="14" Content="货币类市场工具"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="9">
-                <Label x:Name="label21" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="9">
-                <Label x:Name="label31" FontSize="14" Content="所有者权益："/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="9">
-                <Label x:Name="label41" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="10">
-                <Label x:Name="label12" FontSize="14" Content="权益类资产"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="10">
-                <Label x:Name="label22" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="10">
-                <Label x:Name="label32" FontSize="14" Content="原资产负债表内所有者权益"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="10">
-                <Label x:Name="label42" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="11">
-                <Label x:Name="label13" FontSize="14" Content="其他"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="11">
-                <Label x:Name="label23" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="11">
-                <Label x:Name="label33" FontSize="14" Content="所有者权益合计"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="11">
-                <Label x:Name="label43" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="12">
-                <Label x:Name="label14" FontSize="14" Content="资产合计"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="12">
-                <Label x:Name="label24" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="12">
-                <Label x:Name="label34" FontSize="14" Content="负债及所有者权益合计"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="12">
-                <Label x:Name="label44" FontSize="14" HorizontalAlignment="Right"/>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="0" Grid.Row="13">
-                <Label x:Name="label15" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="1" Grid.Row="13">
-                <Label x:Name="label25" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="2" Grid.Row="13">
-                <Label x:Name="label35" />
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="0" Grid.Column="3" Grid.Row="13">
-                <Label x:Name="label45" />
-            </Border>
-
-        </Grid>
+        <Image Margin="111,56,87,61" Source="/citi;component/assets/chart_backgrouned.png"/>
 
         <Image x:Name="image1" HorizontalAlignment="Left" Height="50" Margin="37,37,0,0" VerticalAlignment="Top" Width="50" Source="/citi;component/assets/result_catalog.png" MouseLeftButtonDown="image1_MouseEnter"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="94" Margin="37,24,0,0" VerticalAlignment="Top" Width="552" Source="/citi;component/assets/result_catalog_frame.png"   MouseLeftButtonDown="image2_MouseLeave" Visibility="Hidden"/>
@@ -201,5 +19,42 @@
         <Button x:Name="button2" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="违约概率" HorizontalAlignment="Left" Margin="333,48,0,0" VerticalAlignment="Top" Width="118"   Click="button2_Click" FontSize="16" Visibility="Hidden"/>
         <Button x:Name="button3" Foreground="#838ead" Background="Transparent" BorderThickness="0,0,0,1" BorderBrush="#838ead" Content="偏效应分析" HorizontalAlignment="Left" Margin="456,48,0,0" VerticalAlignment="Top" Width="118"   Click="button3_Click" FontSize="16" Visibility="Hidden"/>
         <Label x:Name="label46" Foreground="#838ead" Content="" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
+        <Label x:Name="label" FontSize="18" Content="新编资产负债表" VerticalAlignment="Top" Margin="367,72,361,0" HorizontalAlignment="Center"/>
+        <Label x:Name="label1" FontSize="14" Content="单位：人民币百万元" Margin="620,112,89,390"/>
+        <Label x:Name="label2" FontSize="14" Content="项目" VerticalAlignment="Top" Margin="111,144,715,0" HorizontalAlignment="Center"/>
+        <Label x:Name="label3" FontSize="14" Content="金额" VerticalAlignment="Top" Margin="318,144,508,0" HorizontalAlignment="Center"/>
+        <Label x:Name="label4" FontSize="14" Content="项目" Margin="468,144,358,358" HorizontalAlignment="Center"/>
+        <Label x:Name="label5" FontSize="14" Content="金额" Margin="703,144,123,358" HorizontalAlignment="Center"/>
+        <Label x:Name="label6" FontSize="14" Content="资产" Margin="111,172,602,330"/>
+        <Label x:Name="label26" FontSize="14" Content="负债" Margin="468,172,217,330"/>
+        <Label x:Name="label7" FontSize="14" Content="原资产负债表内总资产" Margin="111,201,602,301"/>
+        <Label x:Name="label27" FontSize="14" Content="原资产负债表内总负债" Margin="468,201,217,301"/>
+        <Label x:Name="label8" FontSize="14" Content="债券" Margin="111,232,644,270"/>
+        <Label x:Name="label28" FontSize="14" Content="理财业务基金" Margin="468,232,217,270"/>
+        <Label x:Name="label9" FontSize="14" Content="非标债权类资产" Margin="111,263,644,239"/>
+        <Label x:Name="label29" FontSize="14" Content="负债合计" Margin="468,263,217,239"/>
+        <Label x:Name="label10" FontSize="14" Content="现金及银行存款" Margin="111,294,644,208"/>
+        <Label x:Name="label11" FontSize="14" Content="货币类市场工具" Margin="111,321,644,181"/>
+        <Label x:Name="label12" FontSize="14" Content="权益类资产" Margin="111,352,672,150"/>
+        <Label x:Name="label13" FontSize="14" Content="其他" Margin="111,379,686,123"/>
+        <Label x:Name="label14" FontSize="14" Content="资产合计" Margin="111,410,686,92"/>
+        <Label x:Name="label31" FontSize="14" Content="所有者权益" Margin="468,321,217,181"/>
+        <Label x:Name="label32" FontSize="14" Content="原资产负债表内所有者权益" Margin="468,352,217,150"/>
+        <Label x:Name="label33" FontSize="14" Content="所有者权益合计" Margin="468,379,245,123"/>
+        <Label x:Name="label34" FontSize="14" Content="负债及所有者权益合计" Margin="468,410,245,92"/>
+        <Label x:Name="label17" Content="" HorizontalAlignment="Left" Margin="318,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label18" Content="" HorizontalAlignment="Left" Margin="318,234,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label19" Content="" HorizontalAlignment="Left" Margin="318,265,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label20" Content="" HorizontalAlignment="Left" Margin="318,296,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label21" Content="" HorizontalAlignment="Left" Margin="318,323,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label22" Content="" HorizontalAlignment="Left" Margin="318,354,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label23" Content="" HorizontalAlignment="Left" Margin="318,381,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label24" Content="" HorizontalAlignment="Left" Margin="318,412,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label37" Content="" HorizontalAlignment="Left" Margin="703,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label38" Content="" HorizontalAlignment="Left" Margin="703,233,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label39" Content="" HorizontalAlignment="Left" Margin="703,265,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label42" Content="" HorizontalAlignment="Left" Margin="703,354,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label43" Content="" HorizontalAlignment="Left" Margin="703,381,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label44" Content="" HorizontalAlignment="Left" Margin="703,412,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
