@@ -84,7 +84,7 @@ namespace citi.MyPage
             string currency_market_tool = entity.currency_market_tool;//货币市场工具
             string asset = entity.asset;            //权益类资产
             string other = entity.other;
-
+            Console.WriteLine("new " + asset_standard + bond + nonStandardAssets + cash + currency_market_tool);
             PlotModel modelP1 = new PlotModel { Title = " " };
             dynamic seriesP1 = new PieSeries { StrokeThickness = 1, AngleSpan = 360, StartAngle = 0 };
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset_standard)) { Fill = OxyColor.Parse("#5a95be") });

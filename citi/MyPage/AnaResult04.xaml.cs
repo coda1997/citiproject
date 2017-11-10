@@ -170,31 +170,39 @@ namespace citi.MyPage
             return json;
         }
 
-        private void profitTextBox_TextChanged(object sender, TextChangedEventArgs e)
+    
+
+      
+
+     
+
+        private void profitTextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            string content = profitTextBox.Text;
-            float profit=0;
-            if (!float.TryParse(content,out profit)) {
-                return;
-            }
-
-            JsonPartial jsonPartial = JsonConvert.DeserializeObject<JsonPartial>(jData);
-            float bias = 100;
-            int index = 0; ;
-            for (int i = 0; i < jsonPartial.derivative.Count(); i++)
+            if (e.Key.Equals(Key.Enter))
             {
-                float temp = Math.Abs(jsonPartial.derivative[i][0] - bias);
-                if (bias > temp)
+                string content = profitTextBox.Text;
+                float profit = 0;
+                if (!float.TryParse(content, out profit))
                 {
-                    bias = temp;
-                    index = i;
+                    return;
                 }
-            }
+                Console.WriteLine("profit: " + profit);
+                JsonPartial jsonPartial = JsonConvert.DeserializeObject<JsonPartial>(jData);
+                float bias = 100;
+                int index = 0; ;
+                for (int i = 0; i < jsonPartial.derivative.Count(); i++)
+                {
+                    float temp = Math.Abs(jsonPartial.derivative[i][0] - profit);
+                    if (bias > temp)
+                    {
+                        bias = temp;
+                        index = i;
+                    }
+                }
 
-            proText.Content = "违约概率：" + jsonPartial.assets[index][1] + " %";
-            changeText.Content = "违约概率变化率：" + jsonPartial.derivative[index][1] + " %";
-            
-           
+                proText.Content = "违约概率：" + jsonPartial.assets[index][1] + " %";
+                changeText.Content = "违约概率变化率：" + jsonPartial.derivative[index][1] + " %";
+            }
         }
     }
 

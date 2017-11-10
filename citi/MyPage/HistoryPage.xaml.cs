@@ -145,6 +145,11 @@ namespace citi.MyPage
                 entity1.cost_finance = dataRow[23]+"";
                 entity1.bank_deposit_rate = dataRow[24] + "";
                 entity1.financial_products = dataRow[25] + "";
+                entity1.bond = toDouble(entity1.national_debt) + toDouble(entity1.enterprise_debt) + "";
+                entity1.nonStandardAssets = toDouble(entity1.trust_rate) + toDouble(entity1.trust_debt) +
+                    toDouble(entity1.debt_foundation) + toDouble(entity1.trust_debtRights) +
+                    toDouble(entity1.trust_stock) + toDouble(entity1.trust_transfer) + toDouble(entity1.receive) +
+                    toDouble(entity1.self_debtRights) + toDouble(entity1.other) + toDouble(entity1.credit) + toDouble(entity1.bill) + "";
             }
             else
             {
@@ -174,11 +179,22 @@ namespace citi.MyPage
                 entity2.cost_finance = dataRow[23]+"";
                 entity2.bank_deposit_rate = dataRow[24] + "";
                 entity2.financial_products = dataRow[25] + "";
+                entity2.bond = toDouble( entity2.national_debt) +toDouble( entity2.enterprise_debt)+"";
+                entity2.nonStandardAssets = toDouble(entity2.trust_rate) + toDouble(entity2.trust_debt) +
+                    toDouble(entity2.debt_foundation) + toDouble(entity2.trust_debtRights) +
+                    toDouble(entity2.trust_stock) + toDouble(entity2.trust_transfer) + toDouble(entity2.receive) +
+                    toDouble(entity2.self_debtRights) + toDouble(entity2.other) + toDouble(entity2.credit) + toDouble(entity2.bill)+"";
             }
             
             MyLog.FailLog(myListView.SelectedIndex+"");
         }
-
+        private double toDouble(string value)
+        {
+            if (value.Equals(""))
+                return 0;
+            else
+                return Convert.ToDouble(value);
+        }
         private HistoryEntry GetHistoryEntry(object sender)
         {
           

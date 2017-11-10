@@ -53,6 +53,8 @@ namespace citi.MyPage
                     this.Dispatcher.Invoke(new Action(() =>
                     {
                         webBroswer.NavigateToString(res);
+                        proText.Content = "违约概率：" + json.probability + "%";
+
                     }));
                 }).Start();
 

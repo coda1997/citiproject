@@ -35,8 +35,7 @@ namespace citi.MyPage
             InitializeComponent();
             entity1 = e1;
             entity2 = e2;
-            //getPreData();
-            //webBrowser1.Navigate(uriMap);
+      
             initView();
             
 
@@ -85,6 +84,7 @@ namespace citi.MyPage
             }).Go();
             plot3.Model = getModel3();
             plot4.Model = getModel4();
+            
 
           
 
@@ -103,64 +103,7 @@ namespace citi.MyPage
 
         private MyEntity entity1;
         private MyEntity entity2;
-
-        private PlotModel getModel1(JsonOverview data)
-        {
-            PlotModel modelP2 = new PlotModel { Title = " " };
-            dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-            dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
-
-            int sum = 500;
-            for (int i = 0; i < sum; i++)
-            {
-                seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-            }
-            seriesP22.Points.Add(new DataPoint(data.cost, 0));
-            seriesP22.Points.Add(new DataPoint(data.cost, 0.3));
-
-            modelP2.Series.Add(seriesP21);
-            modelP2.Series.Add(seriesP22);
-
-            return modelP2;
-        }
-        private void getPreData()
-        {
-            
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(Constant.HistoryUrl);
-            Console.WriteLine(request.Timeout);
-            
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream responseStream = response.GetResponseStream();
-            StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);
-            string json = streamReader.ReadToEnd();
-            JsonOverview data= JsonConvert.DeserializeObject<JsonOverview>(json);
-
-            //plot1.Model = getModel1(data);
-            //plot2.Model = getModel2(data);
-            plot3.Model = getModel3();
-            plot4.Model = getModel4();
-        }
-
-        private PlotModel getModel2(JsonOverview data)
-        {
-            PlotModel modelP2 = new PlotModel { Title = " " };
-            dynamic seriesP21 = new FunctionSeries() { Color = OxyColor.Parse("#5a95be") };
-            dynamic seriesP22 = new LineSeries() { Color = OxyColor.Parse("#e9445f") };
-
-
-            int sum = 500;
-            for (int i = 0; i < sum; i++)
-            {
-                seriesP21.Points.Add(new DataPoint(data.points[0][i], data.points[1][i]));
-            }
-            seriesP22.Points.Add(new DataPoint(data.cost, 0));
-            seriesP22.Points.Add(new DataPoint(data.cost, 0.3));
-
-            modelP2.Series.Add(seriesP21);
-            modelP2.Series.Add(seriesP22);
-
-            return modelP2;
-        }
+   
 
         private PlotModel getModel3()
         {
@@ -182,6 +125,7 @@ namespace citi.MyPage
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset)) { Fill = OxyColor.Parse("#5A6777") });
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(other)) { Fill = OxyColor.Parse("#d5d5d5") });
             modelP1.Series.Add(seriesP1);
+            Console.WriteLine("history1 " + asset_standard + bond + nonStandardAssets + cash + currency_market_tool);
 
             return modelP1;
         }
@@ -206,6 +150,7 @@ namespace citi.MyPage
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(asset)) { Fill = OxyColor.Parse("#5A6777") });
             seriesP1.Slices.Add(new PieSlice("", Convert.ToDouble(other)) { Fill = OxyColor.Parse("#d5d5d5") });
             modelP1.Series.Add(seriesP1);
+            Console.WriteLine("history2 " + asset_standard + bond + nonStandardAssets + cash + currency_market_tool);
 
             return modelP1;
         }

@@ -295,7 +295,7 @@ namespace citi.MyPage
             double credit = toDouble(detailPage1.Credit);
             double bill = toDouble(detailPage1.Bill);
 
-            double res1 = trust_rate + trust_debt + debt_foundation + trust_debtRights + trust_stock + trust_stock
+            double res1 = trust_rate + trust_debt + debt_foundation + trust_debtRights + trust_stock 
                 + trust_transfer + receive + self_debtRights + other + credit + bill;
             nonStandardAssetsLabel.Content = String.Format("{0:F}", res1);
 

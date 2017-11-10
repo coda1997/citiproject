@@ -109,5 +109,6 @@
         <TextBox x:Name="financial_products" HorizontalAlignment="Left" Height="23" Margin="634,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" TextChanged="financial_products_TextChanged"  input:InputMethod.IsInputMethodEnabled="False" />
         <Label Content="%" HorizontalAlignment="Left" Margin="754,376,0,0" VerticalAlignment="Top"/>
         <Label Content="%" HorizontalAlignment="Left" Margin="754,406,0,0" VerticalAlignment="Top"/>
+        <Label Content="单位/人民币百万元" HorizontalAlignment="Left" Margin="643,460,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

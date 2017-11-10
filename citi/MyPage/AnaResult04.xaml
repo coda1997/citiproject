@@ -36,8 +36,8 @@
         <Label x:Name="label1" Foreground="#838ead" FontSize="16" Content="资产价值分布曲线" HorizontalAlignment="Left" Margin="140,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Foreground="#838ead" FontSize="16" Content="偏效应图" HorizontalAlignment="Left" Margin="612,104,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" FontSize="16" Content="收益率：" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Width="93" Visibility="Hidden"/>
-        <Label x:Name="changeText" FontSize="16" Content="违约概率变化率：" HorizontalAlignment="Left" Margin="638,457,0,0" VerticalAlignment="Top" Width="138"/>
-        <Label x:Name="proText" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="changeText" FontSize="16" Content="违约概率变化率：" HorizontalAlignment="Left" Margin="638,457,0,0" VerticalAlignment="Top" Width="199"/>
+        <Label x:Name="proText" FontSize="16" Content="违约概率：" HorizontalAlignment="Left" Margin="47,457,0,0" VerticalAlignment="Top" Width="231"/>
         <Image x:Name="image" HorizontalAlignment="Left"  Margin="42,443,0,0" VerticalAlignment="Top"  Source="/citi;component/assets/line_dividing.png"/>
         <Label x:Name="label6" Foreground="#838ead" FontSize="12" Content="当前收益率对应的：" HorizontalAlignment="Left" Margin="64,432,0,0" VerticalAlignment="Top"/>
         <!--<Image x:Name="image3" Panel.ZIndex="-2" HorizontalAlignment="Left" Height="244" Margin="10,159,0,0" VerticalAlignment="Top" Width="402" Source="/citi;component/assets/background_partial.png"/>-->
@@ -69,7 +69,7 @@
         <Label x:Name="label46" Foreground="#838ead" Content="" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Visibility="Hidden"/>
         <Label Content="选择市场：" HorizontalAlignment="Left" Margin="602,46,0,0" VerticalAlignment="Top"/>
         <Label Content="利润率：" HorizontalAlignment="Left" Margin="42,408,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="profitTextBox" HorizontalAlignment="Left" Height="23" Margin="100,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="profitTextBox" HorizontalAlignment="Left" Height="23" Margin="100,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" VerticalContentAlignment="Center" Keyboard.KeyUp="profitTextBox_KeyUp"/>
         <Label Content="%" HorizontalAlignment="Left" Margin="165,410,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
